@@ -1,11 +1,9 @@
-"use client";
-
-import { useTheme } from "next-themes";
+import { useBespokeTheme } from "@/components/providers/BespokeThemeProvider";
 import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { theme, toggleTheme } = useBespokeTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
@@ -14,7 +12,7 @@ export default function ThemeToggle() {
 
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={toggleTheme}
       className="p-2 rounded-full hover:bg-surface-elevated transition-colors text-primary-dim hover:text-accent"
       aria-label="Toggle Theme"
     >
