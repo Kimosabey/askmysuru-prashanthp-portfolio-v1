@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Menu, X, ArrowRight, Instagram, Youtube, Twitter } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
@@ -54,17 +54,17 @@ export default function TopNavBar() {
   }, [pathname]);
 
   const navLinks = [
-    { name: "Vision", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Films", href: "/cinematography" },
-    { name: "Gallery", href: "/gallery" },
-    { name: "Units", href: "/units" },
-    { name: "Awards", href: "/certificates" },
-    { name: "Ecosystem", href: "/clients" },
-    { name: "Contact", href: "/contact" },
+    { name: "Vision", href: "/", external: false },
+    { name: "About", href: "/about", external: false },
+    { name: "Films", href: "/cinematography", external: false },
+    { name: "Gallery", href: "/gallery", external: false },
+    { name: "Units", href: "/units", external: false },
+    { name: "Awards", href: "/certificates", external: false },
+    { name: "Ecosystem", href: "/clients", external: false },
+    { name: "Contact", href: "/contact", external: false },
   ];
 
-  const menuVariants = {
+  const menuVariants: Variants = {
     closed: {
       opacity: 0,
       clipPath: "circle(0% at 100% 0%)",
@@ -85,7 +85,7 @@ export default function TopNavBar() {
     }
   };
 
-  const staggerLinks = {
+  const staggerLinks: Variants = {
     open: {
       transition: { staggerChildren: 0.1, delayChildren: 0.3 }
     },
@@ -94,7 +94,7 @@ export default function TopNavBar() {
     }
   };
 
-  const linkVariants = {
+  const linkVariants: Variants = {
     open: {
       y: 0,
       opacity: 1,
@@ -215,7 +215,7 @@ export default function TopNavBar() {
               variants={staggerLinks}
               className="flex flex-col gap-6 items-start"
             >
-              {navLinks.concat([{ name: "Contact", href: "/contact" }]).map((link, i) => (
+              {navLinks.concat([{ name: "Contact", href: "/contact", external: false }]).map((link, i) => (
                 <motion.div key={link.name} variants={linkVariants}>
                   <Link 
                     href={link.href}
