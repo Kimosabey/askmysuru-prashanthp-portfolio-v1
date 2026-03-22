@@ -38,7 +38,7 @@ export default function ClientsPage() {
             <div>
               <span className="font-label text-[10px] uppercase tracking-[0.3em] text-primary mb-8 block px-3 py-1 w-fit border border-primary/20">Parent Entity / HQ</span>
               <h3 className="font-headline text-4xl italic text-primary mb-4">P2 ADD Agency</h3>
-              <p className="font-body text-primary-dim leading-relaxed">The central headquarters in RR Nagara, Bengaluru, independently driving visual documentation, overarching agency management, and brand execution.</p>
+              <p className="font-body text-primary-dim leading-relaxed">The central headquarters in Ideal Homes, RR Nagara, Bengaluru, independently driving visual documentation, overarching agency management, and brand execution.</p>
             </div>
             <div className="font-label text-[10px] uppercase tracking-[0.3em] font-bold text-primary opacity-50 flex items-center gap-3 mt-10">
               <MapPin size={16} /> HEAD OFFICE

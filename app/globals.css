@@ -21,8 +21,17 @@
   --color-border: rgba(255, 255, 255, 0.08);
   --color-border-hover: rgba(255, 255, 255, 0.2);
 
-  /* Fluid Spacing & Shadows */
-  --shadow-cinematic: 0 30px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  /* Layered Naturalistic Shadows (Modern Premium) */
+  --shadow-cinematic: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 12px 32px rgba(0, 0, 0, 0.15),
+    0 32px 64px rgba(0, 0, 0, 0.2);
+  
+  --shadow-cinematic-elevated:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 20px 48px rgba(0, 0, 0, 0.2),
+    0 48px 96px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 /* -------------------------------------
@@ -31,18 +40,18 @@
 
 /* Light Mode Defaults */
 :root {
-  --color-background: #ffffff; /* Pure White for ultra-clean light mode */
-  --color-surface: #f8fafc;
-  --color-surface-elevated: #f1f5f9;
+  --color-background: #fafaf9; /* Warm off-white (Stone 50) for premium modernization */
+  --color-surface: #f5f5f4; /* Stone 100 */
+  --color-surface-elevated: #e7e5e4; /* Stone 200 */
   
-  --color-primary: #0f172a; /* Slate 900 for premium readability */
-  --color-primary-dim: #64748b; /* Slate 500 for secondary text */
+  --color-primary: #0c0a09; /* Stone 950 - Almost Black */
+  --color-primary-dim: #292524; /* Stone 800 - High Contrast for sub-labels */
   
-  --color-accent: #206fc0;
-  --color-accent-dim: #1d4ed8;
+  --color-accent: #1e3a8a; /* Deep Navy Blue */
+  --color-accent-dim: #172554;
   
-  --color-border: rgba(15, 23, 42, 0.08); /* Adaptive slate border */
-  --color-border-hover: rgba(15, 23, 42, 0.15);
+  --color-border: rgba(12, 10, 9, 0.15); /* Stronger adaptive border */
+  --color-border-hover: rgba(12, 10, 9, 0.25);
 }
 
 /* Dark Mode Overrides applied universally on the .dark class */
@@ -69,6 +78,10 @@ html {
   /* Lenis optimization */
   scroll-behavior: initial;
   background-color: var(--color-background);
+}
+
+section {
+  scroll-margin-top: 100px;
 }
 
 body {
@@ -168,14 +181,11 @@ body {
     font-size: clamp(3rem, 10vw, 12rem);
     letter-spacing: -0.05em;
   }
-  .fluid-h2 {
-    font-size: clamp(2.2rem, 6vw, 6rem);
-    letter-spacing: -0.03em;
-  }
   .glass-card {
     backdrop-filter: blur(24px) saturate(180%);
     background-color: var(--color-surface);
     border: 1px solid rgba(15, 23, 42, 0.08); /* Light mode border */
+    border-radius: 4px; /* Small cinematic radius */
     box-shadow: var(--shadow-cinematic);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -188,7 +198,7 @@ body {
     backdrop-filter: blur(40px) saturate(200%);
     background-color: var(--color-surface-elevated);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9);
+    box-shadow: var(--shadow-cinematic-elevated);
   }
   .fluid-h3 {
     font-size: clamp(1.8rem, 5vw, 3rem);

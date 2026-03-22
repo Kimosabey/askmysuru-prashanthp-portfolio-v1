@@ -15,7 +15,7 @@ export default function AuthorityImpact() {
             <span className="text-[10px] font-label tracking-[0.4em] uppercase text-primary-dim">Engaged Community Reach</span>
           </div>
           <div className="flex flex-col items-center text-center">
-            <span className="text-7xl font-headline tracking-tighter text-primary mb-2">2024</span>
+            <span className="text-7xl font-headline tracking-tighter text-primary mb-2">2025</span>
             <span className="text-[10px] font-label tracking-[0.4em] uppercase text-primary-dim text-accent font-bold">Nalwadi Raja Venkatappa Nayaka Award</span>
           </div>
         </div>

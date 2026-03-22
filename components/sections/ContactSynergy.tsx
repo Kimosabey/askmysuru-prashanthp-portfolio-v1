@@ -14,9 +14,32 @@ export default function ContactSynergy() {
             <h2 className="fluid-h2 font-headline italic leading-tight mb-8 text-primary drop-shadow-cinematic">
               Beyond the lens. <br/>A digital <span className="text-accent underline decoration-accent/30 underline-offset-[16px]">metropolis</span>.
             </h2>
-            <p className="font-body text-lg text-primary-dim max-w-xl mb-12 leading-relaxed">
-              Explore askmysuru.com — a collaborative portal dedicated to the heritage, culture, and evolving narrative of the Royal City. A curated visual archive powered by the vision of Prashanth P.
+            <div className="mb-8 space-y-4">
+              <div className="inline-flex items-center gap-3 px-3 py-1 bg-surface-elevated border border-border rounded-full shadow-sm">
+                <div className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse shadow-[0_0_8px_rgba(32,111,192,0.6)]"></div>
+                <span className="font-label text-[8px] uppercase tracking-[0.15em] text-primary">Available for Directorial Commissions // 2026</span>
+              </div>
+              <div>
+                <p className="font-label text-xs text-primary uppercase tracking-widest">P2 ADD Agency HQ</p>
+                <p className="font-body text-sm text-primary-dim leading-relaxed text-balance">
+                  345D, 4th Floor, 17th Cross, Ideal Homes, <br/>
+                  RR Nagara, Bengaluru, Karnataka — 560098
+                </p>
+              </div>
+            </div>
+            <p className="font-body text-base text-primary-dim max-w-xl mb-12 leading-relaxed">
+              Explore askmysuru.com — a collaborative portal dedicated to the heritage, culture, and evolving narrative of Karunadu.
             </p>
+            <div className="flex flex-wrap gap-8 mb-12">
+              <div className="flex flex-col gap-1">
+                <span className="font-label text-[9px] uppercase tracking-widest text-accent">Inquiries</span>
+                <a href="mailto:lets@askmysuru.com" className="font-body text-sm text-primary hover:text-accent transition-colors">lets@askmysuru.com</a>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="font-label text-[9px] uppercase tracking-widest text-accent">Business</span>
+                <a href="mailto:contact@political360.in" className="font-body text-sm text-primary hover:text-accent transition-colors">contact@political360.in</a>
+              </div>
+            </div>
             <div className="flex flex-wrap gap-6">
               <a href="https://askmysuru.com" target="_blank" rel="noopener noreferrer" className="bg-accent text-primary px-10 py-5 rounded-sm font-label tracking-widest text-[11px] font-bold hover:scale-105 transition-all flex items-center gap-3">
                 VISIT THE PORTAL

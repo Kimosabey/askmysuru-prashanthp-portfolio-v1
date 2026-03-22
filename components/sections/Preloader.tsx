@@ -1,72 +1,125 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true);
   const [hasCheckedSession, setHasCheckedSession] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const hasLoaded = sessionStorage.getItem("portfolio-loaded");
     if (hasLoaded) {
       setIsLoading(false);
-    } else {
-      const timer = setTimeout(() => {
-        setIsLoading(false);
-        sessionStorage.setItem("portfolio-loaded", "true");
-      }, 2800);
-      return () => clearTimeout(timer);
+      setHasCheckedSession(true);
+      return;
     }
-    setHasCheckedSession(true);
+
+    // Simulate organic loading progress
+    const interval = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          return 100;
+        }
+        const increment = Math.random() * 15;
+        return Math.min(prev + increment, 100);
+      });
+    }, 150);
+
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      setHasCheckedSession(true);
+      sessionStorage.setItem("portfolio-loaded", "true");
+    }, 2500);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timer);
+    };
   }, []);
 
-  if (hasCheckedSession && !isLoading && sessionStorage.getItem("portfolio-loaded")) {
+  if (hasCheckedSession && !isLoading && typeof window !== 'undefined' && sessionStorage.getItem("portfolio-loaded")) {
     return null;
   }
 
   return (
     <motion.div
-      initial={{ y: 0 }}
-      animate={{ y: isLoading ? 0 : "-100%" }}
-      transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1], delay: 0.2 }}
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white overflow-hidden pointer-events-none"
+      initial={{ opacity: 1 }}
+      animate={{ 
+        opacity: isLoading ? 1 : 0,
+        pointerEvents: isLoading ? "auto" : "none"
+      }}
+      transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1], delay: 0.5 }}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.05)_0%,_rgba(0,0,0,1)_100%)] opacity-80" />
+      {/* Background Cinematic Texture */}
+      <div className="absolute inset-0 bg-[#050505]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(32,111,192,0.08)_0%,_rgba(0,0,0,0)_70%)] opacity-60" />
       
-      <div className="relative z-10 flex flex-col items-center overflow-hidden">
-        <motion.h1 
-          initial={{ y: "100%", opacity: 0 }}
-          animate={{ y: isLoading ? "0%" : "-100%", opacity: isLoading ? 1 : 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="font-headline italic text-5xl tracking-widest text-white/90"
-        >
-          PRASHANTH P.
-        </motion.h1>
+      {/* Shutter Effect Panels */}
+      <motion.div 
+        animate={{ y: isLoading ? "0%" : "-100%" }}
+        transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1], delay: 0.2 }}
+        className="absolute top-0 left-0 w-full h-1/2 bg-black border-b border-white/5 z-20"
+      />
+      <motion.div 
+        animate={{ y: isLoading ? "0%" : "100%" }}
+        transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1], delay: 0.2 }}
+        className="absolute bottom-0 left-0 w-full h-1/2 bg-black border-t border-white/5 z-20"
+      />
+
+      <div className="relative z-[30] flex flex-col items-center">
+        <div className="overflow-hidden mb-6">
+          <motion.h1 
+            initial={{ y: "100%" }}
+            animate={{ y: isLoading ? "0%" : "-100%" }}
+            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+            className="font-headline italic text-5xl md:text-7xl tracking-tighter text-white"
+          >
+            Prashanth P.
+          </motion.h1>
+        </div>
         
-        <motion.div 
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: isLoading ? 1 : 0 }}
-          transition={{ duration: 2.2, ease: "easeInOut" }}
-          className="h-[1px] bg-accent w-48 mt-6 origin-left"
-        />
-        
-        <motion.p
+        <div className="flex flex-col items-center gap-4">
+          <motion.div 
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: progress / 100 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="h-[1px] bg-accent w-64 origin-left"
+          />
+          
+          <div className="flex justify-between w-64 font-label text-[9px] tracking-[0.3em] uppercase text-white/40 font-bold">
+            <span>Archive Unit // 001</span>
+            <span>{Math.round(progress)}% Loaded</span>
+            <span>Frame // 450</span>
+          </div>
+        </div>
+
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: isLoading ? 1 : 0 }}
-          transition={{ delay: 0.4, duration: 1 }}
-          className="mt-6 font-label text-xs text-white/60 tracking-[0.4em] uppercase text-center leading-relaxed"
+          transition={{ delay: 0.3 }}
+          className="mt-12 text-center"
         >
-          THE ARCHITECT OF HERITAGE <br/>
-          <span className="opacity-50 text-[9px] mt-2 block">DIRECTOR // MEDIA HOUSE BUILDER</span>
-        </motion.p>
+          <span className="font-label text-[10px] text-accent tracking-[0.5em] uppercase block mb-2">Heritage Documentarian</span>
+          <span className="font-body text-[10px] text-white/30 uppercase tracking-[0.2em]">Bengaluru — Mysuru — Karnataka</span>
+        </motion.div>
       </div>
 
-      {/* 35mm film strip progress simulation */}
-      <div className="absolute top-0 left-0 w-full h-2 flex gap-1 opacity-20">
-        {[...Array(20)].map((_, i) => (
-          <div key={i} className="h-full w-4 bg-white/40 skew-x-12" />
-        ))}
+      {/* Decorative Corners */}
+      <div className="absolute top-12 left-12 w-12 h-12 border-t border-l border-white/10" />
+      <div className="absolute top-12 right-12 w-12 h-12 border-t border-r border-white/10" />
+      <div className="absolute bottom-12 left-12 w-12 h-12 border-b border-l border-white/10" />
+      <div className="absolute bottom-12 right-12 w-12 h-12 border-b border-r border-white/10" />
+
+      {/* Center Focus Mark */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 opacity-20">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-[1px] bg-white" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[1px] bg-white" />
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-4 bg-white" />
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-4 bg-white" />
       </div>
     </motion.div>
   );

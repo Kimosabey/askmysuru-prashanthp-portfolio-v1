@@ -40,8 +40,8 @@ export default function CertificatesPage() {
                   </p>
                   
                   <div className="flex flex-col gap-2 font-label text-[9px] tracking-[0.3em] uppercase opacity-40">
-                    <span>CONFERRED IN 2024</span>
-                    <span>SURAPURA SAMSTHANA // CERT: 2024-01</span>
+                    <span>CONFERRED IN 2025</span>
+                    <span>SURAPURA SAMSTHANA // CERT: 2025-01</span>
                   </div>
                 </div>
               </div>

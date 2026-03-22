@@ -37,6 +37,7 @@ export const metadata: Metadata = {
 
 import Footer from "@/components/ui/Footer";
 import CinematicAccents from "@/components/ui/CinematicAccents";
+import FilmGrain from "@/components/ui/FilmGrain";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
 export default function RootLayout({
@@ -47,17 +48,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${fontOutfit.variable} ${fontPlayfair.variable} ${notoSansKannada.variable} antialiased hide-scrollbar`}>
       <body suppressHydrationWarning className="bg-background text-primary selection:bg-accent/30 relative hide-scrollbar overflow-x-hidden">
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <CinematicAccents />
-          {/* Global Film Grain Overlay */}
-          <div className="fixed inset-0 z-[100] pointer-events-none opacity-[0.03]">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-              <filter id="noiseFilter">
-                <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
-              </filter>
-              <rect width="100%" height="100%" filter="url(#noiseFilter)" />
-            </svg>
-          </div>
+          <FilmGrain />
           
           <SimpleCursor />
           <CmdKSearch />

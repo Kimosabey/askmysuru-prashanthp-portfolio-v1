@@ -23,7 +23,7 @@ export default function BTSArsenal() {
 
   return (
     <div className="w-full relative bg-background">
-      <section ref={targetRef} className="relative h-[200vh] w-full bg-background border-t border-border">
+      <section ref={targetRef} className="relative h-[150vh] w-full bg-background border-t border-border" id="arsenal">
         <div className="sticky top-0 h-screen flex items-center overflow-hidden">
           <div className="absolute top-24 left-6 md:left-12 z-20">
             <span className="font-label text-[10px] text-accent tracking-[0.4em] uppercase mb-4 block">On Location</span>
@@ -58,7 +58,11 @@ export default function BTSArsenal() {
           <div className="lg:col-span-6 lg:col-start-7">
             <div className="space-y-4">
               {gearList.map((gear, idx) => (
-                <div key={idx} className="flex justify-between items-center py-6 border-b border-border hover:border-accent transition-colors group cursor-default">
+                <motion.div 
+                  key={idx} 
+                  whileTap={{ scale: 0.97 }}
+                  className="flex justify-between items-center py-6 border-b border-border hover:border-accent transition-colors group cursor-default"
+                >
                   <div className="flex flex-col gap-1">
                     <span className="font-headline italic text-2xl md:text-3xl text-primary group-hover:text-accent transition-colors">{gear.name}</span>
                     <span className="font-label text-[10px] uppercase tracking-widest text-primary-dim">{gear.category}</span>
@@ -67,7 +71,7 @@ export default function BTSArsenal() {
                     {gear.usage}
                   </div>
                   <ArrowRight size={16} className="text-border group-hover:translate-x-2 group-hover:text-accent transition-all" />
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

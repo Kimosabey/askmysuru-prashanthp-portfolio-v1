@@ -17,9 +17,14 @@ export default function Footer() {
           <p className="text-primary-dim font-body text-sm max-w-sm leading-relaxed">
             Pioneering a digital renaissance for Karnataka's history. A curated visual archive where academic rigor seamlessly meets cinematic storytelling.
           </p>
-          <p className="text-primary font-label uppercase tracking-widest text-[10px] mt-4">
-            © {currentYear} PRASHANTH P. — DIRECTED BY VISION
-          </p>
+          <div className="flex flex-col gap-1 mt-4">
+            <p className="text-primary font-label uppercase tracking-widest text-[10px]">
+              © {currentYear} PRASHANTH P. — DIRECTED BY VISION
+            </p>
+            <p className="font-label text-[9px] uppercase tracking-[0.2em] text-accent font-bold">
+              Recipient: Nalwadi Raja Venkatappa Nayaka Award (2025)
+            </p>
+          </div>
         </div>
 
         {/* Studio Portals */}

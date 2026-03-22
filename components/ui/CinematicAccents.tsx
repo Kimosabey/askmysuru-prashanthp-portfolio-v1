@@ -12,7 +12,7 @@ export default function CinematicAccents() {
           scale: [1, 1.1, 1] 
         }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-[20%] -right-[10%] w-[60vw] h-[60vw] bg-accent/10 rounded-full blur-[120px]" 
+        className="absolute -top-[20%] -right-[10%] w-[60vw] h-[60vw] bg-accent/10 rounded-full blur-[120px] dark:opacity-100 opacity-20" 
       />
       
       {/* Bottom Left Subtle Glow */}
@@ -22,16 +22,7 @@ export default function CinematicAccents() {
           scale: [1, 1.05, 1] 
         }}
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute -bottom-[10%] -left-[10%] w-[50vw] h-[50vw] bg-accent/5 rounded-full blur-[150px]" 
-      />
-
-      {/* Center Atmospheric Pulse */}
-      <motion.div 
-        animate={{ 
-          opacity: [0.01, 0.03, 0.01],
-        }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/2 rounded-full blur-[200px]" 
+        className="absolute -bottom-[10%] -left-[10%] w-[50vw] h-[50vw] bg-accent/5 rounded-full blur-[150px] dark:opacity-100 opacity-10" 
       />
     </div>
   );

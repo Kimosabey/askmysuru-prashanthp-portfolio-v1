@@ -25,6 +25,7 @@ export default function BentoArchive() {
             key={project.id}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
+            whileTap={{ scale: 0.98 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
             className={`relative group overflow-hidden glass-card hover:border-accent transition-colors duration-500 ${

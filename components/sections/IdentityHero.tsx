@@ -1,15 +1,24 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform, useVelocity, useSpring } from "framer-motion";
 import { Play } from "lucide-react";
+import CinematicButton from "@/components/ui/CinematicButton";
 
 export default function IdentityHero() {
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 400 });
+  const skew = useTransform(smoothVelocity, [-1000, 1000], [-3, 3]);
+  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
+        delayChildren: 2.8, // Wait for Preloader shutter to clear
       },
     },
   };
@@ -22,16 +31,17 @@ export default function IdentityHero() {
   return (
     <section className="relative h-screen min-h-[750px] flex flex-col items-center justify-center pt-[100px] lg:pt-[120px] overflow-hidden bg-background px-6">
       {/* Background elements */}
-      <div className="absolute inset-0 opacity-[0.03] z-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-      <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]"></div>
+      <div className="absolute inset-0 opacity-[0.03] z-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] dark:opacity-[0.05]"></div>
+      <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,transparent_0%,var(--color-background)_100%)] opacity-40"></div>
 
       <motion.div
         className="relative z-20 text-center max-w-5xl flex flex-col items-center gap-12"
         variants={containerVariants}
         initial="hidden"
         animate="show"
+        style={{ skewY: skew, y: y1, opacity }}
       >
-        <motion.div variants={itemVariants} className="flex flex-col gap-6">
+        <motion.div variants={itemVariants} className="flex flex-col gap-6 items-center">
           <span className="font-label text-[10px] md:text-xs uppercase tracking-[0.4em] text-accent font-bold">The Media House Builder's Dossier</span>
           <h1 className="fluid-h1 font-headline italic leading-[0.85] text-primary drop-shadow-cinematic">Visionary <br/> Direction.</h1>
         </motion.div>
@@ -56,13 +66,10 @@ export default function IdentityHero() {
           variants={itemVariants}
           className="flex flex-col md:flex-row items-center justify-center gap-12 mt-4"
         >
-          <button className="group relative px-10 py-5 overflow-hidden transition-all bg-accent text-background border border-accent hover:bg-transparent hover:text-accent">
-            <div className="absolute inset-0 w-0 bg-background transition-all duration-500 ease-out group-hover:w-full"></div>
-            <span className="relative z-10 font-label tracking-[0.2em] uppercase text-[10px] md:text-xs font-bold flex items-center justify-center gap-3 group-hover:text-accent">
-              Explore History
-              <Play size={14} className="fill-current" />
-            </span>
-          </button>
+          <CinematicButton>
+            Explore History
+            <Play size={14} className="fill-current" />
+          </CinematicButton>
         </motion.div>
       </motion.div>
 
@@ -70,7 +77,7 @@ export default function IdentityHero() {
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 2 }}
+        transition={{ delay: 4.5, duration: 2 }}
         className="absolute bottom-4 md:bottom-12 left-6 md:left-12 flex items-center gap-4 opacity-40 hidden sm:flex"
       >
         <span className="text-[9px] font-label tracking-[0.3em] uppercase rotate-[-90deg] origin-left translate-x-3 translate-y-8 whitespace-nowrap">Scroll Experience</span>
