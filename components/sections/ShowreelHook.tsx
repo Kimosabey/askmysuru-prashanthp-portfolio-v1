@@ -20,9 +20,9 @@ export default function ShowreelHook() {
             onClick={() => setIsOpen(true)}
             className="group relative flex items-center justify-center gap-4 mx-auto"
           >
-            <div className="relative flex items-center justify-center w-24 h-24 rounded-full border border-primary/40 bg-primary/10 group-hover:bg-primary/20 transition-all duration-500 backdrop-blur-md">
+            <span className="relative flex items-center justify-center w-24 h-24 rounded-full border border-primary/40 bg-primary/10 group-hover:bg-primary/20 transition-all duration-500 backdrop-blur-md">
               <Play className="w-8 h-8 text-white ml-2 group-hover:scale-110 transition-transform duration-300" />
-            </div>
+            </span>
             <span className="absolute -bottom-8 font-sans text-xs tracking-widest uppercase text-white/50 group-hover:text-white transition-colors duration-300">
               Play Showreel
             </span>
@@ -47,9 +47,9 @@ export default function ShowreelHook() {
             </button>
             <div className="w-full max-w-7xl aspect-video bg-zinc-900 border border-white/10 relative overflow-hidden">
                {/* Replace with actual video embed or player */}
-               <div className="absolute inset-0 flex items-center justify-center text-white/20 font-sans tracking-widest uppercase text-sm">
+               <span className="absolute inset-0 flex items-center justify-center text-white/20 font-sans tracking-widest uppercase text-sm">
                  [ Cinematic Showreel Video Area ]
-               </div>
+               </span>
             </div>
           </motion.div>
         )}

@@ -1,39 +1,99 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  body {
-    background-color: #000;
-    color: #e2e2e2;
-    overflow-x: hidden;
-    cursor: none;
-    font-family: var(--font-inter), sans-serif;
-  }
+@theme {
+  /* Fluid Typography Plugin Settings */
+  --font-headline: var(--font-newsreader);
+  --font-body: var(--font-inter);
+  --font-kannada: var(--font-noto-kannada);
+  --font-label: var(--font-inter);
+
+  /* Semantic V2 Color System (Dark Mode First, High Contrast) */
+  --color-background: #06070a; /* Deepest Cinematic Black */
+  --color-surface: #0b0c10;
+  --color-surface-elevated: #16181f;
+  
+  --color-primary: #f8fafc; /* Crisp White Focus */
+  --color-primary-dim: #94a3b8;
+  
+  --color-accent: #206fc0; /* Official Marine Ask Mysuru */
+  --color-accent-dim: #1d4ed8;
+  
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.2);
+
+  /* Fluid Spacing & Shadows */
+  --shadow-cinematic: 0 30px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* -------------------------------------
+   Light/Dark Theme Token Configurations
+------------------------------------- */
+
+/* Light Mode Defaults */
+:root {
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #f1f5f9;
   
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+  --color-primary: #020617;
+  --color-primary-dim: #475569;
   
-  /* BTS Arsenal Styles */
-  .grid-dots {
-    background-color: #131313;
-    background-image: radial-gradient(circle at 2px 2px, rgba(226, 226, 226, 0.03) 1px, transparent 0);
-    background-size: 40px 40px;
-  }
+  --color-accent: #206fc0;
+  --color-accent-dim: #1d4ed8;
+  
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border-hover: rgba(0, 0, 0, 0.2);
 }
 
-/* Reference Exact CSS */
+/* Dark Mode Overrides applied universally on the .dark class */
+.dark, [data-theme="dark"] {
+  --color-background: #06070a;
+  --color-surface: #0b0c10;
+  --color-surface-elevated: #16181f;
+  
+  --color-primary: #f8fafc;
+  --color-primary-dim: #94a3b8;
+  
+  --color-accent: #206fc0;
+  --color-accent-dim: #1d4ed8;
+  
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.2);
+}
+
+/* -------------------------------------
+   V2 System Resets & Architecture
+------------------------------------- */
+
+html {
+  /* Lenis optimization */
+  scroll-behavior: initial;
+  background-color: var(--color-background);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  /* Sub-pixel rendering for ultra-sharp typography */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ULTIMATE BULLETPROOF SCROLLBAR KILLER */
+* {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+}
+*::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari and Opera */
+}
+
+/* -------------------------------------
+   Cinematic Overlays
+------------------------------------- */
+
 .film-grain {
   position: fixed;
   top: 0;

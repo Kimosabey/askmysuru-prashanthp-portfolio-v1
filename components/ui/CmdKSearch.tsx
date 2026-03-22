@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { MOCK_PROJECTS } from "@/lib/mockData";
 
 export default function CmdKSearch() {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,29 +62,20 @@ export default function CmdKSearch() {
                 <section className="p-2">
                   <h3 className="px-3 py-2 text-[10px] font-semibold uppercase tracking-widest text-slate-500">Director's Archive</h3>
                   
-                  {/* Selected Item */}
-                  <div className="flex items-center gap-3 px-3 py-2.5 rounded-md bg-primary/20 cursor-pointer group transition-all border border-primary/20">
-                    <div className="w-10 h-10 rounded-sm overflow-hidden bg-slate-900 border border-white/10 shrink-0">
-                      <img className="w-full h-full object-cover" alt="Srirangapatna Series" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjw3ASYtuBNEV2SAMjjKhBeYD1OBMeYfJQ49N2Df4gTzYtDlBQuLqQg9I4SmdB9AO63_PA1Dvfk0c0sxd6LoB_4KY8G-vPi1Tzt9Lm-9lEjK-KVnNAqjhhBHip7jESd3f5aW9AVPDMynvCln6Oz_5MPF4G1I-2dD3gJBwNtNbBV1n_GdcUN8-7zW49-AYEaeHmH1PahqpnNPRU8zusYRASG8lsQ4LJga5ES3060kjjvRHjSVCV2db7sTgGQBzN2e588v-sfW5gcQ"/>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-headline text-base text-white truncate">Srirangapatna Series</h4>
-                      <p className="text-[10px] text-primary uppercase font-bold tracking-tighter">Archive • 4K Documentary</p>
-                    </div>
-                    <span className="material-symbols-outlined text-primary text-lg">check</span>
-                  </div>
-
-                  {/* Other Items */}
-                  <div className="flex items-center gap-3 px-3 py-2.5 rounded-md hover:bg-white/5 cursor-pointer group transition-all mt-1">
-                    <div className="w-10 h-10 rounded-sm overflow-hidden bg-slate-900 border border-white/5 shrink-0">
-                      <img className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all" alt="Wildlife Conservation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhont4UfwGYP3RqDT7X7-wIC9GSUrDCYcLhX64_JJbE8VDywSwQ7nSDpm0mbs3-SFLuL2Bpg3W0iaTJGavO4ILr0O3vTqLillQvrp2IA0gLvZQ_2kFHrjZhkchKRcMQNhoEqYQb07FYa2RrY6QIu8iceSMdjuXWIkeD5jOouzED3css5opkMo7E_bCwEA1ByNqPfYEKOcVSanVAjLXwDc3e6mxqKpglwgLXThhKuGgC5EjIe4qprE5Xl80RbYCdagXDCC1Se68CA"/>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-headline text-base text-slate-300 group-hover:text-white truncate transition-colors">Wildlife &amp; Conservation</h4>
-                      <p className="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">Director's Cut • Bandipur</p>
-                    </div>
-                    <span className="material-symbols-outlined text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity">keyboard_return</span>
-                  </div>
+                  {MOCK_PROJECTS.map((project, index) => (
+                    <Link href={`/project/${project.id}`} key={project.id} onClick={() => setIsOpen(false)}>
+                      <div className="flex items-center gap-3 px-3 py-2.5 rounded-md hover:bg-white/5 cursor-pointer group transition-all mt-1 border border-transparent">
+                        <div className="w-10 h-10 rounded-sm overflow-hidden bg-slate-900 border border-white/5 shrink-0">
+                          <img className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all" alt={project.title} src={project.featuredImg} />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-headline text-base text-slate-300 group-hover:text-white truncate transition-colors">{project.title}</h4>
+                          <p className="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">Director's Cut • {project.category}</p>
+                        </div>
+                        <span className="material-symbols-outlined text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity">keyboard_return</span>
+                      </div>
+                    </Link>
+                  ))}
                 </section>
               </div>
 

@@ -4,9 +4,7 @@ import ShowreelHook from "@/components/sections/ShowreelHook";
 import VisionaryStatement from "@/components/sections/VisionaryStatement";
 import BentoArchive from "@/components/sections/BentoArchive";
 import BTSArsenal from "@/components/sections/BTSArsenal";
-import AuthorityImpact from "@/components/sections/AuthorityImpact";
 import ContactSynergy from "@/components/sections/ContactSynergy";
-import Footer from "@/components/ui/Footer";
 
 export default function Home() {
   return (
@@ -19,9 +17,7 @@ export default function Home() {
         <VisionaryStatement />
         <BentoArchive />
         <BTSArsenal />
-        <AuthorityImpact />
         <ContactSynergy />
-        <Footer />
       </div>
     </main>
   );
