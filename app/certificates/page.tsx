@@ -40,8 +40,8 @@ export default function CertificatesPage() {
                   </p>
                   
                   <div className="flex flex-col gap-2 font-label text-[9px] tracking-[0.3em] uppercase opacity-40">
-                    <span>CONFERRED ON MARCH 4, 2025</span>
-                    <span>SURAPURA SAMSTHANA // CERT: 2025-01</span>
+                    <span>CONFERRED IN 2024</span>
+                    <span>SURAPURA SAMSTHANA // CERT: 2024-01</span>
                   </div>
                 </div>
               </div>
@@ -56,7 +56,7 @@ export default function CertificatesPage() {
               </p>
             </div>
             
-            <div className="bg-surface border border-border p-8 space-y-4">
+            <div className="glass-card p-8 space-y-4">
               <h4 className="font-label text-[10px] uppercase tracking-[0.2em] text-accent font-bold">Significance</h4>
               <p className="font-body text-sm text-primary-dim leading-relaxed">
                 Formally recognized for his excellence in historical documentation and for the "Ask Mysuru" platform’s unprecedented role in reviving national interest in the hidden military and royal histories of Karnataka.

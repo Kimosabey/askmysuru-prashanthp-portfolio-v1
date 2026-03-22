@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 
 const videos = [
-  { id: "vDEnb4fE9f4", title: "Surapura Heritage Trailer", category: "Documentary" },
-  { id: "9v-E8I89vSg", title: "The Royal City Narratives", category: "Series" },
-  { id: "bO8D_ZOni4w", title: "Cultural Preservation", category: "Social Impact" },
-  { id: "6f9X_M8hFm0", title: "Ask Mysuru Shorts", category: "Micro-Doc" },
+  { id: "clga7SPzx2Q", title: "Jayamarthanda Gate", category: "Military Heritage" },
+  { id: "WWmaDl_l76Q", title: "GB Hole Documentary", category: "Historical Archive" },
+  { id: "YAIzMGyWB2E", title: "The Secret Route", category: "Exploration" },
+  { id: "TvZAU1pEoGU", title: "Col. Baillie's Dungeon", category: "Prison History" },
 ];
 
 export default function CinematographyPage() {

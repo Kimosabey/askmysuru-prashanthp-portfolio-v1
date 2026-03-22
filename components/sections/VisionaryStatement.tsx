@@ -5,7 +5,7 @@ import { Quote, Film } from "lucide-react";
 
 export default function VisionaryStatement() {
   return (
-    <section className="py-24 md:py-40 px-6 max-w-[1200px] mx-auto relative overflow-hidden flex flex-col items-center text-center">
+    <section className="py-20 md:py-24 px-6 max-w-[1200px] mx-auto relative overflow-hidden flex flex-col items-center text-center">
       
       {/* Abstract Background Accent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none"></div>

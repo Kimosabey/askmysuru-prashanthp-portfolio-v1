@@ -165,12 +165,30 @@ body {
 
 @layer utilities {
   .fluid-h1 {
-    font-size: clamp(3.5rem, 12vw, 10rem);
+    font-size: clamp(3rem, 10vw, 12rem);
     letter-spacing: -0.05em;
   }
   .fluid-h2 {
-    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-size: clamp(2.2rem, 6vw, 6rem);
     letter-spacing: -0.03em;
+  }
+  .glass-card {
+    backdrop-filter: blur(24px) saturate(180%);
+    background-color: var(--color-surface);
+    border: 1px solid rgba(15, 23, 42, 0.08); /* Light mode border */
+    box-shadow: var(--shadow-cinematic);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .dark .glass-card, [data-theme="dark"] .glass-card {
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-card-elevated {
+    backdrop-filter: blur(40px) saturate(200%);
+    background-color: var(--color-surface-elevated);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9);
   }
   .fluid-h3 {
     font-size: clamp(1.8rem, 5vw, 3rem);

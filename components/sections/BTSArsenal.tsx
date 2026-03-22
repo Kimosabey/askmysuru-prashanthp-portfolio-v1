@@ -46,7 +46,7 @@ export default function BTSArsenal() {
         </div>
       </section>
 
-      <section className="relative py-24 px-6 md:px-12 max-w-[1600px] mx-auto z-10 bg-background border-t border-border">
+      <section className="relative pt-12 pb-24 px-6 md:px-12 max-w-[1600px] mx-auto z-10 bg-background border-t border-b border-border">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
           <div className="lg:col-span-5">
             <span className="font-label text-[10px] text-primary-dim tracking-[0.4em] uppercase mb-4 block">The Arsenal</span>

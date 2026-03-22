@@ -2,6 +2,7 @@ import Preloader from "@/components/sections/Preloader";
 import IdentityHero from "@/components/sections/IdentityHero";
 import ShowreelHook from "@/components/sections/ShowreelHook";
 import VisionaryStatement from "@/components/sections/VisionaryStatement";
+import AuthorityImpact from "@/components/sections/AuthorityImpact";
 import BentoArchive from "@/components/sections/BentoArchive";
 import BTSArsenal from "@/components/sections/BTSArsenal";
 import ContactSynergy from "@/components/sections/ContactSynergy";
@@ -15,6 +16,7 @@ export default function Home() {
         <IdentityHero />
         <ShowreelHook />
         <VisionaryStatement />
+        <AuthorityImpact />
         <BentoArchive />
         <BTSArsenal />
         <ContactSynergy />

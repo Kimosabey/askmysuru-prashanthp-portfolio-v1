@@ -5,20 +5,25 @@ import { useEffect, useState } from "react";
 
 export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true);
+  const [hasCheckedSession, setHasCheckedSession] = useState(false);
 
   useEffect(() => {
     const hasLoaded = sessionStorage.getItem("portfolio-loaded");
     if (hasLoaded) {
       setIsLoading(false);
-      return;
+    } else {
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+        sessionStorage.setItem("portfolio-loaded", "true");
+      }, 2800);
+      return () => clearTimeout(timer);
     }
-
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-      sessionStorage.setItem("portfolio-loaded", "true");
-    }, 2800);
-    return () => clearTimeout(timer);
+    setHasCheckedSession(true);
   }, []);
+
+  if (hasCheckedSession && !isLoading && sessionStorage.getItem("portfolio-loaded")) {
+    return null;
+  }
 
   return (
     <motion.div

@@ -5,7 +5,7 @@ import { ExternalLink, Phone } from "lucide-react";
 
 export default function ContactSynergy() {
   return (
-    <main className="pt-20 pb-0 bg-background overflow-hidden relative" id="contact">
+    <div className="pt-0 pb-0 bg-background overflow-hidden relative" id="contact">
       {/* Section: Brand Synergy Teaser */}
       <section className="max-w-[1600px] mx-auto px-6 md:px-12 mb-32 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -84,7 +84,7 @@ export default function ContactSynergy() {
                     SUBMIT INQUIRY
                   </button>
                   <div className="w-full md:w-px h-px md:h-12 bg-border"></div>
-                  <a href="tel:+919739739263" className="w-full md:w-auto flex justify-center items-center gap-3 text-primary-dim hover:text-primary transition-colors font-label text-[11px] tracking-widest uppercase group px-6 py-5 border border-border rounded-sm hover:border-border-hover">
+                  <a href="tel:+919742974234" className="w-full md:w-auto flex justify-center items-center gap-3 text-primary-dim hover:text-primary transition-colors font-label text-[11px] tracking-widest uppercase group px-6 py-5 border border-border rounded-sm hover:border-border-hover">
                     <Phone size={16} className="group-hover:scale-110 transition-transform" />
                     CALL DIRECTLY
                   </a>
@@ -94,6 +94,6 @@ export default function ContactSynergy() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

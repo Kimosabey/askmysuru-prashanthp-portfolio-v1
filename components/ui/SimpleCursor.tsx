@@ -47,20 +47,20 @@ export default function SimpleCursor() {
     <>
       {/* Outer Ring / Viewfinder */}
       <motion.div
-        className="fixed top-0 left-0 border border-accent rounded-full pointer-events-none z-[10000] hidden md:block"
+        className="fixed top-0 left-0 border border-accent rounded-full pointer-events-none z-[10000] hidden md:block mix-blend-difference"
         animate={{
-          x: mousePosition.x - (isHovering ? 24 : 12),
-          y: mousePosition.y - (isHovering ? 24 : 12),
-          width: isHovering ? 48 : 24,
-          height: isHovering ? 48 : 24,
-          opacity: isHovering ? 0.8 : 0.4,
-          scale: isHovering ? 1.2 : 1,
+          x: mousePosition.x - (isHovering ? 28 : 14),
+          y: mousePosition.y - (isHovering ? 28 : 14),
+          width: isHovering ? 56 : 28,
+          height: isHovering ? 56 : 28,
+          opacity: 1,
+          scale: isHovering ? 1.15 : 1,
         }}
         transition={{
           type: "spring",
-          stiffness: 250,
-          damping: 25,
-          mass: 0.5,
+          stiffness: 300,
+          damping: 28,
+          mass: 0.4,
         }}
       >
         <AnimatePresence>
@@ -71,10 +71,10 @@ export default function SimpleCursor() {
               exit={{ opacity: 0, scale: 0.8 }}
               className="absolute inset-0"
             >
-              <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-accent" />
-              <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-accent" />
-              <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-accent" />
-              <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-accent" />
+              <div className="absolute top-[10%] left-[10%] w-2 h-2 border-t border-l border-accent" />
+              <div className="absolute top-[10%] right-[10%] w-2 h-2 border-t border-r border-accent" />
+              <div className="absolute bottom-[10%] left-[10%] w-2 h-2 border-b border-l border-accent" />
+              <div className="absolute bottom-[10%] right-[10%] w-2 h-2 border-b border-r border-accent" />
             </motion.div>
           )}
         </AnimatePresence>
@@ -82,16 +82,17 @@ export default function SimpleCursor() {
 
       {/* Inner Dot */}
       <motion.div
-        className="fixed top-0 left-0 bg-accent rounded-full pointer-events-none z-[10001] hidden md:block"
+        className="fixed top-0 left-0 bg-accent rounded-full pointer-events-none z-[10001] hidden md:block mix-blend-difference"
         animate={{
           x: mousePosition.x - 2,
           y: mousePosition.y - 2,
           scale: isHovering ? 0 : 1,
+          opacity: isHovering ? 0 : 1,
         }}
         transition={{
           type: "spring",
-          stiffness: 1000,
-          damping: 50,
+          stiffness: 800,
+          damping: 40,
         }}
         style={{ width: 4, height: 4 }}
       />

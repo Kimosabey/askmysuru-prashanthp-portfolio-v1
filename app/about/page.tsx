@@ -120,9 +120,9 @@ export default function AboutPage() {
 </div>
           
           <div className="max-w-3xl mx-auto bg-surface-elevated p-10 md:p-16 border border-border relative text-left shadow-cinematic">
-            <div className="absolute -top-[1px] -right-[1px] p-2 bg-accent text-primary font-label text-[9px] uppercase font-bold tracking-[0.2em] shadow-xl">Certified 2025</div>
+            <div className="absolute -top-[1px] -right-[1px] p-2 bg-accent text-primary font-label text-[10px] uppercase font-bold tracking-[0.2em] shadow-xl">Certified 2024</div>
             <p className="font-body text-xl md:text-2xl leading-relaxed mb-8 text-primary">
-              Recipient of this prestigious honor on <span className="text-accent underline decoration-accent/30 underline-offset-8 font-bold">March 4, 2025</span>, for outstanding contributions to historical documentation and the preservation of Karnataka's revolutionary heritage.
+              Recipient of this prestigious honor in <span className="text-accent underline decoration-accent/30 underline-offset-8 font-bold">2024</span>, for outstanding contributions to historical documentation and the preservation of Karnataka's revolutionary heritage.
             </p>
             <div className="text-primary-dim italic font-kannada text-2xl tracking-wide opacity-80 border-t border-border/50 pt-8 mt-8">
               ಅತ್ಯುತ್ತಮ ಇತಿಹಾಸ ಸಂಶೋಧನೆ ಮತ್ತು ಸಾಕ್ಷ್ಯಚಿತ್ರ ನಿರ್ಮಾಣಕ್ಕಾಗಿ
@@ -134,18 +134,18 @@ export default function AboutPage() {
       {/* Section 4: Digital Media Links & Social Reach */}
       <section className="px-6 md:px-12 mb-32 max-w-[1600px] mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <a href="https://youtube.com/@AskMysuru" target="_blank" rel="noopener noreferrer" className="bg-surface p-10 flex flex-col justify-between group hover:-translate-y-2 transition-transform duration-500 border border-border hover:border-border-hover">
+          <a href="https://youtube.com/@AskMysuru" target="_blank" rel="noopener noreferrer" className="glass-card p-10 flex flex-col justify-between group hover:-translate-y-2">
             <div>
               <Youtube size={48} className="text-[#FF0000] mb-8" />
               <h4 className="font-headline text-4xl italic mb-2 text-primary">YouTube</h4>
-              <div className="text-4xl lg:text-5xl font-black text-primary mb-4 tracking-tighter">63.4K+ <span className="text-xs font-label uppercase tracking-widest opacity-40 block mt-2 text-primary-dim font-light">Subscribers</span></div>
+              <div className="text-4xl lg:text-5xl font-black text-primary mb-4 tracking-tighter">63.4K+ <span className="text-xs font-label uppercase tracking-widest opacity-40 block mt-2 text-primary-dim font-light">Subscribers // 442+ Productions</span></div>
             </div>
             <div className="inline-flex items-center gap-3 font-label text-[10px] uppercase tracking-[0.2em] font-bold text-primary-dim group-hover:text-primary group-hover:gap-5 transition-all mt-12">
               VISIT CHANNEL <ArrowRight size={14} />
             </div>
           </a>
           
-          <div className="bg-accent p-10 flex flex-col justify-between text-background shadow-cinematic relative overflow-hidden group">
+          <div className="glass-card-elevated bg-accent p-10 flex flex-col justify-between text-background relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-background/10 to-transparent pointer-events-none"></div>
             <div className="relative z-10">
               <Users size={48} className="mb-8 opacity-90" />
@@ -158,9 +158,9 @@ export default function AboutPage() {
             </div>
           </div>
           
-          <a href="https://instagram.com/askmysuru_official" target="_blank" rel="noopener noreferrer" className="bg-surface p-10 flex flex-col justify-between group hover:-translate-y-2 transition-transform duration-500 border border-border hover:border-border-hover">
+          <a href="https://instagram.com/askmysuru_official" target="_blank" rel="noopener noreferrer" className="glass-card p-10 flex flex-col justify-between group hover:-translate-y-2">
             <div>
-              <Camera size={48} className="text-primary mb-8 opacity-80" />
+              <Instagram size={48} className="text-primary mb-8 opacity-80" />
               <h4 className="font-headline text-4xl italic mb-2 text-primary">Instagram</h4>
               <p className="font-body text-primary-dim mt-4 leading-relaxed max-w-[200px]">Daily visual vignettes of Karnataka's hidden architecture and culture.</p>
             </div>

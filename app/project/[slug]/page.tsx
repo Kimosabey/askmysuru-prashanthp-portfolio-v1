@@ -67,10 +67,10 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
           <div className="space-y-12">
             <div className="group">
               <p className="fluid-h2 font-headline italic text-primary leading-tight mb-6">
-                "The mountains do not speak, they echo. In the stillness of the dawn, we find what we lost in the city noise."
+                "{project.narrative || "Capturing the essence of Karnataka's unseen heritage through a cinematic lens."}"
               </p>
               <p className="text-base md:text-xl font-kannada text-primary-dim tracking-wide leading-relaxed pl-4 md:pl-6 border-l-2 border-accent/40 break-words">
-                "{project.kannadaTitle}... ಬೆಟ್ಟಗಳು ಮಾತನಾಡುವುದಿಲ್ಲ, ಅವು ಪ್ರತಿಧ್ವನಿಸುತ್ತವೆ."
+                "{project.kannadaTitle}... ದಾಸ್ತಾನು ಮತ್ತು ದೃಶ್ಯ ಕಥೆಗಳು."
               </p>
             </div>
           </div>
@@ -80,16 +80,13 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
             <img 
               alt="Narrative still" 
               className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2Yb_Z9j7hEunM9d9ypIFEk1-o368d7wY5SycAcGdvZcbS_1xSpYCcn2xffX7VJmDgi8cS-SLwf5j_oOyk5hUp_ZyRRlDSB8IPW__bSWhdsqI6WihuYKJZMVSg-u1MkyxHrxHpc3x4ir7BddJ1Crso8ZKpFUM4HfbKf_E12HAYFVA2NXlMCS_aZZq6k6hla_1iL624J6R4XS9jkiQnohVWRmfEb2mPueqXpp6sUdCliwZmKAAkXlmoyKK1s6LjQt5P7UxJTDf3pQ" 
+              src={project.featuredImg} 
             />
             <div className="absolute bottom-6 right-6 font-label text-[10px] tracking-widest text-primary-dim uppercase bg-background/80 px-3 py-1 rounded-sm border border-border">SC_012 // EXT</div>
           </div>
           <div className="space-y-8">
             <p className="fluid-body text-primary-dim">
-              This visual poem explores the symbiotic relationship between the tribal communities of the Malnad region and the encroaching modern world. Filmed over 40 days during the peak monsoon, the short captures the raw, unfiltered essence of survival and spirituality.
-            </p>
-            <p className="fluid-body text-primary-dim">
-              The decision to shoot in largely monochromatic contrast was intentional—to strip away the romanticism of the green landscape and focus on the textures of skin, stone, and mist.
+              Explore the intricate details of {project.title}. This visual portfolio documents the structural and cultural significance of the {project.category} vertical, shot over several months of dedicated field work.
             </p>
           </div>
         </div>
@@ -100,19 +97,19 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
         <div className="max-w-[1600px] mx-auto">
           <h2 className="text-[10px] font-label uppercase tracking-[0.4em] text-accent mb-12 text-center md:text-left">Technical Specifications</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-surface p-8 border border-border hover:border-accent transition-colors group">
+            <div className="glass-card p-8 group">
               <span className="text-[10px] font-label text-primary-dim uppercase tracking-widest block mb-4 group-hover:text-primary transition-colors">Camera System</span>
-              <h3 className="text-xl font-headline italic text-primary">Arri Alexa Mini LF</h3>
+              <h3 className="text-xl font-headline italic text-primary">{project.specs?.camera || "ARRI Alexa Mini LF"}</h3>
             </div>
-            <div className="bg-surface p-8 border border-border hover:border-accent transition-colors group">
+            <div className="glass-card p-8 group">
               <span className="text-[10px] font-label text-primary-dim uppercase tracking-widest block mb-4 group-hover:text-primary transition-colors">Glass</span>
-              <h3 className="text-xl font-headline italic text-primary">Cooke S4/i Primes</h3>
+              <h3 className="text-xl font-headline italic text-primary">{project.specs?.lens || "Cooke S4/i Primes"}</h3>
             </div>
-            <div className="bg-surface p-8 border border-border hover:border-accent transition-colors group">
+            <div className="glass-card p-8 group">
               <span className="text-[10px] font-label text-primary-dim uppercase tracking-widest block mb-4 group-hover:text-primary transition-colors">Aspect Ratio</span>
-              <h3 className="text-xl font-headline italic text-primary">2.39:1 Anamorphic</h3>
+              <h3 className="text-xl font-headline italic text-primary">{project.specs?.ratio || "2.39:1 Anamorphic"}</h3>
             </div>
-            <div className="bg-surface p-8 border border-border hover:border-accent transition-colors group">
+            <div className="glass-card p-8 group">
               <span className="text-[10px] font-label text-primary-dim uppercase tracking-widest block mb-4 group-hover:text-primary transition-colors">Format</span>
               <h3 className="text-xl font-headline italic text-primary">ARRIRAW 4.5K</h3>
             </div>

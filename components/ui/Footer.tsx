@@ -45,7 +45,7 @@ export default function Footer() {
           <h4 className="font-label text-xs uppercase tracking-widest text-primary-dim">Professional Connect</h4>
           <div className="flex flex-col gap-4">
             <a href="mailto:lets@askmysuru.com" className="text-primary hover:text-accent font-headline italic text-lg transition-colors">lets@askmysuru.com</a>
-            <a href="tel:+919739739263" className="text-primary hover:text-accent font-headline italic text-lg transition-colors">+91 97397 39263</a>
+            <a href="tel:+919742974234" className="text-primary hover:text-accent font-headline italic text-lg transition-colors">+91 97429 74234</a>
             <div className="flex flex-wrap gap-2 mt-2">
               <a href="https://youtube.com/@AskMysuru" target="_blank" rel="noopener noreferrer" className="bg-surface-elevated hover:bg-border p-2.5 rounded-full transition-colors flex items-center justify-center" aria-label="YouTube">
                 <Youtube size={16} className="text-primary" />
