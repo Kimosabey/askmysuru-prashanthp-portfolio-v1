@@ -49,6 +49,7 @@ export default function SocialConnectivity() {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`Connect with ${social.brand} on ${social.platform}`}
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               whileHover={{ y: -5 }}

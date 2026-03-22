@@ -34,7 +34,7 @@ export default function IdentityHero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-[140px] md:pt-[160px] lg:pt-[180px] overflow-hidden bg-background px-6 md:px-12">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 md:pt-[160px] lg:pt-[180px] overflow-hidden bg-background px-6 md:px-12">
       <div className="absolute inset-0 opacity-[0.03] z-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] dark:opacity-[0.05]"></div>
       <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,transparent_0%,var(--color-background)_100%)] opacity-40"></div>
 

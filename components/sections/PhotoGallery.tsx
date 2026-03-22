@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 
 const photos = [
   { url: "https://lh3.googleusercontent.com/aida-public/AB6AXuDO549CDqtKk4CLiaW3SSiy4Mk3OAGeElA0xkycALowXOYvWOTvrJa3zOgj_21iVapTEL5Pkk7glBvzFo95wwshBxpXHTO-36N2e1L9K9mphf3p04_Go580uR3b3JMJRfPfWCZmYmwrNNLU79hLfTY0K5sE7jput42tktnVblFjtW8N0J5bj3GQ5qs7Y6-wbI7YaapaxLaErVNNcQAQFpfokJqf1WESBgNubK0Di9eYlvh4NwIEPDoc3xtq0Y65tv-Q2As_8KxWFw", category: "Architecture" },
@@ -49,10 +50,12 @@ export default function PhotoGallery() {
               exit={{ opacity: 0 }}
               className="aspect-[4/5] overflow-hidden bg-surface relative group cursor-pointer"
             >
-              <img 
+              <Image 
                 src={photo.url} 
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
                 alt="Gallery"
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                 <span className="font-label text-[8px] uppercase tracking-widest text-white border-l border-accent pl-2">{photo.category}</span>
