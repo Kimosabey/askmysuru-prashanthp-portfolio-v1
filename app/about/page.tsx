@@ -1,32 +1,37 @@
-export default function LeadershipPage() {
+import { Award, Youtube, ArrowRight, Users, Camera } from "lucide-react";
+
+export default function AboutPage() {
   return (
     <main className="pt-40 pb-20 bg-background overflow-hidden relative">
       {/* Section 1: The Visionary Founder */}
       <section className="px-6 md:px-12 mb-32 max-w-[1600px] mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
           <div className="lg:col-span-8">
-            <span className="font-label text-[10px] text-accent tracking-[0.4em] uppercase block mb-6">The Architect of Heritage</span>
+            <span className="font-label text-[10px] text-accent tracking-[0.4em] uppercase block mb-6">Media House Builder & Visionary</span>
             <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl italic leading-[0.9] tracking-tighter text-primary mb-8 drop-shadow-cinematic">
               Prashanth P. <br/>
-              <span className="text-primary-dim font-light not-italic text-3xl md:text-5xl lg:text-6xl tracking-tight">Founding Director of Ask Mysuru</span>
+              <span className="text-primary-dim font-light not-italic text-3xl md:text-5xl lg:text-6xl tracking-tight">Founder of Ask Mysuru & Political360</span>
             </h1>
             <p className="font-body text-lg md:text-xl text-primary-dim max-w-2xl leading-relaxed mb-10">
-              Pioneering a digital renaissance for Karnataka's history. Through Ask Mysuru, Prashanth has built a platform where academic rigor meets cinematic storytelling, preserving centuries of heritage for the digital native.
+              A Bengaluru–Mysuru-based digital media entrepreneur and heritage documentarian. Prashanth has engineered two distinct, full-scale independent media brands, bridging the gap between historical preservation and modern political discourse.
             </p>
             <p className="font-headline italic text-2xl md:text-3xl text-accent-dim">
               "ದಾಖಲಿಸದ ಇತಿಹಾಸವು ಅಳಿಸಿಹೋಗುತ್ತದೆ." <span className="font-body text-sm not-italic opacity-60 ml-4 font-light text-primary">(Unrecorded history is lost.)</span>
             </p>
           </div>
           <div className="lg:col-span-4 relative group mt-16 lg:mt-0">
-            <div className="absolute -top-4 -left-4 w-12 h-12 border-t border-l border-border"></div>
-            <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b border-r border-border"></div>
-            <img 
-              className="w-full aspect-[4/5] object-cover grayscale contrast-125 filter group-hover:grayscale-0 transition-all duration-700 mix-blend-luminosity group-hover:mix-blend-normal" 
-              alt="Prashanth P. Portrait Professional Director Headshot" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVPM6WE6C1Gku0bbV5zmuv_6snCimoP2LkkMRQuiIY6tQNCbYjmDPsfEmZpEQ3nU_Hg75SiIb_wHyCKAeqEbpTKnNiX_oVZePs-W0EyUT9IdzIMPvyZlvU-UG4npSbFFc2b5yzWZyGtMCPaaFTceDgp4nfE4nKFRotA7_2EI91wbDsiR--jULnGsn_sguWTSPsKwzPhYrwV3_lrJFuntEm3ofx6fzvgdM4ItTNHxPlD1jNxZGW3XNnf-emykF3WjX_VDel9IYWDw"
-            />
-            <div className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-sm px-4 py-2 border border-border">
-              <span className="font-label text-[10px] tracking-[0.2em] text-primary uppercase">35MM EXPOSURE // 001</span>
+            <div className="absolute -top-4 -left-4 w-12 h-12 border-t border-l border-border z-20"></div>
+            <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b border-r border-border z-20"></div>
+            <div className="overflow-hidden aspect-[4/5] relative bg-surface border border-border shadow-cinematic">
+              <img 
+                className="w-full h-full object-cover grayscale contrast-125 filter group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 mix-blend-luminosity hover:mix-blend-normal" 
+                alt="Prashanth P. Personal Rider Profile" 
+                src="/Prashanth_Bike.jpg"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-80 pointer-events-none"></div>
+            </div>
+            <div className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-sm px-4 py-2 border border-border z-20">
+              <span className="font-label text-[10px] tracking-[0.2em] text-primary uppercase">35MM EXPOSURE // ROAD TRUTH</span>
             </div>
           </div>
         </div>
@@ -108,11 +113,11 @@ export default function LeadershipPage() {
           <span className="font-label text-[10px] text-accent tracking-[0.4em] mb-8 block uppercase">Distinction & Honor</span>
           <h2 className="font-headline text-5xl md:text-7xl lg:text-8xl italic text-primary mb-12 drop-shadow-cinematic">Nalwadi Raja Venkatappa Nayaka Award</h2>
           
-          <div className="inline-flex items-center justify-center gap-8 mb-20 opacity-40">
-            <div className="w-16 h-px bg-primary"></div>
-            <span className="material-symbols-outlined text-4xl text-primary">workspace_premium</span>
-            <div className="w-16 h-px bg-primary"></div>
-          </div>
+<div className="inline-flex items-center justify-center gap-8 mb-20 opacity-40">
+  <div className="w-16 h-px bg-primary"></div>
+  <Award size={40} className="text-primary" />
+  <div className="w-16 h-px bg-primary"></div>
+</div>
           
           <div className="max-w-3xl mx-auto bg-surface-elevated p-10 md:p-16 border border-border relative text-left shadow-cinematic">
             <div className="absolute -top-[1px] -right-[1px] p-2 bg-accent text-primary font-label text-[9px] uppercase font-bold tracking-[0.2em] shadow-xl">Certified 2025</div>
@@ -129,21 +134,21 @@ export default function LeadershipPage() {
       {/* Section 4: Digital Media Links & Social Reach */}
       <section className="px-6 md:px-12 mb-32 max-w-[1600px] mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <a href="https://www.youtube.com/@AskMysuru" target="_blank" rel="noopener noreferrer" className="bg-surface p-10 flex flex-col justify-between group hover:-translate-y-2 transition-transform duration-500 border border-border hover:border-border-hover">
+          <a href="https://youtube.com/@AskMysuru" target="_blank" rel="noopener noreferrer" className="bg-surface p-10 flex flex-col justify-between group hover:-translate-y-2 transition-transform duration-500 border border-border hover:border-border-hover">
             <div>
-              <span className="material-symbols-outlined text-5xl text-[#FF0000] mb-8">play_circle</span>
+              <Youtube size={48} className="text-[#FF0000] mb-8" />
               <h4 className="font-headline text-4xl italic mb-2 text-primary">YouTube</h4>
               <div className="text-4xl lg:text-5xl font-black text-primary mb-4 tracking-tighter">63.4K+ <span className="text-xs font-label uppercase tracking-widest opacity-40 block mt-2 text-primary-dim font-light">Subscribers</span></div>
             </div>
             <div className="inline-flex items-center gap-3 font-label text-[10px] uppercase tracking-[0.2em] font-bold text-primary-dim group-hover:text-primary group-hover:gap-5 transition-all mt-12">
-              VISIT CHANNEL <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              VISIT CHANNEL <ArrowRight size={14} />
             </div>
           </a>
           
           <div className="bg-accent p-10 flex flex-col justify-between text-background shadow-cinematic relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-background/10 to-transparent pointer-events-none"></div>
             <div className="relative z-10">
-              <span className="material-symbols-outlined text-5xl mb-8 opacity-90">groups</span>
+              <Users size={48} className="mb-8 opacity-90" />
               <h4 className="font-headline text-4xl italic mb-2">Community Reach</h4>
               <div className="text-5xl lg:text-6xl font-black mb-4 tracking-tighter">160K+</div>
               <p className="font-body text-sm opacity-80 leading-relaxed font-semibold">Total engaged audience across Instagram, Facebook, and Twitter.</p>
@@ -153,14 +158,14 @@ export default function LeadershipPage() {
             </div>
           </div>
           
-          <a href="https://www.instagram.com/askmysuru_official/" target="_blank" rel="noopener noreferrer" className="bg-surface p-10 flex flex-col justify-between group hover:-translate-y-2 transition-transform duration-500 border border-border hover:border-border-hover">
+          <a href="https://instagram.com/askmysuru_official" target="_blank" rel="noopener noreferrer" className="bg-surface p-10 flex flex-col justify-between group hover:-translate-y-2 transition-transform duration-500 border border-border hover:border-border-hover">
             <div>
-              <span className="material-symbols-outlined text-5xl text-primary mb-8 opacity-80">camera_indoor</span>
+              <Camera size={48} className="text-primary mb-8 opacity-80" />
               <h4 className="font-headline text-4xl italic mb-2 text-primary">Instagram</h4>
               <p className="font-body text-primary-dim mt-4 leading-relaxed max-w-[200px]">Daily visual vignettes of Karnataka's hidden architecture and culture.</p>
             </div>
             <div className="inline-flex items-center gap-3 font-label text-[10px] uppercase tracking-[0.2em] font-bold text-primary-dim group-hover:text-primary group-hover:gap-5 transition-all mt-12">
-              FOLLOW FEED <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              FOLLOW FEED <ArrowRight size={14} />
             </div>
           </a>
         </div>

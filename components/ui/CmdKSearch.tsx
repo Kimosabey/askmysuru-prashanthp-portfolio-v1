@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { MOCK_PROJECTS } from "@/lib/mockData";
+import { Search, CornerDownLeft } from "lucide-react";
 
 export default function CmdKSearch() {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +46,7 @@ export default function CmdKSearch() {
               
               {/* Search Input */}
               <div className="px-4 py-4 flex items-center gap-3 border-b border-white/5">
-                <span className="material-symbols-outlined text-slate-500 text-xl">search</span>
+                <Search className="text-slate-500" size={20} />
                 <input 
                   autoFocus 
                   className="flex-1 bg-transparent border-none focus:outline-none focus:ring-0 text-base font-body placeholder:text-slate-500 text-white" 
@@ -72,7 +73,7 @@ export default function CmdKSearch() {
                           <h4 className="font-headline text-base text-slate-300 group-hover:text-white truncate transition-colors">{project.title}</h4>
                           <p className="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">Director's Cut • {project.category}</p>
                         </div>
-                        <span className="material-symbols-outlined text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity">keyboard_return</span>
+                        <CornerDownLeft className="text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity" size={16} />
                       </div>
                     </Link>
                   ))}

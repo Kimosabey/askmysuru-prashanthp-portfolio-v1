@@ -9,11 +9,11 @@ export default function ShowreelHook() {
 
   return (
     <>
-      <section className="relative w-full py-32 bg-background flex flex-col items-center justify-center border-t border-borderDark/50">
+      <section className="relative w-full py-24 bg-background flex flex-col items-center justify-center border-t border-border">
         <div className="max-w-4xl text-center px-6">
           <h2 className="font-sans text-sm tracking-widest text-accent uppercase mb-8">The 60-Second Hook</h2>
-          <p className="font-serif text-3xl md:text-5xl text-foreground/80 leading-relaxed mb-12">
-            Every frame is a painted canvas of <span className="italic text-white">culture, heritage, and the silence of nature.</span>
+          <p className="font-headline text-3xl md:text-5xl text-primary leading-relaxed mb-12">
+            Every frame is a painted canvas of <span className="italic text-accent">culture, heritage, and the silence of nature.</span>
           </p>
           
           <button 

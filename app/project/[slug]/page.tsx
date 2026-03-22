@@ -2,6 +2,8 @@ import { MOCK_PROJECTS } from "@/lib/mockData";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
+import { ArrowLeft, Play } from "lucide-react";
+
 export default function ProjectDetail({ params }: { params: { slug: string } }) {
   const project = MOCK_PROJECTS.find(p => p.id === params.slug);
   
@@ -35,7 +37,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
 
         <div className="relative z-20 max-w-4xl">
           <Link href="/#archive" className="md:hidden text-accent text-xs font-label uppercase tracking-widest flex items-center gap-2 mb-8">
-            <span className="material-symbols-outlined text-sm">arrow_back</span>
+            <ArrowLeft size={16} />
             Back to Archive
           </Link>
           <div className="flex items-center gap-4 mb-6">
@@ -138,7 +140,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex items-end p-8 md:p-16">
               <button className="bg-primary text-background px-8 py-4 rounded-sm flex items-center gap-4 hover:scale-105 hover:bg-accent transition-all">
                 <span className="text-[11px] font-label font-bold uppercase tracking-widest">Watch the reel</span>
-                <span className="material-symbols-outlined text-xl">play_arrow</span>
+                <Play size={20} className="fill-current" />
               </button>
             </div>
           </div>

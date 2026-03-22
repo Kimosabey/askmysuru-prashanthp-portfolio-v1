@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Quote, Film } from "lucide-react";
 
 export default function VisionaryStatement() {
   return (
@@ -16,7 +17,7 @@ export default function VisionaryStatement() {
         transition={{ duration: 1, ease: [0.25, 0.8, 0.25, 1] }}
         className="relative z-10 w-full flex flex-col items-center"
       >
-        <span className="material-symbols-outlined text-4xl text-accent mb-8 opacity-80">format_quote</span>
+        <Quote size={48} className="text-accent mb-8 opacity-80" />
         
         <h2 className="fluid-h2 font-headline italic text-primary leading-tight tracking-tight max-w-[20ch] mb-12">
           "Crafting visual narratives that bridge the gap between ancient heritage and modern cinematic precision."
@@ -24,7 +25,7 @@ export default function VisionaryStatement() {
 
         <div className="flex items-center gap-6 mb-12 opacity-30">
           <div className="h-px w-16 md:w-32 bg-primary"></div>
-          <span className="material-symbols-outlined text-sm">filter_frames</span>
+          <Film size={16} className="text-primary" />
           <div className="h-px w-16 md:w-32 bg-primary"></div>
         </div>
 

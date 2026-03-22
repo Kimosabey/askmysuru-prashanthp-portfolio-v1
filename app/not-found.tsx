@@ -1,3 +1,4 @@
+import { CornerDownLeft } from "lucide-react";
 import Link from "next/link";
 
 export default function NotFound() {
@@ -32,7 +33,7 @@ export default function NotFound() {
           href="/"
           className="inline-flex items-center gap-3 px-8 py-4 bg-primary-container text-on-primary-container hover:scale-105 transition-transform duration-300 font-label tracking-widest text-[11px] font-bold uppercase rounded-sm"
         >
-          <span className="material-symbols-outlined text-sm">keyboard_return</span>
+          <CornerDownLeft size={16} />
           Return to Reel
         </Link>
       </div>

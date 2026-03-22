@@ -2,10 +2,10 @@
 
 @theme {
   /* Fluid Typography Plugin Settings */
-  --font-headline: var(--font-newsreader);
-  --font-body: var(--font-inter);
+  --font-headline: var(--font-playfair);
+  --font-body: var(--font-outfit);
   --font-kannada: var(--font-noto-kannada);
-  --font-label: var(--font-inter);
+  --font-label: var(--font-outfit);
 
   /* Semantic V2 Color System (Dark Mode First, High Contrast) */
   --color-background: #06070a; /* Deepest Cinematic Black */
@@ -31,18 +31,18 @@
 
 /* Light Mode Defaults */
 :root {
-  --color-background: #f8fafc;
-  --color-surface: #ffffff;
+  --color-background: #ffffff; /* Pure White for ultra-clean light mode */
+  --color-surface: #f8fafc;
   --color-surface-elevated: #f1f5f9;
   
-  --color-primary: #020617;
-  --color-primary-dim: #475569;
+  --color-primary: #0f172a; /* Slate 900 for premium readability */
+  --color-primary-dim: #64748b; /* Slate 500 for secondary text */
   
   --color-accent: #206fc0;
   --color-accent-dim: #1d4ed8;
   
-  --color-border: rgba(0, 0, 0, 0.1);
-  --color-border-hover: rgba(0, 0, 0, 0.2);
+  --color-border: rgba(15, 23, 42, 0.08); /* Adaptive slate border */
+  --color-border-hover: rgba(15, 23, 42, 0.15);
 }
 
 /* Dark Mode Overrides applied universally on the .dark class */
@@ -161,4 +161,22 @@ body {
   height: 16px; 
   background-color: #1b1b1b; 
   border-radius: 2px;
+}
+
+@layer utilities {
+  .fluid-h1 {
+    font-size: clamp(3.5rem, 12vw, 10rem);
+    letter-spacing: -0.05em;
+  }
+  .fluid-h2 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    letter-spacing: -0.03em;
+  }
+  .fluid-h3 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    letter-spacing: -0.02em;
+  }
+  .drop-shadow-cinematic {
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
+  }
 }

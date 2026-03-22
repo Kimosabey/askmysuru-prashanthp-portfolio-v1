@@ -1,0 +1,951 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask Mysuru | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS Variables & Base Setup (Light Theme) --- */
+        :root {
+            --bg-light: #ffffff;
+            --bg-surface: #f8f9fa;
+            --text-main: #111111;
+            --text-muted: #666666;
+            
+            /* Theme Colors */
+            --accent-orange: #ff5722;
+            --accent-orange-light: #ff8a65;
+            --accent-black: #000000;
+            
+            /* Light Glassmorphism */
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(0, 0, 0, 0.06);
+            --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            --glass-hover-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- Background Textures & Orbs --- */
+        .bg-pattern {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        .bg-orbs {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            animation: float 25s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .orb-1 {
+            top: -10%; left: -10%;
+            width: 50vw; height: 50vw;
+            background: var(--accent-orange);
+            opacity: 0.15;
+        }
+
+        .orb-2 {
+            bottom: -20%; right: -10%;
+            width: 40vw; height: 40vw;
+            background: var(--accent-black);
+            opacity: 0.05;
+            animation-delay: -7s;
+        }
+
+        .orb-3 {
+            top: 40%; left: 50%;
+            width: 30vw; height: 30vw;
+            background: var(--accent-orange-light);
+            opacity: 0.1;
+            animation-delay: -14s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5%, 10%) scale(1.1); }
+            100% { transform: translate(-5%, -5%) scale(0.95); }
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3 {
+            letter-spacing: -0.04em;
+            font-weight: 800;
+        }
+
+        .gradient-text {
+            background: linear-gradient(180deg, #000000 0%, #444444 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-highlight {
+            color: var(--accent-orange);
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            text-align: center;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            margin-bottom: 4rem;
+            font-weight: 400;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.7rem 2rem;
+            border-radius: 50px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-orange);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-main);
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* --- Layout & Sections --- */
+        section {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* --- Hero Section (Split Layout) --- */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding-top: 8rem;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.2rem;
+            background: #fff;
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .status-dot {
+            width: 8px; height: 8px;
+            background-color: var(--accent-orange);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-orange);
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0% { box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.4); }
+            70% { box-shadow: 0 0 0 6px rgba(255, 87, 34, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 87, 34, 0); }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--text-muted);
+            max-width: 500px;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/5;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: var(--glass-shadow);
+            border: 1px solid var(--glass-border);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 3.5rem;
+            border-radius: 50px;
+            background: var(--accent-black);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--accent-black);
+        }
+
+        .btn:hover {
+            background: var(--accent-orange);
+            border-color: var(--accent-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 87, 34, 0.3);
+        }
+
+        /* --- About Section --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- Enhanced Glass Cards (Light Theme) --- */
+        .glass-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 1.2rem;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: var(--glass-shadow);
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--glass-hover-shadow);
+            border-color: rgba(255, 87, 34, 0.3);
+        }
+
+        /* --- Video Overlays (Play Button) --- */
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: opacity 0.4s ease, backdrop-filter 0.4s ease;
+            pointer-events: none;
+            border-radius: 16px;
+        }
+
+        .play-btn {
+            width: 60px; height: 60px;
+            background: #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-black);
+            transition: all 0.3s ease;
+        }
+
+        .play-btn svg {
+            width: 24px; height: 24px;
+            fill: currentColor;
+            margin-left: 4px;
+        }
+
+        .glass-card:hover .video-overlay {
+            opacity: 0;
+        }
+        
+        .glass-card:hover .play-btn {
+            transform: scale(0.8);
+            background: var(--accent-orange);
+            color: #fff;
+        }
+
+        /* --- YouTube Grid (16:9) --- */
+        .yt-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #e0e0e0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: none;
+            transition: transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .glass-card:hover .video-container iframe {
+            transform: scale(1.05);
+        }
+
+        .card-info {
+            padding: 1.5rem 0.5rem 0.5rem;
+        }
+
+        .card-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.3rem;
+            color: var(--text-main);
+        }
+
+        .card-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* --- Instagram Reel Grid (9:16) --- */
+        .ig-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem;
+            justify-content: center;
+        }
+
+        .reel-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #e0e0e0;
+        }
+
+        .reel-container iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: none;
+            transition: transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .glass-card:hover .reel-container iframe {
+            transform: scale(1.05);
+        }
+
+        /* --- Photo Gallery --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* --- Certificates --- */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        /* --- Clients Section --- */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .client-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            background: #fff;
+            padding: 1.5rem;
+        }
+
+        .client-card img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%) opacity(0.6);
+            transition: all 0.3s ease;
+        }
+
+        .client-card:hover img {
+            filter: grayscale(0%) opacity(1);
+        }
+
+        /* --- Contact Section --- */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            background: #fff;
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .contact-btn:hover {
+            background: var(--accent-orange);
+            color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 87, 34, 0.2);
+            border-color: var(--accent-orange);
+        }
+
+        /* --- Animations (JS Reveal) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.15s; }
+        .delay-2 { transition-delay: 0.3s; }
+        .delay-3 { transition-delay: 0.45s; }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--glass-border);
+            background: var(--bg-surface);
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content {
+                align-items: center;
+                text-align: center;
+                order: 2;
+            }
+            .hero-image-wrapper {
+                order: 1;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+            
+            .nav-container {
+                width: 100%;
+                justify-content: space-between;
+                padding: 0.7rem 1.5rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 1rem;
+                right: 1rem;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                border-radius: 20px;
+                border: 1px solid var(--glass-border);
+                box-shadow: var(--glass-shadow);
+                gap: 1.5rem;
+                text-align: center;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(10px);
+            }
+
+            section { padding: 6rem 1.5rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .btn { width: 100%; }
+            .contact-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Textures -->
+    <div class="bg-pattern"></div>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div style="font-weight: 800; font-size: 1.2rem; display: none;" class="mobile-logo">Ask Mysuru</div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#youtube">Cinematography</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="status-badge reveal">
+                <div class="status-dot"></div>
+                Available for freelance projects
+            </div>
+            <h1 class="reveal delay-1">
+                <span class="gradient-text">Visual Storytelling.</span><br>
+                <span class="text-highlight">Elevated.</span>
+            </h1>
+            <p class="reveal delay-2">Premium Content Creation • Cinematography • Brand Campaigns</p>
+            <div class="reveal delay-3">
+                <a href="#youtube" class="btn">Explore My Work</a>
+            </div>
+        </div>
+        <div class="hero-image-wrapper reveal delay-2">
+            <!-- Replace this placeholder with your actual hero image -->
+            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Cinematographer at work">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title gradient-text reveal">About Me</h2>
+        <p class="section-subtitle reveal">The vision behind the lens.</p>
+        
+        <div class="about-grid">
+            <div class="about-image glass-card reveal">
+                <!-- Replace this placeholder with your actual profile image -->
+                <img src="https://images.unsplash.com/photo-1554046920-90dc5823ba0a?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Profile Picture">
+            </div>
+            <div class="about-text reveal delay-1">
+                <h3>Capturing the Essence of Mysuru &amp; Beyond</h3>
+                <p>Hello! I am a passionate cinematographer and visual storyteller dedicated to bringing ideas to life through the power of video and photography. With years of experience in the industry, I specialize in creating compelling narratives for brands, documentaries, and social media campaigns.</p>
+                <p>My approach blends technical expertise with a deep understanding of human emotion, ensuring that every frame not only looks beautiful but also resonates with the audience. Whether it's a high-energy commercial or a serene documentary, I strive for excellence in every project.</p>
+                <a href="#contact" class="btn" style="margin-top: 1rem;">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Showcase (16:9) -->
+    <section id="youtube">
+        <h2 class="section-title gradient-text reveal">Cinematography</h2>
+        <p class="section-subtitle reveal">Immersive long-form visual experiences crafted for modern brands.</p>
+        
+        <div class="yt-grid">
+            <!-- Card 1 -->
+            <div class="glass-card reveal">
+                <div class="video-container">
+                    <div class="video-overlay">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/fmpTlHYzFQQ?si=s_mbfjBIdyqqnq7z" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                </div>
+                <div class="card-info">
+                    <h3>Mysuru Dasara Song 2025</h3>
+                    <p>ರಚನೆ - ಡಾ|| ಪಿ. ಶಿವರಾಜು KAS</p>
+                    <p>ADC Mysuru</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="glass-card reveal delay-1">
+                <div class="video-container">
+                    <div class="video-overlay">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/5V8FMTKRgTU?si=Uo81sYrzo-u_Y1lj" title="YouTube video player" allowfullscreen=""></iframe>
+                </div>
+                <div class="card-info">
+                    <h3>Mysuru Dasara Song 2024</h3>
+                    <p>ರಚನೆ - ಡಾ|| ಪಿ. ಶಿವರಾಜು KAS</p>
+                    <p>ADC Mysuru</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="glass-card reveal delay-2">
+                <div class="video-container">
+                    <div class="video-overlay">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/6j6rTem3JbA?si=8kyf2l5F8Rd7oLM7" title="YouTube video player" allowfullscreen=""></iframe>
+                </div>
+                <div class="card-info">
+                    <h3>Home Tour of King Shri Krishnadevaraya</h3>
+                    <p>19th Gen of Vijayanagara Empire</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery">
+        <h2 class="section-title gradient-text reveal">Photo Gallery</h2>
+        <p class="section-subtitle reveal">A collection of moments frozen in time.</p>
+        
+        <div class="gallery-grid">
+            <!-- Replace these placeholders with your actual photos -->
+            <div class="glass-card gallery-item reveal"><img src="https://images.unsplash.com/photo-1551316679-9c6ae9dec224?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Gallery Image 1"></div>
+            <div class="glass-card gallery-item reveal delay-1"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Gallery Image 2"></div>
+            <div class="glass-card gallery-item reveal delay-2"><img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Gallery Image 3"></div>
+            <div class="glass-card gallery-item reveal"><img src="https://images.unsplash.com/photo-1516802273409-68526ee1bdd6?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Gallery Image 4"></div>
+            <div class="glass-card gallery-item reveal delay-1"><img src="https://images.unsplash.com/photo-1505909182942-e2f09aee3e89?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Gallery Image 5"></div>
+            <div class="glass-card gallery-item reveal delay-2"><img src="https://images.unsplash.com/photo-1534142498782-41139458e3eb?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Gallery Image 6"></div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates">
+        <h2 class="section-title gradient-text reveal">Certificates &amp; Awards</h2>
+        <p class="section-subtitle reveal">Recognition of excellence and continuous learning.</p>
+        
+        <div class="cert-grid">
+            <!-- Replace these placeholders with your actual certificate images -->
+            <div class="glass-card cert-card reveal">
+                <img src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Certificate 1 Placeholder">
+                <div class="card-info">
+                    <h3>Advanced Cinematography Masterclass</h3>
+                    <p>Global Film Institute - 2024</p>
+                </div>
+            </div>
+            <div class="glass-card cert-card reveal delay-1">
+                <img src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Certificate 2 Placeholder">
+                <div class="card-info">
+                    <h3>Drone Piloting &amp; Aerial Photography</h3>
+                    <p>Aero Visuals Academy - 2023</p>
+                </div>
+            </div>
+            <div class="glass-card cert-card reveal delay-2">
+                <img src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Certificate 3 Placeholder">
+                <div class="card-info">
+                    <h3>Best Visual Storytelling Award</h3>
+                    <p>State Media Awards - 2022</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients">
+        <h2 class="section-title gradient-text reveal">Trusted By</h2>
+        <p class="section-subtitle reveal">Collaborations with forward-thinking brands and agencies.</p>
+        
+        <div class="clients-grid">
+            <!-- Replace the src attributes with your actual client logo URLs -->
+            <div class="glass-card client-card reveal">
+                <img src="https://via.placeholder.com/200x100/ffffff/000000?text=Brand+Logo+1" alt="Client 1">
+            </div>
+            <div class="glass-card client-card reveal delay-1">
+                <img src="https://via.placeholder.com/200x100/ffffff/000000?text=Brand+Logo+2" alt="Client 2">
+            </div>
+            <div class="glass-card client-card reveal delay-2">
+                <img src="https://via.placeholder.com/200x100/ffffff/000000?text=Brand+Logo+3" alt="Client 3">
+            </div>
+            <div class="glass-card client-card reveal delay-3">
+                <img src="https://via.placeholder.com/200x100/ffffff/000000?text=Brand+Logo+4" alt="Client 4">
+            </div>
+            <div class="glass-card client-card reveal">
+                <img src="https://via.placeholder.com/200x100/ffffff/000000?text=Brand+Logo+5" alt="Client 5">
+            </div>
+            <div class="glass-card client-card reveal delay-1">
+                <img src="https://via.placeholder.com/200x100/ffffff/000000?text=Brand+Logo+6" alt="Client 6">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title gradient-text reveal">Let's Create Together</h2>
+        <p class="section-subtitle reveal">Available for freelance opportunities and brand collaborations worldwide.</p>
+        
+        <div class="contact-container reveal">
+            <a href="https://www.instagram.com/askmysuru_official" target="_blank" class="contact-btn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                Instagram
+            </a>
+            <a href="https://www.youtube.com/@AskMysuru" target="_blank" class="contact-btn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2C5.12 19.5 12 19.5 12 19.5s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                YouTube
+            </a>
+            <a href="https://www.facebook.com/askmysuru.official" target="_blank" class="contact-btn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2C5.12 19.5 12 19.5 12 19.5s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                Facebook
+            </a>
+            <a href="mailto:lets@askmysuru.com" class="contact-btn" target="_blank">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                Email Me
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>©2026 Ask Mysuru</p>
+    </footer>
+
+    <!-- Minimal JavaScript for Scroll Animations & Mobile Menu -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Scroll Reveal Animation
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
+
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            const mobileLogo = document.querySelector('.mobile-logo');
+
+            if (window.innerWidth <= 768) {
+                mobileLogo.style.display = 'block';
+            }
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth <= 768) {
+                    mobileLogo.style.display = 'block';
+                } else {
+                    mobileLogo.style.display = 'none';
+                    navLinks.classList.remove('active');
+                }
+            });
+
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+
+</body></html>

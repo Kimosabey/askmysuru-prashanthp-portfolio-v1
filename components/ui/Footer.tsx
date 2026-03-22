@@ -1,3 +1,5 @@
+import { Youtube, Instagram, Facebook, Twitter, Pin, ArrowRight, Film } from "lucide-react";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -10,7 +12,7 @@ export default function Footer() {
           <img 
             src="/AskMysuru_Color.png" 
             alt="Ask Mysuru Official Logo" 
-            className="h-10 w-auto object-contain filter brightness-0 invert opacity-80" 
+            className="h-10 w-auto object-contain transition-all duration-500 dark:brightness-0 dark:invert opacity-80 hover:opacity-100" 
           />
           <p className="text-primary-dim font-body text-sm max-w-sm leading-relaxed">
             Pioneering a digital renaissance for Karnataka's history. A curated visual archive where academic rigor seamlessly meets cinematic storytelling.
@@ -26,11 +28,11 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <a href="https://askmysuru.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent font-headline italic text-lg transition-colors flex items-center justify-between group">
               AskMysuru.com
-              <span className="material-symbols-outlined text-sm opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">arrow_forward</span>
+              <ArrowRight size={16} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
             </a>
             <a href="https://political360.in/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent font-headline italic text-lg transition-colors flex items-center justify-between group">
               Political360.in
-              <span className="material-symbols-outlined text-sm opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">arrow_forward</span>
+              <ArrowRight size={16} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
             </a>
             <div className="text-primary-dim font-headline italic text-lg opacity-50 cursor-not-allowed">
               P2 ADD Agency
@@ -43,18 +45,22 @@ export default function Footer() {
           <h4 className="font-label text-xs uppercase tracking-widest text-primary-dim">Professional Connect</h4>
           <div className="flex flex-col gap-4">
             <a href="mailto:lets@askmysuru.com" className="text-primary hover:text-accent font-headline italic text-lg transition-colors">lets@askmysuru.com</a>
-            <div className="flex flex-wrap gap-4 mt-2">
-              <a href="https://www.youtube.com/@AskMysuru" target="_blank" rel="noopener noreferrer" className="bg-surface-elevated hover:bg-border p-3 rounded-full transition-colors" aria-label="YouTube">
-                <span className="material-symbols-outlined text-sm text-primary">play_arrow</span>
+            <a href="tel:+919739739263" className="text-primary hover:text-accent font-headline italic text-lg transition-colors">+91 97397 39263</a>
+            <div className="flex flex-wrap gap-2 mt-2">
+              <a href="https://youtube.com/@AskMysuru" target="_blank" rel="noopener noreferrer" className="bg-surface-elevated hover:bg-border p-2.5 rounded-full transition-colors flex items-center justify-center" aria-label="YouTube">
+                <Youtube size={16} className="text-primary" />
               </a>
-              <a href="https://www.instagram.com/askmysuru_official/" target="_blank" rel="noopener noreferrer" className="bg-surface-elevated hover:bg-border p-3 rounded-full transition-colors" aria-label="Instagram">
-                <span className="material-symbols-outlined text-sm text-primary">camera_alt</span>
+              <a href="https://instagram.com/askmysuru_official" target="_blank" rel="noopener noreferrer" className="bg-surface-elevated hover:bg-border p-2.5 rounded-full transition-colors flex items-center justify-center" aria-label="Instagram">
+                <Instagram size={16} className="text-primary" />
               </a>
-              <a href="https://facebook.com/askmysuru" target="_blank" rel="noopener noreferrer" className="bg-surface-elevated hover:bg-border p-3 rounded-full transition-colors" aria-label="Facebook">
-                <span className="material-symbols-outlined text-sm text-primary">public</span>
+              <a href="https://facebook.com/askmysuru" target="_blank" rel="noopener noreferrer" className="bg-surface-elevated hover:bg-border p-2.5 rounded-full transition-colors flex items-center justify-center" aria-label="Facebook">
+                <Facebook size={16} className="text-primary" />
               </a>
-              <a href="https://chat.whatsapp.com/K3fhv59ylSQE83pVNCLzft" target="_blank" rel="noopener noreferrer" className="bg-surface-elevated hover:bg-border p-3 rounded-full transition-colors" aria-label="WhatsApp Community">
-                <span className="material-symbols-outlined text-sm text-primary">chat</span>
+              <a href="https://twitter.com/360_political" target="_blank" rel="noopener noreferrer" className="bg-surface-elevated hover:bg-border p-2.5 rounded-full transition-colors flex items-center justify-center" aria-label="Twitter">
+                <Twitter size={16} className="text-primary" />
+              </a>
+              <a href="https://pinterest.com/political360" target="_blank" rel="noopener noreferrer" className="bg-surface-elevated hover:bg-border p-2.5 rounded-full transition-colors flex items-center justify-center" aria-label="Pinterest">
+                <Pin size={16} className="text-primary" />
               </a>
             </div>
           </div>
@@ -72,9 +78,9 @@ export default function Footer() {
       <div className="w-full border-t border-border pt-8 flex justify-between items-center px-6 md:px-12 relative z-20">
         <div className="h-px bg-border flex-grow hidden md:block"></div>
         <div className="flex items-center gap-4 opacity-40 px-6 mx-auto md:mx-0">
-          <span className="material-symbols-outlined text-xs text-primary">filter_frames</span>
+          <Film size={12} className="text-primary" />
           <span className="font-label text-[10px] tracking-[0.4em] uppercase text-primary">35MM DIGITAL PROCESS</span>
-          <span className="material-symbols-outlined text-xs text-primary">filter_frames</span>
+          <Film size={12} className="text-primary" />
         </div>
         <div className="h-px bg-border flex-grow hidden md:block"></div>
       </div>

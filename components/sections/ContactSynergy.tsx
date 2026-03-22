@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ExternalLink, Phone } from "lucide-react";
 
 export default function ContactSynergy() {
   return (
@@ -10,7 +11,7 @@ export default function ContactSynergy() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-7">
             <span className="font-label text-sm uppercase tracking-[0.3em] text-accent mb-6 block">Ecosystem Synergy</span>
-            <h2 className="font-headline text-5xl md:text-7xl italic leading-tight mb-8 text-primary drop-shadow-cinematic">
+            <h2 className="fluid-h2 font-headline italic leading-tight mb-8 text-primary drop-shadow-cinematic">
               Beyond the lens. <br/>A digital <span className="text-accent underline decoration-accent/30 underline-offset-[16px]">metropolis</span>.
             </h2>
             <p className="font-body text-lg text-primary-dim max-w-xl mb-12 leading-relaxed">
@@ -19,7 +20,7 @@ export default function ContactSynergy() {
             <div className="flex flex-wrap gap-6">
               <a href="https://askmysuru.com" target="_blank" rel="noopener noreferrer" className="bg-accent text-primary px-10 py-5 rounded-sm font-label tracking-widest text-[11px] font-bold hover:scale-105 transition-all flex items-center gap-3">
                 VISIT THE PORTAL
-                <span className="material-symbols-outlined text-sm">open_in_new</span>
+                <ExternalLink size={14} />
               </a>
             </div>
           </div>
@@ -59,11 +60,11 @@ export default function ContactSynergy() {
               <form className="grid grid-cols-1 md:grid-cols-2 gap-10" onSubmit={(e) => e.preventDefault()}>
                 <div className="space-y-3">
                   <label htmlFor="name" className="font-label text-[10px] tracking-widest uppercase text-primary-dim">Full Name</label>
-                  <input id="name" className="w-full bg-transparent border-b border-border py-3 focus:outline-none focus:border-accent transition-colors font-body text-base placeholder:text-primary/20 text-primary" placeholder="Enter your name" type="text" aria-required="true" />
+                  <input id="name" className="w-full bg-transparent border-b border-border py-3 focus:outline-none focus:border-accent transition-colors font-body text-base placeholder:text-primary/40 text-primary" placeholder="Enter your name" type="text" aria-required="true" />
                 </div>
                 <div className="space-y-3">
                   <label htmlFor="email" className="font-label text-[10px] tracking-widest uppercase text-primary-dim">Email Address</label>
-                  <input id="email" className="w-full bg-transparent border-b border-border py-3 focus:outline-none focus:border-accent transition-colors font-body text-base placeholder:text-primary/20 text-primary" placeholder="Enter your email" type="email" aria-required="true" />
+                  <input id="email" className="w-full bg-transparent border-b border-border py-3 focus:outline-none focus:border-accent transition-colors font-body text-base placeholder:text-primary/40 text-primary" placeholder="Enter your email" type="email" aria-required="true" />
                 </div>
                 <div className="md:col-span-2 space-y-3">
                   <label htmlFor="project_type" className="font-label text-[10px] tracking-widest uppercase text-primary-dim">Project Classification</label>
@@ -76,16 +77,16 @@ export default function ContactSynergy() {
                 </div>
                 <div className="md:col-span-2 space-y-3">
                   <label htmlFor="message" className="font-label text-[10px] tracking-widest uppercase text-primary-dim">Vision & Details</label>
-                  <textarea id="message" className="w-full bg-transparent border-b border-border py-3 focus:outline-none focus:border-accent transition-colors font-body text-base placeholder:text-primary/20 resize-none h-32 text-primary" placeholder="Briefly describe your vision..." aria-required="true"></textarea>
+                  <textarea id="message" className="w-full bg-transparent border-b border-border py-3 focus:outline-none focus:border-accent transition-colors font-body text-base placeholder:text-primary/40 resize-none h-32 text-primary" placeholder="Briefly describe your vision..." aria-required="true"></textarea>
                 </div>
                 <div className="md:col-span-2 pt-8 flex flex-col md:flex-row gap-8 items-center justify-between">
                   <button className="w-full md:w-1/2 bg-primary text-background px-12 py-5 rounded-sm font-label tracking-widest text-[11px] font-bold hover:bg-accent hover:text-primary transition-all focus-visible:outline-2 focus-visible:outline-accent" type="submit">
                     SUBMIT INQUIRY
                   </button>
                   <div className="w-full md:w-px h-px md:h-12 bg-border"></div>
-                  <a href="https://chat.whatsapp.com/K3fhv59ylSQE83pVNCLzft" target="_blank" rel="noopener noreferrer" className="w-full md:w-auto flex justify-center items-center gap-3 text-primary-dim hover:text-primary transition-colors font-label text-[11px] tracking-widest uppercase group px-6 py-5 border border-border rounded-sm hover:border-border-hover">
-                    <span className="material-symbols-outlined text-xl group-hover:scale-110 transition-transform">chat</span>
-                    WHATSAPP DOC
+                  <a href="tel:+919739739263" className="w-full md:w-auto flex justify-center items-center gap-3 text-primary-dim hover:text-primary transition-colors font-label text-[11px] tracking-widest uppercase group px-6 py-5 border border-border rounded-sm hover:border-border-hover">
+                    <Phone size={16} className="group-hover:scale-110 transition-transform" />
+                    CALL DIRECTLY
                   </a>
                 </div>
               </form>

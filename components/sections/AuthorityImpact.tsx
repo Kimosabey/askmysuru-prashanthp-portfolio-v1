@@ -1,3 +1,5 @@
+import { Film, Star, Camera, Aperture, Video } from "lucide-react";
+
 export default function AuthorityImpact() {
   return (
     <section className="bg-surface-container-lowest py-32 px-8 border-t border-borderDark/20">
@@ -24,19 +26,19 @@ export default function AuthorityImpact() {
 
         <div className="flex flex-wrap justify-center items-center gap-16 md:gap-24 opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
           <div className="text-xl font-bold tracking-tighter font-headline flex items-center gap-2 text-white">
-            <span className="material-symbols-outlined">movie</span> CANNES FILM FESTIVAL
+            <Film size={20} /> CANNES FILM FESTIVAL
           </div>
           <div className="text-xl font-bold tracking-tighter font-headline flex items-center gap-2 text-white">
-            <span className="material-symbols-outlined">stars</span> BERLINALE
+            <Star size={20} /> BERLINALE
           </div>
           <div className="text-xl font-bold tracking-tighter font-headline flex items-center gap-2 text-white">
-            <span className="material-symbols-outlined">lens</span> VOGUE
+            <Aperture size={20} /> VOGUE
           </div>
           <div className="text-xl font-bold tracking-tighter font-headline flex items-center gap-2 text-white">
-            <span className="material-symbols-outlined">camera_roll</span> NATIONAL GEOGRAPHIC
+            <Camera size={20} /> NATIONAL GEOGRAPHIC
           </div>
           <div className="text-xl font-bold tracking-tighter font-headline flex items-center gap-2 text-white">
-            <span className="material-symbols-outlined">video_library</span> VIMEO STAFF PICK
+            <Video size={20} /> VIMEO STAFF PICK
           </div>
         </div>
       </div>
