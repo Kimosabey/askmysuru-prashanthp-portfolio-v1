@@ -9,7 +9,7 @@ export default function RecognitionSpotlight() {
       {/* Abstract Light Leak */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[140px] pointer-events-none"></div>
 
-      <div className="max-w-[1200px] mx-auto px-6 text-center relative z-10">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -23,7 +23,7 @@ export default function RecognitionSpotlight() {
           </div>
 
           <span className="font-label text-[10px] text-accent tracking-[0.5em] uppercase mb-8 block">Distinguished Achievement</span>
-          <h2 className="font-headline text-5xl md:text-7xl lg:text-8xl italic text-primary mb-12 leading-[0.9] tracking-tighter drop-shadow-cinematic">
+          <h2 className="fluid-h2 font-headline italic text-primary mb-12 leading-[0.9] tracking-tighter drop-shadow-cinematic">
             Nalwadi Raja <br/>Venkatappa Nayaka Award
           </h2>
 

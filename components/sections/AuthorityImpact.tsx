@@ -2,8 +2,8 @@ import { Film, Star, Camera, Aperture, Video } from "lucide-react";
 
 export default function AuthorityImpact() {
   return (
-    <section className="bg-surface-container-lowest pt-0 pb-20 px-8 border-t border-borderDark/20">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-surface-container-lowest pt-0 pb-20 px-6 md:px-12 border-t border-borderDark/20 w-full">
+      <div className="max-w-[1600px] mx-auto">
         <div className="text-center mb-24">
           <h2 className="text-5xl md:text-7xl font-headline italic tracking-tighter mb-6 text-on-surface">Authority & Impact.</h2>
           <div className="h-[1px] w-24 bg-tertiary mx-auto"></div>

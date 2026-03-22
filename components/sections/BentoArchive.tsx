@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function BentoArchive() {
   return (
-    <section className="pt-0 pb-24 px-6 md:px-12 bg-background max-w-[1600px] mx-auto" id="archive">
+    <section className="pt-0 pb-24 px-6 md:px-12 bg-background max-w-[1600px] mx-auto w-full" id="archive">
       <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
         <div className="max-w-xl">
           <span className="font-label text-xs tracking-[0.4em] uppercase text-accent mb-6 block">The Master Archive</span>
@@ -29,10 +29,10 @@ export default function BentoArchive() {
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
             className={`relative group overflow-hidden glass-card hover:border-accent transition-colors duration-500 ${
-              index === 0 ? "md:col-span-8 md:row-span-1" : 
-              index === 1 ? "md:col-span-4 md:row-span-2" :
-              index === 2 ? "md:col-span-4 md:row-span-1" :
-              "md:col-span-4 md:row-span-1"
+              index === 0 ? "md:col-span-8 md:row-span-1 h-[450px] md:h-auto" : 
+              index === 1 ? "md:col-span-4 md:row-span-2 h-[450px] md:h-auto" :
+              index === 2 ? "md:col-span-4 md:row-span-1 h-[450px] md:h-auto" :
+              "md:col-span-4 md:row-span-1 h-[450px] md:h-auto"
             }`}
           >
             <Link href={`/project/${project.id}`} className="absolute inset-0 z-20">

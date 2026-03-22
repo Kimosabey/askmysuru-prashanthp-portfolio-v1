@@ -2,7 +2,7 @@ import { Award, Youtube, ArrowRight, Users, Camera, Instagram } from "lucide-rea
 
 export default function AboutPage() {
   return (
-    <main className="pt-40 pb-20 bg-background overflow-hidden relative">
+    <main className="pt-48 pb-20 bg-background overflow-hidden relative">
       {/* Section 1: The Visionary Founder */}
       <section className="px-6 md:px-12 mb-32 max-w-[1600px] mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
@@ -22,7 +22,7 @@ export default function AboutPage() {
           <div className="lg:col-span-4 relative group mt-16 lg:mt-0">
             <div className="absolute -top-4 -left-4 w-12 h-12 border-t border-l border-border z-20"></div>
             <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b border-r border-border z-20"></div>
-            <div className="overflow-hidden aspect-[4/5] relative bg-surface border border-border shadow-cinematic">
+            <div className="overflow-hidden aspect-[4/5] relative bg-surface border border-border shadow-cinematic rounded-2xl">
               <img 
                 className="w-full h-full object-cover grayscale contrast-125 filter group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 mix-blend-luminosity hover:mix-blend-normal" 
                 alt="Prashanth P. Personal Rider Profile" 
@@ -30,7 +30,7 @@ export default function AboutPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-80 pointer-events-none"></div>
             </div>
-            <div className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-sm px-4 py-2 border border-border z-20">
+            <div className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-sm px-4 py-2 border border-border z-20 rounded-sm">
               <span className="font-label text-[10px] tracking-[0.2em] text-primary uppercase">35MM EXPOSURE // ROAD TRUTH</span>
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function AboutPage() {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-auto lg:h-[800px]">
           {/* Srirangapatna Series */}
-          <div className="lg:col-span-7 relative group overflow-hidden bg-surface flex flex-col justify-end min-h-[400px] border border-border hover:border-border-hover transition-colors">
+          <div className="lg:col-span-7 relative group overflow-hidden bg-surface flex flex-col justify-end min-h-[400px] border border-border hover:border-accent/40 transition-colors rounded-2xl">
             <img 
               className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000 mix-blend-lighten" 
               alt="Ancient Srirangapatna Temple and River" 
@@ -64,7 +64,7 @@ export default function AboutPage() {
           </div>
 
           {/* Wildlife & Conservation */}
-          <div className="lg:col-span-5 relative group overflow-hidden bg-surface flex flex-col justify-end min-h-[400px] border border-border hover:border-border-hover transition-colors">
+          <div className="lg:col-span-5 relative group overflow-hidden bg-surface flex flex-col justify-end min-h-[400px] border border-border hover:border-accent/40 transition-colors rounded-2xl">
             <img 
               className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-1000 mix-blend-lighten" 
               alt="Wild Bengal Tiger in Bandipur Forest" 
@@ -79,7 +79,7 @@ export default function AboutPage() {
           </div>
 
           {/* Surapura-Vijayanagara Series */}
-          <div className="lg:col-span-12 relative group overflow-hidden bg-surface min-h-[400px] border border-border hover:border-border-hover transition-colors">
+          <div className="lg:col-span-12 relative group overflow-hidden bg-surface min-h-[400px] border border-border hover:border-accent/40 transition-colors rounded-2xl">
             <img 
               className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-1000 mix-blend-luminosity hover:mix-blend-normal" 
               alt="Hampi Vijayanagara Ruins Sunset" 
@@ -119,7 +119,7 @@ export default function AboutPage() {
   <div className="w-16 h-px bg-primary"></div>
 </div>
           
-          <div className="max-w-3xl mx-auto bg-surface-elevated p-10 md:p-16 border border-border relative text-left shadow-cinematic">
+          <div className="max-w-3xl mx-auto bg-surface-elevated p-10 md:p-16 border border-border relative text-left shadow-cinematic rounded-3xl">
             <div className="absolute -top-[1px] -right-[1px] p-2 bg-accent text-primary font-label text-[10px] uppercase font-bold tracking-[0.2em] shadow-xl">Certified 2025</div>
             <p className="font-body text-xl md:text-2xl leading-relaxed mb-8 text-primary">
               Recipient of this prestigious honor in <span className="text-accent underline decoration-accent/30 underline-offset-8 font-bold">2025</span>, for outstanding contributions to historical documentation and the preservation of Karnataka's revolutionary heritage.

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Newsreader, Noto_Sans_Kannada } from "next/font/google";
+import { Inter, Newsreader, Noto_Sans_Kannada, Geist } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import FilmStripProgress from "@/components/ui/FilmStripProgress";
@@ -37,6 +37,10 @@ export const metadata: Metadata = {
 
 import Footer from "@/components/ui/Footer";
 import { ProductionProviders } from "@/components/providers/ProductionProviders";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
 
 export default function RootLayout({
   children,
@@ -44,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${fontOutfit.variable} ${fontPlayfair.variable} ${notoSansKannada.variable} antialiased hide-scrollbar`}>
+    <html lang="en" suppressHydrationWarning className={cn("antialiased", "hide-scrollbar", fontOutfit.variable, fontPlayfair.variable, notoSansKannada.variable, "font-sans", geist.variable)}>
       <body suppressHydrationWarning className="bg-background text-primary selection:bg-accent/30 relative hide-scrollbar overflow-x-hidden">
         <ProductionProviders>
           {children}

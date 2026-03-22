@@ -14,8 +14,8 @@ const logos = [
 
 export default function ClientEcosystem() {
   return (
-    <section className="py-24 px-6 md:px-12 bg-background border-y border-border" id="clients">
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
+    <section className="py-24 px-6 md:px-12 bg-background border-y border-border w-full" id="clients">
+      <div className="max-w-[1600px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-12 mb-20">
           <div className="text-center md:text-left">
             <span className="font-label text-[10px] text-accent tracking-[0.4em] uppercase mb-4 block">Independent Media Houses</span>

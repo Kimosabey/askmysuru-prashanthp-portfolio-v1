@@ -9,7 +9,7 @@ export default function GalleryPage() {
   ];
 
   return (
-    <main className="pt-40 pb-20 bg-background min-h-screen">
+    <main className="pt-48 pb-20 bg-background min-h-screen">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         <h1 className="font-headline text-5xl md:text-7xl italic text-primary mb-6">Visual Gallery</h1>
         <div className="w-32 h-[1px] bg-accent mb-12"></div>
@@ -20,7 +20,7 @@ export default function GalleryPage() {
         
         <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
           {visuals.map((img, idx) => (
-            <a key={idx} href={img.url} target={img.url.startsWith("http") ? "_blank" : "_self"} rel="noopener noreferrer" className={`block w-full ${img.aspect} bg-surface border border-border flex items-end justify-center relative overflow-hidden group shadow-cinematic break-inside-avoid shadow-sm`}>
+            <a key={idx} href={img.url} target={img.url.startsWith("http") ? "_blank" : "_self"} rel="noopener noreferrer" className={`block w-full ${img.aspect} bg-surface border border-border flex items-end justify-center relative overflow-hidden group shadow-cinematic break-inside-avoid shadow-sm rounded-2xl`}>
               <img 
                 src={img.src} 
                 alt={img.tag} 

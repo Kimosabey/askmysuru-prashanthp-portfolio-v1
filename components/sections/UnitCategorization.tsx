@@ -32,7 +32,7 @@ export default function UnitCategorization() {
             <motion.div
               key={i}
               whileHover={{ y: -8 }}
-              className="relative aspect-[3/4] bg-surface-elevated border border-border p-6 flex flex-col justify-end group overflow-hidden"
+              className="relative aspect-[3/4] bg-surface-elevated border border-border p-6 flex flex-col justify-end group overflow-hidden rounded-2xl transition-all duration-500 hover:border-accent/40"
             >
               <div className={`absolute top-0 right-0 w-16 h-16 ${unit.color} opacity-10 group-hover:opacity-30 transition-opacity blur-2xl`}></div>
               <span className="font-label text-[10px] text-primary-dim mb-2">{unit.id}</span>

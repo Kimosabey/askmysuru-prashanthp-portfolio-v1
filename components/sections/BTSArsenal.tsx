@@ -25,7 +25,7 @@ export default function BTSArsenal() {
     <div className="w-full relative bg-background">
       <section ref={targetRef} className="relative h-[150vh] w-full bg-background border-t border-border" id="arsenal">
         <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-          <div className="absolute top-24 left-6 md:left-12 z-20">
+          <div className="absolute top-24 px-6 md:px-12 z-20">
             <span className="font-label text-[10px] text-accent tracking-[0.4em] uppercase mb-4 block">On Location</span>
             <h2 className="fluid-h2 font-headline italic text-primary drop-shadow-cinematic">Behind the Lens</h2>
           </div>
@@ -46,7 +46,7 @@ export default function BTSArsenal() {
         </div>
       </section>
 
-      <section className="relative pt-12 pb-24 px-6 md:px-12 max-w-[1600px] mx-auto z-10 bg-background border-t border-b border-border">
+      <section className="relative pt-12 pb-24 px-6 md:px-12 max-w-[1600px] mx-auto z-10 bg-background border-t border-b border-border w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
           <div className="lg:col-span-5">
             <span className="font-label text-[10px] text-primary-dim tracking-[0.4em] uppercase mb-4 block">The Arsenal</span>

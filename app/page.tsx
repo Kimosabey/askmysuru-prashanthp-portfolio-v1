@@ -15,21 +15,16 @@ import BTSArsenal from "@/components/sections/BTSArsenal";
 import PhotoGallery from "@/components/sections/PhotoGallery";
 import SocialConnectivity from "@/components/sections/SocialConnectivity";
 import ContactSynergy from "@/components/sections/ContactSynergy";
-import { TracingBeam } from "@/components/ui/TracingBeam";
-import { useScroll, useVelocity, useSpring, useTransform, motion } from "framer-motion";
+import { useScroll } from "framer-motion";
 
 export default function Home() {
   const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 400 });
-  const skew = useTransform(smoothVelocity, [-1000, 1000], [-1, 1]);
 
   return (
     <main className="relative bg-background w-full min-h-screen overflow-hidden">
       <Preloader />
       
-      <motion.div id="scroll-container" style={{ skewY: skew }} className="relative w-full z-10 origin-center">
-        <TracingBeam className="px-6">
+      <div id="scroll-container" className="relative w-full z-10 origin-center">
           <IdentityHero />
           <ShowreelHook />
           <VisionaryStatement />
@@ -44,8 +39,7 @@ export default function Home() {
           <ClientEcosystem />
           <BTSArsenal />
           <ContactSynergy />
-        </TracingBeam>
-      </motion.div>
+      </div>
     </main>
   );
 }

@@ -12,7 +12,7 @@ const videos = [
 
 export default function CinematographyPage() {
   return (
-    <main className="pt-40 pb-20 bg-background min-h-screen">
+    <main className="pt-48 pb-20 bg-background min-h-screen">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         <div className="mb-24">
           <span className="font-label text-[10px] uppercase tracking-[0.5em] text-accent mb-6 block">Visual Archive</span>
@@ -29,7 +29,7 @@ export default function CinematographyPage() {
               transition={{ delay: idx * 0.1 }}
               className="group cursor-pointer"
             >
-              <div className="aspect-video bg-surface overflow-hidden relative border border-border group-hover:border-accent/40 transition-colors duration-700">
+              <div className="aspect-video bg-surface overflow-hidden relative border border-border group-hover:border-accent/40 transition-colors duration-700 rounded-2xl">
                 <img 
                   alt={video.title}
                   className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-[2s] ease-out" 
@@ -40,7 +40,7 @@ export default function CinematographyPage() {
                     <Play size={32} className="fill-current" />
                   </div>
                 </div>
-                <div className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-sm border border-border px-3 py-1 font-label text-[9px] uppercase tracking-widest text-primary-dim">
+                <div className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-sm border border-border px-3 py-1 font-label text-[9px] uppercase tracking-widest text-primary-dim rounded-sm">
                   {video.category}
                 </div>
               </div>

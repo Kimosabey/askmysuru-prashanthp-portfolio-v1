@@ -5,7 +5,7 @@ import { Quote, Film } from "lucide-react";
 
 export default function VisionaryStatement() {
   return (
-    <section className="pt-32 pb-24 px-6 max-w-[1200px] mx-auto relative overflow-hidden flex flex-col items-center text-center" id="vision">
+    <section className="pt-32 pb-24 px-6 md:px-12 max-w-[1600px] mx-auto relative overflow-hidden flex flex-col items-center text-center" id="vision">
       
       {/* Abstract Background Accent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
@@ -29,7 +29,7 @@ export default function VisionaryStatement() {
           <div className="h-px w-16 md:w-32 bg-primary"></div>
         </div>
 
-        <p className="font-kannada text-xl md:text-3xl text-primary-dim leading-relaxed tracking-wide max-w-3xl">
+        <p className="font-kannada text-lg md:text-3xl text-primary-dim leading-relaxed tracking-wide max-w-4xl px-4">
           ಪುರಾತನ ಪರಂಪರೆ ಮತ್ತು ಆಧುನಿಕ ಚಿತ್ರಕಲೆಯ ನಡುವಿನ ಕೊಂಡಿಯನ್ನು ದೃಶ್ಯ ಕಥೆಗಳ ಮೂಲಕ ಹೆಣೆಯುವುದು.
         </p>
 

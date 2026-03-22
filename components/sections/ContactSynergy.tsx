@@ -7,7 +7,7 @@ export default function ContactSynergy() {
   return (
     <div className="pt-0 pb-0 bg-background overflow-hidden relative" id="contact">
       {/* Section: Brand Synergy Teaser */}
-      <section className="max-w-[1600px] mx-auto px-6 md:px-12 mb-32 relative z-10">
+      <section className="max-w-[1600px] mx-auto px-6 md:px-12 mb-32 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-7">
             <span className="font-label text-sm uppercase tracking-[0.3em] text-accent mb-6 block">Ecosystem Synergy</span>
@@ -69,8 +69,8 @@ export default function ContactSynergy() {
       </section>
 
       {/* Section: Contact & Form */}
-      <section className="relative py-32 overflow-hidden bg-surface border-t border-border">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
+      <section className="relative py-32 overflow-hidden bg-surface border-t border-border w-full">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
           <div className="text-center mb-20">
             <h2 className="font-headline text-4xl md:text-5xl italic mb-4 text-primary">Professional Inquiries</h2>
             <p className="font-label text-sm tracking-[0.2em] text-primary-dim uppercase">Start a collaboration or inquire about commissions</p>

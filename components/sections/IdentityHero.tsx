@@ -8,9 +8,6 @@ import CinematicButton from "@/components/ui/CinematicButton";
 export default function IdentityHero() {
   const [hasLoadedBefore, setHasLoadedBefore] = useState(false);
   const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 400 });
-  const skew = useTransform(smoothVelocity, [-1000, 1000], [-3, 3]);
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
@@ -37,7 +34,7 @@ export default function IdentityHero() {
   };
 
   return (
-    <section className="relative h-screen min-h-[750px] flex flex-col items-center justify-center pt-[100px] lg:pt-[120px] overflow-hidden bg-background px-6">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-[140px] md:pt-[160px] lg:pt-[180px] overflow-hidden bg-background px-6 md:px-12">
       <div className="absolute inset-0 opacity-[0.03] z-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] dark:opacity-[0.05]"></div>
       <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,transparent_0%,var(--color-background)_100%)] opacity-40"></div>
 
@@ -46,11 +43,11 @@ export default function IdentityHero() {
         variants={containerVariants}
         initial="hidden"
         animate="show"
-        style={{ skewY: skew, y: y1, opacity }}
+        style={{ y: y1, opacity }}
       >
         <motion.div variants={itemVariants} className="flex flex-col gap-6 items-center">
           <span className="font-label text-[10px] md:text-xs uppercase tracking-[0.4em] text-accent font-bold">The Media House Builder's Dossier</span>
-          <h1 className="fluid-h1 font-headline italic leading-[0.85] text-primary drop-shadow-cinematic">Visionary <br/> Direction.</h1>
+          <h1 className="fluid-h1 font-headline italic leading-[0.85] text-primary drop-shadow-cinematic py-4">Visionary <br/> Direction.</h1>
         </motion.div>
         
         <motion.div variants={itemVariants} className="flex flex-col gap-8 max-w-sm">
