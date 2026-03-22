@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { gearList } from "@/lib/mockData";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function BTSArsenal() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -33,7 +34,13 @@ export default function BTSArsenal() {
           <motion.div style={{ x }} className="flex gap-8 md:gap-16 px-6 md:px-32 w-[max-content]">
             {btsImages.map((src, idx) => (
               <div key={idx} className="relative w-[80vw] md:w-[60vw] h-[60vh] md:h-[70vh] flex-shrink-0 bg-surface-elevated border border-border group overflow-hidden">
-                <img src={src} alt="Behind the scenes on set" className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-[2s] ease-out" />
+                <Image 
+                  src={src} 
+                  alt="Behind the scenes on set" 
+                  fill
+                  sizes="(max-width: 768px) 80vw, 60vw"
+                  className="object-cover opacity-90 group-hover:scale-110 transition-transform duration-[2s] ease-out" 
+                />
                 <div className="absolute top-6 right-6 z-10">
                   <div className="bg-background/80 backdrop-blur-md px-4 py-2 border border-accent/20 text-accent font-label text-[10px] tracking-widest uppercase rounded-sm translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
                     Exposure_00{idx + 1}

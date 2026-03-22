@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { MOCK_PROJECTS } from "@/lib/mockData";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function BentoArchive() {
   return (
@@ -39,9 +40,11 @@ export default function BentoArchive() {
               <span className="sr-only">View {project.title}</span>
             </Link>
             
-            <img 
+            <Image 
               src={project.featuredImg} 
               alt={project.title}
+              fill
+              sizes={index === 0 ? "(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 66vw" : "(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 33vw"}
               className="absolute inset-0 w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:scale-105 group-hover:brightness-75 transition-all duration-[1.5s] ease-out mix-blend-luminosity group-hover:mix-blend-normal"
             />
             

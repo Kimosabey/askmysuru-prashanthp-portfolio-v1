@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
+import Image from "next/image";
 
 const films = [
   {
@@ -44,9 +45,12 @@ export default function CinematographyShowcase() {
               className="glass-card p-4 group"
             >
               <div className="relative aspect-video overflow-hidden rounded-sm mb-6">
-                <img 
-                  src={`https://img.youtube.com/vi/${film.id}/maxresdefault.jpg`} 
+                <Image 
+                  src={`https://img.youtube.com/vi/${film.id}/hqdefault.jpg`} 
                   alt={film.title}
+                  width={480}
+                  height={270}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -54,6 +58,7 @@ export default function CinematographyShowcase() {
                     href={`https://youtube.com/watch?v=${film.id}`} 
                     target="_blank" 
                     rel="noopener noreferrer"
+                    aria-label={`Watch ${film.title} on YouTube`}
                     className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-black"
                   >
                     <Play size={24} fill="currentColor" />

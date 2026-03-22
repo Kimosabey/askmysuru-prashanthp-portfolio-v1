@@ -126,7 +126,7 @@ export default function TopNavBar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Link href="/" aria-label="Home" className="group relative flex items-center gap-4">
+            <Link href="/" className="group relative flex items-center gap-4">
               <div className="relative w-10 h-10 md:w-12 md:h-12 overflow-hidden rounded-sm border border-border group-hover:border-accent transition-all duration-500">
                 <Image 
                   src="/AskMysuru_Color.png" 
