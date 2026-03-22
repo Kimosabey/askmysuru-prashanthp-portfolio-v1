@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#111111",
+                        "tertiary-fixed": "#c6e7ff",
+                        "surface-tint": "#a5c8ff",
+                        "on-tertiary-container": "#e6f4ff",
+                        "on-primary-container": "#ecf1ff",
+                        "on-primary-fixed-variant": "#004784",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#0076a3",
+                        "surface-variant": "#222222",
+                        "on-secondary-fixed-variant": "#314867",
+                        "inverse-surface": "#e2e2e2",
+                        "inverse-on-surface": "#303030",
+                        "surface-container": "#0a0a0a",
+                        "on-primary-fixed": "#001c3a",
+                        "secondary-fixed": "#d4e3ff",
+                        "primary-container": "#206FC0",
+                        "surface-bright": "#1a1a1a",
+                        "outline-variant": "#333333",
+                        "on-surface": "#E2E2E2",
+                        "surface-container-highest": "#1c1c1c",
+                        "surface-container-lowest": "#000000",
+                        "primary-fixed-dim": "#a5c8ff",
+                        "on-secondary-container": "#a0b6db",
+                        "on-secondary": "#1a314f",
+                        "primary": "#206FC0",
+                        "on-tertiary": "#00344b",
+                        "primary-fixed": "#d4e3ff",
+                        "inverse-primary": "#005fad",
+                        "surface-container-high": "#121212",
+                        "surface": "#000000",
+                        "on-background": "#E2E2E2",
+                        "secondary": "#b1c8ed",
+                        "tertiary-fixed-dim": "#81cfff",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#a3a3a3",
+                        "background": "#000000",
+                        "tertiary": "#1497CE",
+                        "secondary-container": "#1a1a1a",
+                        "on-tertiary-fixed": "#001e2d",
+                        "on-secondary-fixed": "#011c39",
+                        "outline": "#4a4a4a",
+                        "secondary-fixed-dim": "#b1c8ed",
+                        "surface-dim": "#000000",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#004c6b",
+                        "on-error": "#690005",
+                        "on-primary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>body {
+    background-color: #000000;
+    background-image: radial-gradient(circle at 2px 2px, rgba(226, 226, 226, 0.02) 1px, transparent 0);
+    background-size: 40px 40px
+    }
+.hide-scrollbar::-webkit-scrollbar {
+    display: none
+    }
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none
+    }
+.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.02;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBPYx1-am-41FKJGCujpqDGpn2HRUE3Roii-dwNJTGptgVpthGBmg83r6jtQlrjGBpPE3prue_eBYNL7T0J3xUOxOyqI9eSAwz7v0_opt_ontK7LymnA3Oyysy5UNXV-VZxtrhUXY_jmC1keWNpM812XWdFRzYoC2SOYWdteiMFZVogQBsZ-Gb21B_wpjYh5kmxDbnwUBdNK-SiRTkDC4G1CJ0euKEDvDPSy8hwRcwaj6gbS9EE9Dp9rAoMwsZXNlaOVWz2xZoe-Q)
+    }</style>
+</head>
+<body class="font-body text-on-surface select-none bg-background">
+<div class="film-grain"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#000000]/80 backdrop-blur-xl flex justify-between items-center px-8 py-6 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="text-xl font-headline italic tracking-tighter text-[#E2E2E2] hover:animate-pulse cursor-pointer">
+            PRASHANTH P.
+        </div>
+<div class="hidden md:flex items-center gap-12">
+<a class="text-[#E2E2E2]/60 hover:text-[#E2E2E2] transition-colors font-headline italic tracking-tight hover:scale-105 transition-transform duration-300 ease-out" href="#">FILMS</a>
+<a class="text-[#E2E2E2]/60 hover:text-[#E2E2E2] transition-colors font-headline italic tracking-tight hover:scale-105 transition-transform duration-300 ease-out" href="#">STILLS</a>
+<a class="text-[#206FC0] font-bold font-headline italic tracking-tight hover:scale-105 transition-transform duration-300 ease-out" href="#">JOURNAL</a>
+<a class="text-[#E2E2E2]/60 hover:text-[#E2E2E2] transition-colors font-headline italic tracking-tight hover:scale-105 transition-transform duration-300 ease-out" href="#">ABOUT</a>
+</div>
+<button class="bg-[#206FC0] text-white px-6 py-2 rounded-sm text-[10px] font-bold tracking-[0.2em] hover:brightness-110 transition-all active:scale-95">
+            CONTACT
+        </button>
+</nav>
+<main class="pt-32 pb-20">
+<!-- Behind The Lens Header -->
+<header class="px-8 mb-16 max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<span class="text-[#1497CE] font-label text-[10px] tracking-[0.3em] uppercase mb-4 block">Process &amp; Observation</span>
+<h1 class="text-6xl md:text-8xl font-headline italic leading-[0.9] tracking-tighter text-on-surface">
+                    Behind <br/>The Lens.
+                </h1>
+</div>
+<div class="flex items-center gap-4 text-outline-variant">
+<span class="text-[10px] font-label tracking-widest uppercase">Scroll to explore</span>
+<div class="w-20 h-[1px] bg-outline-variant"></div>
+</div>
+</header>
+<!-- BTS Horizontal Scroll Gallery -->
+<section class="relative overflow-hidden mb-32">
+<div class="flex overflow-x-auto hide-scrollbar gap-8 px-8 snap-x snap-mandatory">
+<!-- Film Strip Framing - Left -->
+<div class="flex-none w-24 flex flex-col justify-between py-12 opacity-10 hidden lg:flex">
+<div class="flex flex-col gap-2">
+<div class="w-4 h-6 border border-on-surface"></div>
+<div class="w-4 h-6 border border-on-surface"></div>
+</div>
+<div class="text-[10px] rotate-90 origin-left whitespace-nowrap tracking-[0.5em] font-label">ROLL NO. 042</div>
+<div class="flex flex-col gap-2">
+<div class="w-4 h-6 border border-on-surface"></div>
+<div class="w-4 h-6 border border-on-surface"></div>
+</div>
+</div>
+<!-- Gallery Items -->
+<div class="flex-none w-[85vw] md:w-[600px] snap-center">
+<div class="relative group overflow-hidden bg-surface-container-low aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0" data-alt="Prashanth operating a large cinema camera on a busy film set" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV0u8Ys4LYmIM6bldW0peG5w_7HGh0yZhM4B4ktEI-BrcHUchnUcz2eMS4FQsSrC9FJ4K-O74rzX-5Re1ifhCIrvvGy2z_1YlKuUY13g2BQ7GRFJSCPpBQ2r0JH1yb7I_Z94GrdU9ziEDASOBKLlrYmJakAn0ntD2xDGcWWDWs0ROfMGEE_bdUknzbxI8KyYsypWIhg_VOKa_FideaHlBber42R_oO1Twm5CDIw-_O86G9x5XxJk8BI2yPmMuyI9I264h9NwCjAQ"/>
+<div class="absolute bottom-6 left-6 flex flex-col gap-1">
+<span class="text-[10px] font-label text-on-surface tracking-widest bg-black/60 backdrop-blur-md px-3 py-1 self-start">01 / SHADOW PLAY</span>
+<span class="text-sm font-headline italic text-on-surface/80">Location: Mumbai, IN</span>
+</div>
+</div>
+</div>
+<div class="flex-none w-[85vw] md:w-[700px] snap-center">
+<div class="relative group overflow-hidden bg-surface-container-low aspect-[16/9]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0" data-alt="High angle view of a film crew setting up lighting equipment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCefy_GWpTHHyMy8bDP-Ro0qF6KHhnMrLMedXiBHl_ZWdAE-klkkVUiedZYyIjn0IOn90o5c7TaRyy4tDp9SO6XRFTuO4MikrXd5nFnIvDVYHq7aEur_57IDGcQ3wlsGfOtIKQMngOUkpYh_awSLBfs2VO9pqZTspWTNcCGwRzd7Q6g9_ynoVAETl2uaMdgEVRIMJFVSbBD2WII0lIC-m9KiskPvdig_5KpOiHJLNqHylZk8iwsn8jaZIpprfp3DWXjko7bxWRpvA"/>
+<div class="absolute bottom-6 left-6 flex flex-col gap-1">
+<span class="text-[10px] font-label text-on-surface tracking-widest bg-black/60 backdrop-blur-md px-3 py-1 self-start">02 / THE ARCHITECTURE OF LIGHT</span>
+</div>
+</div>
+</div>
+<div class="flex-none w-[85vw] md:w-[500px] snap-center">
+<div class="relative group overflow-hidden bg-surface-container-low aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0" data-alt="Candid shot of a director looking through a viewfinder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVoo4uM775UVNmrt65D9qUFi9hks5mb6EQI94Qrq8Z2C54PwIPl2wTGhFkHocj_TK99dtwSRGMafTilradSnRx-wAN27chtLq3XG7UtWUUm2NOjyI7xmb9GjbfLFIyGQKkfTgZ5nrOZFvBHEpc7zwiQh5qmE3zgSh_yvKpV8vM7t5JsdT-04dmTTW95uTyvRzvUnwExaTfVAjNF4JtadXByMKdMMSfn8JzDe0P54yVlMGya19Y8XzEUoaai942eUVj78CrKRvUwg"/>
+<div class="absolute bottom-6 left-6 flex flex-col gap-1">
+<span class="text-[10px] font-label text-on-surface tracking-widest bg-black/60 backdrop-blur-md px-3 py-1 self-start">03 / MOMENTS OF STILLNESS</span>
+</div>
+</div>
+</div>
+<div class="flex-none w-[85vw] md:w-[600px] snap-center">
+<div class="relative group overflow-hidden bg-surface-container-low aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0" data-alt="Silhouette of camera gear against a sunset on set" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxpT4LCvXGj61elnCRhmbOpCKpYKt8j5LnmoBKtHLVW9ScOSfFCNT6tD_-IEzRZc4xZzg4oMcvxCod8FngJn4Q8A7mG4ZDPLU0qcqtKk2xO2giJVvQTZCWBEmTqiKb9j8bh5F4JCecb4B3qBeG8XNzgChc8mNDV1oEJGLSDV6FNyF85tTAdpHIfyeXI8e1eXzlFwS7DxykLTmBythl6ddXjl_0satsIJ6Xl1l408HqMRSqOgW9wkEoRPdT8i6Q1ZNd_fgriDgeWg"/>
+<div class="absolute bottom-6 left-6 flex flex-col gap-1">
+<span class="text-[10px] font-label text-on-surface tracking-widest bg-black/60 backdrop-blur-md px-3 py-1 self-start">04 / THE FINAL WRAP</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Arsenal Section -->
+<section class="max-w-7xl mx-auto px-8 mb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-4">
+<h2 class="text-4xl font-headline italic mb-6">The <br/>Arsenal.</h2>
+<p class="text-on-surface/60 font-body text-sm leading-relaxed mb-8 max-w-xs">
+                        High-fidelity tools chosen for their unique optical signatures and reliability in the most demanding environments.
+                    </p>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 p-4 border-l border-outline-variant/30 hover:border-[#206FC0] transition-colors group">
+<span class="text-[10px] font-label opacity-30 group-hover:opacity-100 transition-opacity">01</span>
+<span class="font-label text-xs tracking-widest uppercase">Cinematography</span>
+</div>
+<div class="flex items-center gap-4 p-4 border-l border-outline-variant/30 hover:border-[#206FC0] transition-colors group">
+<span class="text-[10px] font-label opacity-30 group-hover:opacity-100 transition-opacity">02</span>
+<span class="font-label text-xs tracking-widest uppercase">Movement &amp; Grip</span>
+</div>
+<div class="flex items-center gap-4 p-4 border-l border-outline-variant/30 hover:border-[#206FC0] transition-colors group">
+<span class="text-[10px] font-label opacity-30 group-hover:opacity-100 transition-opacity">03</span>
+<span class="font-label text-xs tracking-widest uppercase">Post-Processing</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-1 px-1 bg-outline-variant/20">
+<div class="bg-surface p-12 flex flex-col justify-between aspect-square md:aspect-auto">
+<span class="material-symbols-outlined text-4xl text-[#206FC0] font-light mb-8">videocam</span>
+<div>
+<h3 class="text-xl font-body font-semibold mb-2">RED V-RAPTOR</h3>
+<p class="text-[10px] font-label tracking-widest text-on-surface/40 uppercase">8K VV 120FPS SENSOR</p>
+</div>
+</div>
+<div class="bg-surface p-12 flex flex-col justify-between aspect-square md:aspect-auto">
+<span class="material-symbols-outlined text-4xl text-[#206FC0] font-light mb-8">settings_input_component</span>
+<div>
+<h3 class="text-xl font-body font-semibold mb-2">DJI RONIN 2</h3>
+<p class="text-[10px] font-label tracking-widest text-on-surface/40 uppercase">PROFESSIONAL STABILIZATION</p>
+</div>
+</div>
+<div class="bg-surface p-12 flex flex-col justify-between aspect-square md:aspect-auto">
+<span class="material-symbols-outlined text-4xl text-[#206FC0] font-light mb-8">camera</span>
+<div>
+<h3 class="text-xl font-body font-semibold mb-2">SONY A7S III</h3>
+<p class="text-[10px] font-label tracking-widest text-on-surface/40 uppercase">LOW-LIGHT ARCHITECTURE</p>
+</div>
+</div>
+<div class="bg-surface p-12 flex flex-col justify-between aspect-square md:aspect-auto">
+<span class="material-symbols-outlined text-4xl text-[#206FC0] font-light mb-8">blur_on</span>
+<div>
+<h3 class="text-xl font-body font-semibold mb-2">MASTER ANAMORPHIC</h3>
+<p class="text-[10px] font-label tracking-widest text-on-surface/40 uppercase">ZEISS T1.9 LENS SERIES</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Authority & Impact -->
+<section class="bg-surface-container-lowest py-32 px-8 border-t border-outline-variant/10">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-24">
+<h2 class="text-5xl md:text-7xl font-headline italic tracking-tighter mb-6">Authority &amp; Impact.</h2>
+<div class="h-[1px] w-24 bg-[#1497CE] mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 mb-32">
+<div class="flex flex-col items-center text-center">
+<span class="text-7xl font-headline tracking-tighter text-[#1497CE] mb-2">160K+</span>
+<span class="text-[10px] font-label tracking-[0.4em] uppercase text-on-surface/40">Global Community</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="text-7xl font-headline tracking-tighter text-[#1497CE] mb-2">12M+</span>
+<span class="text-[10px] font-label tracking-[0.4em] uppercase text-on-surface/40">Collective Impressions</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="text-7xl font-headline tracking-tighter text-on-surface mb-2">08</span>
+<span class="text-[10px] font-label tracking-[0.4em] uppercase text-on-surface/40">International Awards</span>
+</div>
+</div>
+<div class="flex flex-wrap justify-center items-center gap-16 md:gap-24 opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="text-xl font-bold tracking-tighter font-headline flex items-center gap-2">
+<span class="material-symbols-outlined text-[#206FC0]">movie</span> CANNES FILM FESTIVAL
+                    </div>
+<div class="text-xl font-bold tracking-tighter font-headline flex items-center gap-2">
+<span class="material-symbols-outlined text-[#206FC0]">stars</span> BERLINALE
+                    </div>
+<div class="text-xl font-bold tracking-tighter font-headline flex items-center gap-2">
+<span class="material-symbols-outlined text-[#206FC0]">lens</span> VOGUE
+                    </div>
+<div class="text-xl font-bold tracking-tighter font-headline flex items-center gap-2">
+<span class="material-symbols-outlined text-[#206FC0]">camera_roll</span> NATIONAL GEOGRAPHIC
+                    </div>
+<div class="text-xl font-bold tracking-tighter font-headline flex items-center gap-2">
+<span class="material-symbols-outlined text-[#206FC0]">video_library</span> VIMEO STAFF PICK
+                    </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background w-full py-12 px-8 mt-20 border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+<div class="text-[#E2E2E2]/60 font-semibold font-body uppercase tracking-[0.2em] text-[10px]">
+                © 2024 PRASHANTH P. — DIRECTED BY VISION
+            </div>
+<div class="flex items-center gap-8">
+<a class="text-[#E2E2E2]/40 hover:text-[#206FC0] transition-colors duration-500 font-body uppercase tracking-[0.2em] text-[10px]" href="#">INSTAGRAM</a>
+<a class="text-[#E2E2E2]/40 hover:text-[#206FC0] transition-colors duration-500 font-body uppercase tracking-[0.2em] text-[10px]" href="#">VIMEO</a>
+<a class="text-[#E2E2E2]/40 hover:text-[#206FC0] transition-colors duration-500 font-body uppercase tracking-[0.2em] text-[10px]" href="#">LINKEDIN</a>
+<a class="text-[#E2E2E2]/40 hover:text-[#206FC0] transition-colors duration-500 font-body uppercase tracking-[0.2em] text-[10px]" href="#">EMAIL</a>
+</div>
+</div>
+</footer>
+</body></html>

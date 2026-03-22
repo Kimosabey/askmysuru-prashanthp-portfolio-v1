@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Archive — PRASHANTH P.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>body {
+    background-color: #000;
+    cursor: none
+    }
+.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBREwiZFa7tVWz8RIg2Isdw4pkEXfDB0wud9ZIe3hsQZNrR9DaZkZqpM7scqbx5VvCw02aEhmQ-ZkC-nBel3odFiqdQf1dENEpmy_wcOPms7n1DjSyYtTTWQbXtKnnIXhHk85EDEbwsDjH54QuoblDeG-gWcqOiLEBWYYD35QqoshtlCx6yBf1tUlG3lN2WcNRry3raAe8dFwroCxh4abSQi0ku-Lx2D6HF-WP97sJ70BgCdmj4K1npB9oLkUM6FVqvnzhRsUYUuQ)
+    }
+.custom-cursor {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #206FC0;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.3s, height 0.3s, border-color 0.3s
+    }
+.custom-cursor::before, .custom-cursor::after {
+    content: "";
+    position: absolute;
+    background: #206FC0
+    }
+.custom-cursor::before {
+    width: 1px;
+    height: 10px
+    }
+.custom-cursor::after {
+    width: 10px;
+    height: 1px
+    }
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(150px, auto);
+    gap: 1.5rem
+    }
+.magnetic-pull {
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1)
+    }
+.magnetic-pull:hover {
+    transform: scale(1.02)
+    }
+.perspective-card {
+    perspective: 1000px
+    }</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface-container-low": "#1b1b1b",
+                "tertiary-fixed": "#c6e7ff",
+                "surface-tint": "#a5c8ff",
+                "on-tertiary-container": "#e6f4ff",
+                "on-primary-container": "#ecf1ff",
+                "on-primary-fixed-variant": "#004784",
+                "on-error-container": "#ffdad6",
+                "tertiary-container": "#0076a3",
+                "surface-variant": "#353535",
+                "on-secondary-fixed-variant": "#314867",
+                "inverse-surface": "#e2e2e2",
+                "inverse-on-surface": "#303030",
+                "surface-container": "#1f1f1f",
+                "on-primary-fixed": "#001c3a",
+                "secondary-fixed": "#d4e3ff",
+                "primary-container": "#206fc0",
+                "surface-bright": "#393939",
+                "outline-variant": "#414751",
+                "on-surface": "#e2e2e2",
+                "surface-container-highest": "#353535",
+                "surface-container-lowest": "#0e0e0e",
+                "primary-fixed-dim": "#a5c8ff",
+                "on-secondary-container": "#a0b6db",
+                "on-secondary": "#1a314f",
+                "primary": "#a5c8ff",
+                "on-tertiary": "#00344b",
+                "primary-fixed": "#d4e3ff",
+                "inverse-primary": "#005fad",
+                "surface-container-high": "#2a2a2a",
+                "surface": "#131313",
+                "on-background": "#e2e2e2",
+                "secondary": "#b1c8ed",
+                "tertiary-fixed-dim": "#81cfff",
+                "error": "#ffb4ab",
+                "on-surface-variant": "#c1c7d3",
+                "background": "#131313",
+                "tertiary": "#81cfff",
+                "secondary-container": "#314867",
+                "on-tertiary-fixed": "#001e2d",
+                "on-secondary-fixed": "#011c39",
+                "outline": "#8b919d",
+                "secondary-fixed-dim": "#b1c8ed",
+                "surface-dim": "#131313",
+                "error-container": "#93000a",
+                "on-tertiary-fixed-variant": "#004c6b",
+                "on-error": "#690005",
+                "on-primary": "#00315e"
+              },
+              fontFamily: {
+                "headline": ["Newsreader"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-black text-on-surface font-body selection:bg-primary-container selection:text-white overflow-x-hidden">
+<div class="film-grain"></div>
+<div class="custom-cursor hidden md:flex" id="cursor"></div>
+<header class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl flex justify-between items-center px-8 py-6 w-full shadow-[0_20px_40px_rgba(226,226,226,0.04)]">
+<div class="text-xl font-['Newsreader'] italic tracking-tighter text-[#E2E2E2] hover:animate-pulse cursor-none">
+            PRASHANTH P.
+        </div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-[#206FC0] font-bold font-['Newsreader'] italic tracking-tight hover:scale-105 transition-transform duration-300 ease-out" href="#">FILMS</a>
+<a class="text-[#E2E2E2]/60 hover:text-[#E2E2E2] transition-colors font-['Newsreader'] italic tracking-tight hover:scale-105 transition-transform duration-300 ease-out" href="#">STILLS</a>
+<a class="text-[#E2E2E2]/60 hover:text-[#E2E2E2] transition-colors font-['Newsreader'] italic tracking-tight hover:scale-105 transition-transform duration-300 ease-out" href="#">JOURNAL</a>
+<a class="text-[#E2E2E2]/60 hover:text-[#E2E2E2] transition-colors font-['Newsreader'] italic tracking-tight hover:scale-105 transition-transform duration-300 ease-out" href="#">ABOUT</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-sm font-label text-[10px] tracking-[0.2em] hover:scale-105 transition-transform duration-300 ease-out">
+            CONTACT
+        </button>
+</header>
+<main class="pt-32 px-8 max-w-7xl mx-auto pb-20">
+<div class="mb-16 flex flex-col md:flex-row justify-between items-end gap-6">
+<div class="max-w-2xl">
+<span class="font-label text-primary tracking-[0.3em] text-[10px] mb-4 block uppercase">The Director's Cut</span>
+<h1 class="font-headline text-5xl md:text-7xl italic leading-tight text-on-surface">
+                    The Archive
+                </h1>
+</div>
+<div class="flex gap-4 pb-2">
+<div class="flex flex-col items-end">
+<span class="font-label text-outline-variant text-[9px] tracking-widest uppercase">Sequence</span>
+<span class="font-body text-on-surface/40 text-sm">002 / 006</span>
+</div>
+</div>
+</div>
+<div class="bento-grid">
+<div class="col-span-12 md:col-span-8 row-span-2 group relative overflow-hidden bg-surface-container-low magnetic-pull cursor-none">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-700 z-10"></div>
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="Cinematic shot of ancient temple architecture in golden hour" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1kk86122dq7lK7ac20SIIVbwwl_zhw1HLUbSnK0nzCzvU1hWDlVxprTxuwa2rwdt2P7AFrCwb5aX5Xj93NfpPetkxNvvXvANlHMMlwOmghb4NpzsS7ubDmMyJBelfdNkvEmZBqo4bNXtf863Xn7OtTjb60s0MqHTJQJHjQxT49l2YXapMiUGKa4W74DvEeENxnqPqI32Bju3kqn4wMtEzICxNDwaZ9GuGspd1Q6wTtGMCpWzGKsDhg7O__ai--xshzo51-43uow"/>
+<div class="absolute top-6 left-6 z-20">
+<span class="bg-primary-container/90 backdrop-blur-sm text-white px-3 py-1 text-[9px] font-label tracking-widest uppercase">Heritage</span>
+</div>
+<div class="absolute bottom-8 left-8 z-20">
+<h3 class="font-headline text-3xl italic text-white mb-2">Echoes of Hampi</h3>
+<p class="font-body text-white/60 text-sm tracking-wide max-w-xs uppercase text-[10px]">A visual study of forgotten empires</p>
+</div>
+<div class="absolute top-4 right-4 z-20 flex gap-1 opacity-40">
+<div class="w-1 h-1 bg-white rounded-full"></div>
+<div class="w-1 h-1 bg-white rounded-full"></div>
+<div class="w-1 h-1 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 row-span-1 group relative overflow-hidden bg-surface-container-low magnetic-pull cursor-none">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover grayscale transition-transform duration-1000 group-hover:scale-105" data-alt="Monochrome misty mountain range in high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQL_7kKDgF5_YEmII_1XvXM3k-HDVFnqV4U1n2vt3D_glzVSyLlrZHabSxnQR0fztqwxlgWaDy8UAJU8-HmIWGEDoVdZUb2J4t8wNXPBubgvNCnhYHtleiGUYZTBh6HIEPBClOTagKhYfJrD1i-ge03wUCQAb7_eAroc7KSqmacnWPsNcnBjX-l_0QSspz6kCDui3kEFyug-dnDNdNLz7X9gzk9V4yKx7QsxUjBLC1RUkCd2x3xnPHJnN4E7OVoPcSbNdUAgBI4w"/>
+<div class="absolute bottom-6 left-6 z-20">
+<span class="text-tertiary text-[9px] font-label tracking-widest uppercase mb-1 block">Nature</span>
+<h3 class="font-headline text-xl italic text-white">Silent Peaks</h3>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 row-span-2 group relative overflow-hidden bg-surface-container-low magnetic-pull cursor-none">
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-700 z-10"></div>
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="Dynamic low angle shot of futuristic skyscraper reflecting blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOkLHgRHeIxue4nQ62tyjZJugEHVqBNt3efwNEfv0QPaxsXmHXOdplXE90yc83om9QVBy530EIraw03WXhEdjjWmGs2s5nx0b1FFY3lSvqZK-uiSd4G7tgENBpzo0clOcq-1X4aQ9WIEaCQQbkP8Xd9tLc4kcykgBKFwvF5TofEo9mxn8xtUYAHErK7r3z2VJzdqv8JkH-7p4MoLKUzpEAQGjUdMP9zazJOGcz-p3S9PbAi0diyMwAWHPb1CikOURyAu_4ZTvAxg"/>
+<div class="absolute top-6 right-6 z-20">
+<span class="border border-white/20 backdrop-blur-md text-white px-3 py-1 text-[9px] font-label tracking-widest uppercase">Tech</span>
+</div>
+<div class="absolute bottom-8 left-8 z-20">
+<h3 class="font-headline text-2xl italic text-white mb-2">Silicon Shadows</h3>
+<p class="font-body text-white/50 text-[10px] uppercase tracking-tighter">Humanity &amp; Code</p>
+</div>
+<div class="absolute top-0 bottom-0 left-4 w-px bg-white/10 z-20"></div>
+</div>
+<div class="col-span-12 md:col-span-4 row-span-1 group relative overflow-hidden bg-surface-container-low magnetic-pull cursor-none">
+<div class="absolute inset-0 bg-primary-container/10 group-hover:bg-transparent transition-colors duration-700 z-10"></div>
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Blurred city lights and traffic at night long exposure" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPizh-qfgKnSM_hZ4rWELRKKxauYg8s9C_UXS39RlTIL9J3gTESgJmAdqY0ytXFTtbyME8LKJGje-dVUl1ww6l9veMUlTw3HfhKfE2qGICV663gGqe2e3sPRGxBqZwJkyXMwB4O5Ou6ygn4INZLwO3y43kUL6SfjmCyox2ZvVA7MZ6Hlu3a5zQ9EMcQyRpWdj_Qla3mTvObg_V0n_kMxqGKN-6NTReiOwZCoX0fHF-XVcBXV8BFB_7OLHqR6MjzTDwrubAxjD_0g"/>
+<div class="absolute bottom-6 left-6 z-20">
+<span class="text-secondary text-[9px] font-label tracking-widest uppercase mb-1 block">City Spotlight</span>
+<h3 class="font-headline text-xl italic text-white">Neon Pulse</h3>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 row-span-2 group relative overflow-hidden bg-surface-container-low magnetic-pull cursor-none">
+<div class="absolute inset-0 bg-black/60 z-10"></div>
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="Close up portrait of a person with dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpCxZ9Yaaw58MDUABMnRJShSKeUywzHR2QamYaR13g9xUsWrUsi0rgcaCbz6mqUpzxK_ULntl30XgqLGubezogCaydZNnKcEHL8ecgnFD2SIguxQ2-Fn8X4cocayFhMjX76dZ55z33hGUqNx78-XLW8Sq7Lw7TLtcb23kp0ZleYrdwI_pcVBPydWuTC3r3Ra27Dvf5Q7B5e5FmvEVvdEQ5LzEJE4CLl_7MH4htWtHViwnrvCeHkQN1u6ucFnzFhn5knikUNTXtvA"/>
+<div class="absolute inset-0 flex items-center justify-center z-20 px-8 text-center">
+<div>
+<span class="text-on-surface-variant text-[10px] font-label tracking-[0.4em] uppercase mb-4 block">Society</span>
+<h3 class="font-headline text-3xl italic text-white leading-tight">The Human Condition</h3>
+<div class="mt-6 w-12 h-px bg-primary mx-auto"></div>
+</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-8 row-span-1 group relative overflow-hidden bg-surface-container-low magnetic-pull cursor-none">
+<div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent z-10"></div>
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Wide landscape of travelers walking through misty mountains" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2LKfMzpvNhy54cRfx9aztJ2TYEJrJAWAdN6Ux7QD6QsWKIqmGT7jkPhBwKpsQJJfZo8N8jQFDdSTLZau86u7wzqWbPdQfAzGS128-4BnlWmVN1PQkz_gJyarj0DqAqAe76nDMRwrhS4i7ibhVrG1Al_KkvhrdZQG8RZ1gvYs_OBaKNm81qmM4wnxfQai2zPlynvI60bGhaGrCfjSIN_7dlUUTmiZtXzDqLLdkDz87SF1wFw6EivUiWqXNJI_Go62-jn32B2B0pQ"/>
+<div class="absolute top-0 bottom-0 left-0 w-2 bg-primary z-20"></div>
+<div class="absolute inset-y-0 left-12 flex flex-col justify-center z-20">
+<span class="text-primary text-[9px] font-label tracking-widest uppercase mb-2">Yatra</span>
+<h3 class="font-headline text-4xl italic text-white">Path to Enlightenment</h3>
+<p class="font-body text-white/40 text-[10px] tracking-[0.2em] mt-2 uppercase">A 4000km Pilgrimage Film</p>
+</div>
+</div>
+</div>
+<div class="mt-20 flex justify-center">
+<button class="group flex items-center gap-4 text-on-surface/60 hover:text-primary transition-colors duration-500 font-label text-[11px] tracking-[0.3em] uppercase">
+                Explore More Archive
+                <span class="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</main>
+<footer class="bg-[#131313] w-full py-12 px-8 mt-20 border-t border-[#414751]/15">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-[#E2E2E2] font-semibold font-['Inter'] uppercase tracking-[0.2em] text-[10px]">
+                © 2024 PRASHANTH P. — DIRECTED BY VISION
+            </div>
+<div class="flex gap-8">
+<a class="text-[#E2E2E2]/40 hover:text-[#206FC0] transition-colors duration-500 font-['Inter'] uppercase tracking-[0.2em] text-[10px]" href="#">INSTAGRAM</a>
+<a class="text-[#E2E2E2]/40 hover:text-[#206FC0] transition-colors duration-500 font-['Inter'] uppercase tracking-[0.2em] text-[10px]" href="#">VIMEO</a>
+<a class="text-[#E2E2E2]/40 hover:text-[#206FC0] transition-colors duration-500 font-['Inter'] uppercase tracking-[0.2em] text-[10px]" href="#">LINKEDIN</a>
+<a class="text-[#E2E2E2]/40 hover:text-[#206FC0] transition-colors duration-500 font-['Inter'] uppercase tracking-[0.2em] text-[10px]" href="#">EMAIL</a>
+</div>
+</div>
+</footer>
+<script>
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.getElementById('cursor');
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+
+            const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
+            if (hoveredElement && (hoveredElement.closest('.magnetic-pull') || hoveredElement.closest('button') || hoveredElement.closest('a'))) {
+                cursor.style.width = '80px';
+                cursor.style.height = '80px';
+                cursor.style.borderColor = '#ffffff';
+            } else {
+                cursor.style.width = '40px';
+                cursor.style.height = '40px';
+                cursor.style.borderColor = '#206FC0';
+            }
+        });
+    </script>
+</body></html>

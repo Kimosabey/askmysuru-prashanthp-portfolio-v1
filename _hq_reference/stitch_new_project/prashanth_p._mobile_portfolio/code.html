@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PRASHANTH P. | Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#00315e",
+              "on-secondary": "#1a314f",
+              "inverse-surface": "#e2e2e2",
+              "on-secondary-container": "#a0b6db",
+              "on-error": "#690005",
+              "on-background": "#e2e2e2",
+              "tertiary-fixed-dim": "#81cfff",
+              "tertiary": "#81cfff",
+              "surface-dim": "#131313",
+              "on-primary-container": "#ecf1ff",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container-low": "#1b1b1b",
+              "on-error-container": "#ffdad6",
+              "on-surface": "#e2e2e2",
+              "on-secondary-fixed-variant": "#314867",
+              "secondary": "#b1c8ed",
+              "surface-bright": "#393939",
+              "primary-fixed": "#d4e3ff",
+              "secondary-fixed": "#d4e3ff",
+              "on-primary-fixed": "#001c3a",
+              "primary-fixed-dim": "#a5c8ff",
+              "surface-container-high": "#2a2a2a",
+              "outline": "#8b919d",
+              "surface-tint": "#a5c8ff",
+              "secondary-container": "#314867",
+              "on-tertiary-fixed-variant": "#004c6b",
+              "on-tertiary-fixed": "#001e2d",
+              "surface": "#131313",
+              "tertiary-fixed": "#c6e7ff",
+              "primary-container": "#206fc0",
+              "secondary-fixed-dim": "#b1c8ed",
+              "error-container": "#93000a",
+              "tertiary-container": "#0076a3",
+              "surface-container": "#1f1f1f",
+              "outline-variant": "#414751",
+              "inverse-primary": "#005fad",
+              "primary": "#a5c8ff",
+              "surface-container-highest": "#353535",
+              "on-tertiary": "#00344b",
+              "on-surface-variant": "#c1c7d3",
+              "surface-variant": "#353535",
+              "on-tertiary-container": "#e6f4ff",
+              "on-primary-fixed-variant": "#004784",
+              "inverse-on-surface": "#303030",
+              "background": "#131313",
+              "on-secondary-fixed": "#011c39",
+              "error": "#ffb4ab"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.film-grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 99;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAxsdVpggloabP95FSjTAYdd8swzQ4hw4UyyU0Cv-aTpEjJ3d3LFqadul11vDxbD7nTQhsynVpgEDMcBluzpfPf9qL5CxnNO7Q1mOOwmM2R4q6NGqHONOXiSNla-Bx_rSzNm2TtURaiAjqZH3bzWTOPjdJd692e1eyizkq2mNRDNthzqk_fvhA2GKY4n90ViflOGFS9_aagENvcNr-sRFCQK7hhHYMrjR4_SUpHR9npvdcMDq_5-2QeUNVe_faYtPSi93xbS_9SUw)
+    }
+.magnetic-pull:active {
+    transform: scale(0.97)
+    }
+.font-newsreader {
+    font-family: "Newsreader", serif
+    }
+.font-inter {
+    font-family: "Inter", sans-serif
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<div class="film-grain"></div>
+<!-- 35mm Film Progress Bar -->
+<div class="fixed top-0 left-0 w-full h-1 z-[60] bg-surface-container-highest flex justify-between px-1">
+<div class="h-full w-1/4 bg-primary-container"></div>
+<div class="flex gap-1 h-full">
+<div class="w-2 h-full bg-secondary-container"></div>
+<div class="w-2 h-full bg-secondary-container"></div>
+<div class="w-2 h-full bg-secondary-container"></div>
+</div>
+</div>
+<!-- Shared Component: TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#131313]/80 backdrop-blur-lg after:content-[''] after:block after:h-[2px] after:w-full after:bg-gradient-to-r after:from-transparent after:via-[#353535] after:to-transparent absolute bottom-0 left-0">
+<div class="font-newsreader italic text-[#E2E2E2] tracking-[0.2em] text-lg">PRASHANTH P.</div>
+<button class="text-[#206FC0] hover:opacity-70 transition-opacity magnetic-pull duration-300">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-6">
+<!-- Identity Hero Section -->
+<section class="mb-16">
+<div class="flex flex-col gap-4">
+<span class="font-label text-label-sm uppercase tracking-[0.2em] text-secondary opacity-80">Director / Cinematographer</span>
+<h1 class="font-headline italic text-5xl md:text-7xl leading-tight tracking-tight text-on-surface">
+                    Capturing the <br/>
+<span class="text-primary">Ephemeral</span> 
+                    Essence.
+                </h1>
+<p class="font-body text-body-lg text-on-surface-variant max-w-sm mt-4 leading-relaxed opacity-90">
+                    A visual narrative focused on high-contrast storytelling and the tactile depth of 35mm film aesthetics.
+                </p>
+</div>
+<div class="mt-12 relative h-[442px] w-full overflow-hidden rounded-sm group">
+<img alt="Cinematic landscape shot" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 transition-all duration-700" data-alt="Cinematic silhouette of a person standing against a sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmWFvbRyH_Ql4r7IOEMPZxTF52yxBp3gVke5btJh2-I_HptGIJZjcUNFZYmHsr5fvDf1wa1-7B5_UWhyWt9T_QInVaRMuS8lu3-4KJKzMHXt_Ov1hlBNW6n-C1FSjmMCMh10TbwMVgqeS4UBdL1in3ptuNb6bFmINDEYk_kMcwriO63lyMJ6XBLQV4tL2IUDJfqrJkHXFmbjAuH0juv4B9h5ioxUBXXsyZ3hL6Tiolh8kjGbSy3KrsYIEHAmCKiD947fHevuXfuA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<span class="font-label text-[10px] tracking-[0.3em] text-on-surface/50">FRAME 001/2024</span>
+</div>
+</div>
+</section>
+<!-- Archive Bento Grid (Vertical Stack for Mobile) -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline text-3xl italic">Archive</h2>
+<div class="h-px flex-grow mx-4 bg-gradient-to-r from-outline-variant/30 to-transparent"></div>
+</div>
+<div class="flex flex-col gap-8">
+<!-- Large Feature Card -->
+<div class="bg-surface-container-low p-1 rounded-sm overflow-hidden flex flex-col gap-4 group">
+<div class="aspect-[4/5] w-full overflow-hidden relative">
+<img alt="Film archive thumbnail" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" data-alt="B&amp;W close up of a vintage movie camera lens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLYnSp6IJBj2DRcyT2qxJTCcuS6tce13QZHxhcJqsAOiFfDuRhK-y1FaXIvs5-bLlb-9-knU2niBb7zVzV_vyY9CYMhePhvJA9BX0FltNYrT7bP-cR7bEuourXYTlHvvbt5OOCog46y86PlbmN0qw3xUdCynV8xU_Jm1TIiuF2G8whw8qdVQv2wYb0kWSbusQTNVATuDJaSYUOcW2Yhu3A8gELHS3I5fw6OmrFNE9oYjiBvvIGK3UIghyIf_8RmGIRu9floswI5w"/>
+<div class="absolute top-4 right-4 bg-primary-container text-on-primary-container px-3 py-1 text-[10px] tracking-widest font-label">FEATURED</div>
+</div>
+<div class="px-3 pb-4">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-2xl">The Silent Pulse</h3>
+<span class="font-label text-[10px] text-primary mt-2">SHORT FILM</span>
+</div>
+<p class="text-body-lg text-on-surface-variant text-sm italic opacity-70">Exploring the rhythm of urban solitude through a 16mm lens.</p>
+</div>
+</div>
+<!-- Secondary Cards Grid -->
+<div class="grid grid-cols-1 gap-8">
+<!-- Project 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant/15 p-4 flex flex-col gap-4">
+<div class="aspect-video w-full overflow-hidden">
+<img alt="Visual project" class="w-full h-full object-cover grayscale group-hover:grayscale-0" data-alt="Deep blue cinematic night scene in a city" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCqf6UuLiSHkblFvVNRfmWz_I_2o3GeHmMZhb5CreO0rqWqSwIMPMS6tmHMcPYVfDGeGLULWMIhJGlsfJJpf1YJun4nQo1VQRjSq90pf2-apXqfSIassmN6FcYscdJeCSVDE3RJ6ZXKsKdgS3QvdzUb-HSxpPTS7ai2cudjGn2avKrODArlsmUSiich5NdimLcuVyreP6b2jTA0En4KA5gjdbim_webTwXryypktld-YHL3-DaFeNEMkUvPr7D1B12s-Gh8wXBwQ"/>
+</div>
+<div>
+<span class="font-label text-[10px] text-tertiary">STILLS</span>
+<h3 class="font-headline text-xl mt-1">Midnight in Mumbai</h3>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="bg-surface-container-low p-4 flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute -top-4 -left-4 w-12 h-12 border-t border-l border-primary/20"></div>
+<div class="aspect-square w-full overflow-hidden">
+<img alt="Directorial work" class="w-full h-full object-cover brightness-90" data-alt="Artistic portrait of an actor in dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATqdApbayRhu-CmQ8Sir40imjh2HB_fS0vFRA4dQViavTSiWi9zt_3-YMdS0iJHx0MShGIlRdfDWB98wAKoYBoTnISyvM_Dhow3Q1EZXjzCjJ_o_ZtmeYmJHzROTvCxnv4lgdUEkzla2tjQTv0zIwPnT-eYpip-8ZUzkI910wr7dJs8A4bBJ_3B436S9G52Fmw93CCqZx6kE72c25HZk1-EObHtWdfYsXzgbMo-Ev_tOpsJ6uvXwu94ayH5uShEU4DphFk1dhZoQ"/>
+</div>
+<div>
+<span class="font-label text-[10px] text-secondary">COMMERCIAL</span>
+<h3 class="font-headline text-xl mt-1">Movement &amp; Light</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA / Inquiry Section -->
+<section class="py-12 bg-surface-container-low rounded-sm px-6 text-center border-t border-primary-container/10">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl" data-icon="auto_awesome">auto_awesome</span>
+<h2 class="font-headline text-3xl mb-4 italic">The Vision Awaits.</h2>
+<p class="text-body-lg text-on-surface-variant mb-8 text-sm px-4">Available for select projects and visual collaborations globally.</p>
+<button class="w-full py-4 bg-primary-container text-on-primary-container font-label tracking-[0.2em] text-xs uppercase rounded-sm magnetic-pull">
+                Begin Inquiry
+            </button>
+</section>
+</main>
+<!-- Shared Component: BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#1B1B1B]/90 backdrop-blur-xl border-t border-[#414751]/15 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-[#206FC0] scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="movie">movie</span>
+<span class="font-inter text-[10px] uppercase tracking-[0.15em]">Work</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#E2E2E2]/60 hover:text-[#206FC0] transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="photo_camera">photo_camera</span>
+<span class="font-inter text-[10px] uppercase tracking-[0.15em]">Stills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#E2E2E2]/60 hover:text-[#206FC0] transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person_4">person_4</span>
+<span class="font-inter text-[10px] uppercase tracking-[0.15em]">About</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#E2E2E2]/60 hover:text-[#206FC0] transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="alternate_email">alternate_email</span>
+<span class="font-inter text-[10px] uppercase tracking-[0.15em]">Contact</span>
+</a>
+</nav>
+<!-- Visual 35mm Ticks (Frames the whole view) -->
+<div class="fixed right-2 top-0 bottom-0 flex flex-col justify-around py-20 pointer-events-none opacity-20">
+<div class="w-1 h-2 bg-on-surface"></div>
+<div class="w-1 h-2 bg-on-surface"></div>
+<div class="w-1 h-2 bg-on-surface"></div>
+<div class="w-1 h-2 bg-on-surface"></div>
+<div class="w-1 h-2 bg-on-surface"></div>
+<div class="w-1 h-2 bg-on-surface"></div>
+<div class="w-1 h-2 bg-on-surface"></div>
+<div class="w-1 h-2 bg-on-surface"></div>
+</div>
+</body></html>
