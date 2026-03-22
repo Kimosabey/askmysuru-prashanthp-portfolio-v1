@@ -1,4 +1,5 @@
 import { Youtube, Instagram, Facebook, Twitter, Pin, ArrowRight, Film } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,11 +10,14 @@ export default function Footer() {
         
         {/* Core Identity */}
         <div className="md:col-span-4 flex flex-col gap-6">
-          <img 
-            src="/AskMysuru_Color.png" 
-            alt="Ask Mysuru Official Logo" 
-            className="h-10 w-auto object-contain transition-all duration-500 dark:brightness-0 dark:invert opacity-80 hover:opacity-100" 
-          />
+          <div className="relative h-10 w-48">
+            <Image 
+              src="/AskMysuru_Color.png" 
+              alt="Ask Mysuru Official Logo" 
+              fill
+              className="object-contain transition-all duration-500 dark:brightness-0 dark:invert opacity-80 hover:opacity-100" 
+            />
+          </div>
           <p className="text-primary-dim font-body text-sm max-w-sm leading-relaxed">
             Pioneering a digital renaissance for Karnataka's history. A curated visual archive where academic rigor seamlessly meets cinematic storytelling.
           </p>
@@ -29,7 +33,7 @@ export default function Footer() {
 
         {/* Studio Portals */}
         <div className="md:col-span-3 md:col-start-7 flex flex-col gap-6">
-          <h4 className="font-label text-xs uppercase tracking-widest text-primary-dim">Studio Ecosystem</h4>
+          <h3 className="font-label text-xs uppercase tracking-widest text-primary-dim">Studio Ecosystem</h3>
           <div className="flex flex-col gap-4">
             <a href="https://askmysuru.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent font-headline italic text-lg transition-colors flex items-center justify-between group">
               AskMysuru.com
@@ -47,7 +51,7 @@ export default function Footer() {
 
         {/* Global Connections */}
         <div className="md:col-span-3 flex flex-col gap-6">
-          <h4 className="font-label text-xs uppercase tracking-widest text-primary-dim">Professional Connect</h4>
+          <h3 className="font-label text-xs uppercase tracking-widest text-primary-dim">Professional Connect</h3>
           <div className="flex flex-col gap-4">
             <a href="mailto:lets@askmysuru.com" className="text-primary hover:text-accent font-headline italic text-lg transition-colors">lets@askmysuru.com</a>
             <a href="tel:+919742974234" className="text-primary hover:text-accent font-headline italic text-lg transition-colors">+91 97429 74234</a>
@@ -74,7 +78,7 @@ export default function Footer() {
       
       {/* Massive Typographic Anchor */}
       <div className="max-w-[1600px] mx-auto mt-24 mb-8 overflow-hidden">
-        <h2 className="text-[clamp(3rem,12vw,14rem)] leading-[0.8] font-headline italic text-primary/5 tracking-tighter text-center select-none block w-full">
+        <h2 className="text-[clamp(3rem,12vw,14rem)] leading-[0.8] font-headline italic text-primary/40 tracking-tighter text-center select-none block w-full">
           DIRECTOR'S VISION
         </h2>
       </div>
@@ -82,10 +86,10 @@ export default function Footer() {
       {/* Technical Film Badge */}
       <div className="w-full border-t border-border pt-8 flex justify-between items-center px-6 md:px-12 relative z-20">
         <div className="h-px bg-border flex-grow hidden md:block"></div>
-        <div className="flex items-center gap-4 opacity-40 px-6 mx-auto md:mx-0">
-          <Film size={12} className="text-primary" />
-          <span className="font-label text-[10px] tracking-[0.4em] uppercase text-primary">35MM DIGITAL PROCESS</span>
-          <Film size={12} className="text-primary" />
+        <div className="flex items-center gap-4 opacity-100 px-6 mx-auto md:mx-0">
+          <Film size={12} className="text-primary-dim" />
+          <span className="font-label text-[10px] tracking-[0.4em] uppercase text-primary-dim">35MM DIGITAL PROCESS</span>
+          <Film size={12} className="text-primary-dim" />
         </div>
         <div className="h-px bg-border flex-grow hidden md:block"></div>
       </div>
