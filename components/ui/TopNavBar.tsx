@@ -43,7 +43,7 @@ export default function TopNavBar() {
       observer = new IntersectionObserver(observerCallback, observerOptions);
       sections.forEach((id) => {
         const el = document.getElementById(id);
-        if (el) observer.observe(el);
+        if (el && observer) observer.observe(el);
       });
     }
 
