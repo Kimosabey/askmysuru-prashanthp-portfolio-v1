@@ -2,6 +2,18 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Label } from "@/components/ui/label";
+import Image from "next/image";
 
 export default function ContactSynergy() {
   return (
@@ -51,10 +63,12 @@ export default function ContactSynergy() {
             <div className="absolute -top-4 -left-4 w-12 h-12 border-t border-l border-border"></div>
             <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b border-r border-border"></div>
             <div className="overflow-hidden aspect-[4/5] bg-surface relative">
-              <img 
+              <Image 
                 className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 mix-blend-luminosity group-hover:mix-blend-normal" 
                 alt="Mysuru Palace at dusk" 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuB__tBX0JVJSYzbI7X9C6fiCmWHCxyikmtXTcyaN3N_H2EqlvnhnnzHqgkDIA-SnWhMHtLGPyKJpyv2jKqpgStYX6s73c8snA6R6Y-U9InYFnclIuRZgIP-aOXKcxrCAhM3Awk59MEv3fFpMzvmSm4pLuAijT1VMpR126vkN3bC_XgRZT24xg8KDE1_thTpKrIl2BKr_tU4h65Fd0SP9gfovWpFNonKzRBjG-UOClOKWIQPTa0gymlqk2ImuqKoZ0cUIkItaDYvog"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
             </div>
@@ -82,32 +96,60 @@ export default function ContactSynergy() {
               
               <form className="grid grid-cols-1 md:grid-cols-2 gap-10" onSubmit={(e) => e.preventDefault()}>
                 <div className="space-y-3">
-                  <label htmlFor="name" className="font-label text-[10px] tracking-widest uppercase text-primary-dim">Full Name</label>
-                  <input id="name" className="w-full bg-transparent border-b border-border py-3 focus:outline-none focus:border-accent transition-colors font-body text-base placeholder:text-primary/40 text-primary" placeholder="Enter your name" type="text" aria-required="true" />
+                  <Label htmlFor="name" className="font-label text-[10px] tracking-widest uppercase text-primary-dim">Full Name</Label>
+                  <Input 
+                    id="name" 
+                    className="w-full bg-transparent border-none border-b border-border rounded-none px-0 py-3 focus-visible:ring-0 focus-visible:border-accent transition-colors font-body text-base placeholder:text-primary/40 text-primary h-auto" 
+                    placeholder="Enter your name" 
+                    type="text" 
+                    required 
+                  />
                 </div>
                 <div className="space-y-3">
-                  <label htmlFor="email" className="font-label text-[10px] tracking-widest uppercase text-primary-dim">Email Address</label>
-                  <input id="email" className="w-full bg-transparent border-b border-border py-3 focus:outline-none focus:border-accent transition-colors font-body text-base placeholder:text-primary/40 text-primary" placeholder="Enter your email" type="email" aria-required="true" />
+                  <Label htmlFor="email" className="font-label text-[10px] tracking-widest uppercase text-primary-dim">Email Address</Label>
+                  <Input 
+                    id="email" 
+                    className="w-full bg-transparent border-none border-b border-border rounded-none px-0 py-3 focus-visible:ring-0 focus-visible:border-accent transition-colors font-body text-base placeholder:text-primary/40 text-primary h-auto" 
+                    placeholder="Enter your email" 
+                    type="email" 
+                    required 
+                  />
                 </div>
                 <div className="md:col-span-2 space-y-3">
-                  <label htmlFor="project_type" className="font-label text-[10px] tracking-widest uppercase text-primary-dim">Project Classification</label>
-                  <select id="project_type" className="w-full bg-transparent border-b border-border py-3 focus:outline-none focus:border-accent transition-colors font-body text-base cursor-pointer text-primary appearance-none">
-                    <option className="bg-surface text-primary">Commercial Film</option>
-                    <option className="bg-surface text-primary">Fine Art Photography</option>
-                    <option className="bg-surface text-primary">Editorial / Journal</option>
-                    <option className="bg-surface text-primary">Directorial Collaboration</option>
-                  </select>
+                  <Label htmlFor="project_type" className="font-label text-[10px] tracking-widest uppercase text-primary-dim">Project Classification</Label>
+                  <Select>
+                    <SelectTrigger id="project_type" className="w-full bg-transparent border-none border-b border-border rounded-none px-0 py-3 focus-visible:ring-0 focus:ring-0 focus:border-accent transition-colors font-body text-base text-primary h-auto text-left shadow-none outline-none">
+                      <SelectValue placeholder="Select classification" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-surface border-border">
+                      <SelectItem value="commercial">Commercial Film</SelectItem>
+                      <SelectItem value="fine-art">Fine Art Photography</SelectItem>
+                      <SelectItem value="editorial">Editorial / Journal</SelectItem>
+                      <SelectItem value="collaboration">Directorial Collaboration</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 <div className="md:col-span-2 space-y-3">
-                  <label htmlFor="message" className="font-label text-[10px] tracking-widest uppercase text-primary-dim">Vision & Details</label>
-                  <textarea id="message" className="w-full bg-transparent border-b border-border py-3 focus:outline-none focus:border-accent transition-colors font-body text-base placeholder:text-primary/40 resize-none h-32 text-primary" placeholder="Briefly describe your vision..." aria-required="true"></textarea>
+                  <Label htmlFor="message" className="font-label text-[10px] tracking-widest uppercase text-primary-dim">Vision & Details</Label>
+                  <Textarea 
+                    id="message" 
+                    className="w-full bg-transparent border-none border-b border-border rounded-none px-0 py-3 focus-visible:ring-0 focus-visible:border-accent transition-colors font-body text-base placeholder:text-primary/40 resize-none h-32 text-primary shadow-none" 
+                    placeholder="Briefly describe your vision..." 
+                    required 
+                  />
                 </div>
                 <div className="md:col-span-2 pt-8 flex flex-col md:flex-row gap-8 items-center justify-between">
-                  <button className="w-full md:w-1/2 bg-primary text-background px-12 py-5 rounded-sm font-label tracking-widest text-[11px] font-bold hover:bg-accent hover:text-primary transition-all focus-visible:outline-2 focus-visible:outline-accent" type="submit">
+                  <Button 
+                    className="w-full md:w-1/2 bg-primary text-background h-auto py-5 rounded-sm font-label tracking-widest text-[11px] font-bold hover:bg-accent hover:text-primary transition-all shadow-cinematic" 
+                    type="submit"
+                  >
                     SUBMIT INQUIRY
-                  </button>
+                  </Button>
                   <div className="w-full md:w-px h-px md:h-12 bg-border"></div>
-                  <a href="tel:+919742974234" className="w-full md:w-auto flex justify-center items-center gap-3 text-primary-dim hover:text-primary transition-colors font-label text-[11px] tracking-widest uppercase group px-6 py-5 border border-border rounded-sm hover:border-border-hover">
+                  <a 
+                    href="tel:+919742974234" 
+                    className="w-full md:w-auto flex justify-center items-center gap-3 text-primary-dim hover:text-primary transition-colors font-label text-[11px] tracking-widest uppercase group px-6 py-5 border border-border rounded-sm hover:border-border-hover"
+                  >
                     <Phone size={16} className="group-hover:scale-110 transition-transform" />
                     CALL DIRECTLY
                   </a>

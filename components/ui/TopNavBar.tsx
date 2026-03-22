@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Menu, X, ArrowRight, Instagram, Youtube, Twitter } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import Image from "next/image";
 
 export default function TopNavBar() {
   const pathname = usePathname();
@@ -61,7 +62,6 @@ export default function TopNavBar() {
     { name: "Units", href: "/units", external: false },
     { name: "Awards", href: "/certificates", external: false },
     { name: "Ecosystem", href: "/clients", external: false },
-    { name: "Contact", href: "/contact", external: false },
   ];
 
   const menuVariants: Variants = {
@@ -126,11 +126,14 @@ export default function TopNavBar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Link href="/" className="group relative flex items-center gap-4">
+            <Link href="/" aria-label="Home" className="group relative flex items-center gap-4">
               <div className="relative w-10 h-10 md:w-12 md:h-12 overflow-hidden rounded-sm border border-border group-hover:border-accent transition-all duration-500">
-                <img 
+                <Image 
                   src="/AskMysuru_Color.png" 
                   alt="AskMysuru Logo" 
+                  width={48}
+                  height={48}
+                  priority
                   className="w-full h-full object-contain p-1 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-700"
                 />
               </div>
@@ -206,7 +209,7 @@ export default function TopNavBar() {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 bg-background text-primary z-[55] flex flex-col pt-32 px-8 overflow-hidden"
+            className="fixed inset-0 bg-background text-primary z-[55] flex flex-col pt-24 px-8 overflow-y-auto"
           >
             {/* Background Texture */}
             <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
@@ -243,9 +246,9 @@ export default function TopNavBar() {
               <div className="flex flex-col gap-4">
                 <span className="font-label text-[10px] tracking-widest text-primary-dim uppercase">Follow</span>
                 <div className="flex gap-6">
-                  <a href="#" className="hover:text-accent transition-colors"><Instagram size={18} /></a>
-                  <a href="#" className="hover:text-accent transition-colors"><Youtube size={18} /></a>
-                  <a href="#" className="hover:text-accent transition-colors"><Twitter size={18} /></a>
+                  <a href="#" aria-label="Instagram" className="hover:text-accent transition-colors"><Instagram size={18} /></a>
+                  <a href="#" aria-label="YouTube" className="hover:text-accent transition-colors"><Youtube size={18} /></a>
+                  <a href="#" aria-label="Twitter" className="hover:text-accent transition-colors"><Twitter size={18} /></a>
                 </div>
               </div>
             </motion.div>

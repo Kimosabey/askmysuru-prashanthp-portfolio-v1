@@ -14,9 +14,9 @@ export default function CinematicButton({ children, onClick, className = "", var
   const baseStyles = "relative group overflow-hidden px-8 py-4 font-label text-[10px] uppercase tracking-[0.3em] font-bold transition-all duration-500 ease-out rounded-sm";
   
   const variants = {
-    primary: "bg-accent text-white border border-accent hover:border-accent",
-    secondary: "bg-surface-elevated text-primary border border-border hover:border-accent",
-    outline: "bg-transparent text-primary border border-primary/20 hover:border-accent"
+    primary: "bg-accent text-white border border-accent hover:border-accent group-hover:text-primary",
+    secondary: "bg-surface-elevated text-primary border border-border hover:border-accent group-hover:text-background",
+    outline: "bg-transparent text-primary border border-primary/20 hover:border-accent group-hover:text-background"
   };
 
   return (
