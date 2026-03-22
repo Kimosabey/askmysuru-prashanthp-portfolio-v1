@@ -1,10 +1,12 @@
 "use client";
 
-import { motion, AnimatePresence, useScroll, useTransform, useVelocity, useSpring } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence, useScroll, useTransform, useVelocity, useSpring, Variants } from "framer-motion";
 import { Play } from "lucide-react";
 import CinematicButton from "@/components/ui/CinematicButton";
 
 export default function IdentityHero() {
+  const [hasLoadedBefore, setHasLoadedBefore] = useState(false);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 400 });
@@ -12,25 +14,30 @@ export default function IdentityHero() {
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
-  const containerVariants = {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setHasLoadedBefore(!!sessionStorage.getItem("portfolio-loaded"));
+    }
+  }, []);
+
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 2.8, // Wait for Preloader shutter to clear
+        delayChildren: hasLoadedBefore ? 0.2 : 2.8,
       },
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
   return (
     <section className="relative h-screen min-h-[750px] flex flex-col items-center justify-center pt-[100px] lg:pt-[120px] overflow-hidden bg-background px-6">
-      {/* Background elements */}
       <div className="absolute inset-0 opacity-[0.03] z-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] dark:opacity-[0.05]"></div>
       <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,transparent_0%,var(--color-background)_100%)] opacity-40"></div>
 
@@ -73,7 +80,6 @@ export default function IdentityHero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -84,7 +90,6 @@ export default function IdentityHero() {
         <div className="w-px h-16 md:h-24 bg-gradient-to-b from-primary to-transparent"></div>
       </motion.div>
 
-      {/* Frame Corners */}
       <div className="absolute top-32 left-8 md:top-40 md:left-12 w-8 h-8 md:w-16 md:h-16 border-t border-l border-border hidden sm:block pointer-events-none"></div>
       <div className="absolute top-32 right-8 md:top-40 md:right-12 w-8 h-8 md:w-16 md:h-16 border-t border-r border-border hidden sm:block pointer-events-none"></div>
       <div className="absolute bottom-8 right-8 md:bottom-12 md:right-12 w-8 h-8 md:w-16 md:h-16 border-b border-r border-border hidden sm:block pointer-events-none"></div>

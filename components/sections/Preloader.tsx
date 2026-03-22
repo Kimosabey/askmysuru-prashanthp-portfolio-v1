@@ -9,12 +9,8 @@ export default function Preloader() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const hasLoaded = sessionStorage.getItem("portfolio-loaded");
-    if (hasLoaded) {
-      setIsLoading(false);
-      setHasCheckedSession(true);
-      return;
-    }
+    // We removed the session check here so the preloader shows on every home page visit/reload
+    // as per user request.
 
     // Simulate organic loading progress
     const interval = setInterval(() => {
@@ -40,7 +36,7 @@ export default function Preloader() {
     };
   }, []);
 
-  if (hasCheckedSession && !isLoading && typeof window !== 'undefined' && sessionStorage.getItem("portfolio-loaded")) {
+  if (hasCheckedSession && !isLoading) {
     return null;
   }
 
