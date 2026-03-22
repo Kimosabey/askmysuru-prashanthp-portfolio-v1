@@ -20,7 +20,7 @@ export default function IdentityHero() {
   };
 
   return (
-    <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-background px-6">
+    <section className="relative h-screen min-h-[750px] flex flex-col items-center justify-center pt-[100px] lg:pt-[120px] overflow-hidden bg-background px-6">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-[0.03] z-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
       <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]"></div>
