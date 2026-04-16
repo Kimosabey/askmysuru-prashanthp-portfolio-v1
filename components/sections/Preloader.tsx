@@ -72,7 +72,7 @@ export default function Preloader() {
             initial={{ y: "100%" }}
             animate={{ y: isLoading ? "0%" : "-100%" }}
             transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-            className="font-headline italic text-5xl md:text-7xl tracking-tighter text-white"
+            className="font-headline italic text-3xl md:text-5xl lg:text-7xl tracking-tighter text-white"
           >
             Prashanth P.
           </motion.h1>

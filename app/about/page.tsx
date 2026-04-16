@@ -2,7 +2,7 @@ import { Award, Youtube, ArrowRight, Users, Camera, Instagram } from "lucide-rea
 
 export default function AboutPage() {
   return (
-    <main className="pt-48 pb-20 bg-background overflow-hidden relative">
+    <main className="pt-28 md:pt-48 pb-20 bg-background relative">
       {/* Section 1: The Visionary Founder */}
       <section className="px-6 md:px-12 mb-32 max-w-[1600px] mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
@@ -10,10 +10,10 @@ export default function AboutPage() {
             <span className="font-label text-[10px] text-accent tracking-[0.4em] uppercase block mb-6">Media House Builder & Visionary</span>
             <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl italic leading-[0.9] tracking-tighter text-primary mb-8 drop-shadow-cinematic">
               Prashanth P. <br/>
-              <span className="text-primary-dim font-light not-italic text-3xl md:text-5xl lg:text-6xl tracking-tight">Founder of Ask Mysuru & Political360</span>
+              <span className="text-primary-dim font-light not-italic text-3xl md:text-5xl lg:text-6xl tracking-tight">Founder of Ask Mysuru</span>
             </h1>
             <p className="font-body text-lg md:text-xl text-primary-dim max-w-2xl leading-relaxed mb-10">
-              A Bengaluru–Mysuru-based digital media entrepreneur and heritage documentarian. Prashanth has engineered two distinct, full-scale independent media brands, bridging the gap between historical preservation and modern political discourse.
+              A Bengaluru–Mysuru-based digital media entrepreneur and heritage documentarian. Prashanth has engineered a full-scale independent media brand dedicated to preserving and archiving Karnataka's rich cultural and historical legacy.
             </p>
             <p className="font-headline italic text-2xl md:text-3xl text-accent-dim">
               "ದಾಖಲಿಸದ ಇತಿಹಾಸವು ಅಳಿಸಿಹೋಗುತ್ತದೆ." <span className="font-body text-sm not-italic opacity-60 ml-4 font-light text-primary">(Unrecorded history is lost.)</span>
@@ -59,7 +59,7 @@ export default function AboutPage() {
             <div className="relative z-10 p-8 md:p-12">
               <span className="font-label text-[10px] tracking-[0.2em] uppercase bg-primary text-background px-3 py-1.5 mb-6 inline-block font-bold">15 EPISODES</span>
               <h3 className="font-headline text-4xl md:text-6xl italic text-primary mb-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">The Srirangapatna Series</h3>
-              <p className="font-body text-primary-dim max-w-md text-sm md:text-base leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">An exhaustive visual chronicle of Tipu Sultan's capital and its spiritual lineage.</p>
+              <p className="font-body text-primary-dim max-w-md text-sm md:text-base leading-relaxed md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">An exhaustive visual chronicle of Tipu Sultan's capital and its spiritual lineage.</p>
             </div>
           </div>
 
@@ -74,7 +74,7 @@ export default function AboutPage() {
             <div className="relative z-10 p-8 md:p-12">
               <span className="font-label text-[10px] tracking-[0.2em] uppercase border border-border px-3 py-1.5 mb-6 inline-block text-primary">BANDIPUR CONSERVATION</span>
               <h3 className="font-headline text-3xl md:text-5xl italic text-primary mb-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">Wildlife & Conservation</h3>
-              <p className="font-body text-primary-dim text-sm md:text-base leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">Exploring tiger conservation efforts and the delicate balance of the Western Ghats forests in Bandipur.</p>
+              <p className="font-body text-primary-dim text-sm md:text-base leading-relaxed md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">Exploring tiger conservation efforts and the delicate balance of the Western Ghats forests in Bandipur.</p>
             </div>
           </div>
 
@@ -107,11 +107,11 @@ export default function AboutPage() {
       </section>
 
       {/* Section 3: The Heritage Recognition */}
-      <section className="bg-surface py-32 md:py-48 mb-32 relative border-y border-border">
+      <section className="bg-surface py-16 md:py-32 lg:py-48 mb-32 relative border-y border-border">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-accent/0 to-accent"></div>
         <div className="px-6 max-w-screen-2xl mx-auto text-center relative z-10">
           <span className="font-label text-[10px] text-accent tracking-[0.4em] mb-8 block uppercase">Distinction & Honor</span>
-          <h2 className="font-headline text-5xl md:text-7xl lg:text-8xl italic text-primary mb-12 drop-shadow-cinematic">Nalwadi Raja Venkatappa Nayaka Award</h2>
+          <h2 className="font-headline text-3xl md:text-5xl lg:text-7xl italic text-primary mb-12 drop-shadow-cinematic">Nalwadi Raja Venkatappa Nayaka Award</h2>
           
 <div className="inline-flex items-center justify-center gap-8 mb-20 opacity-40">
   <div className="w-16 h-px bg-primary"></div>
@@ -138,7 +138,7 @@ export default function AboutPage() {
             <div>
               <Youtube size={48} className="text-[#FF0000] mb-8" />
               <h4 className="font-headline text-4xl italic mb-2 text-primary">YouTube</h4>
-              <div className="text-4xl lg:text-5xl font-black text-primary mb-4 tracking-tighter">63.4K+ <span className="text-xs font-label uppercase tracking-widest opacity-40 block mt-2 text-primary-dim font-light">Subscribers // 450+ Productions</span></div>
+              <div className="text-2xl md:text-4xl lg:text-5xl font-black text-primary mb-4 tracking-tighter">63.4K+ <span className="text-xs font-label uppercase tracking-widest opacity-40 block mt-2 text-primary-dim font-light">Subscribers // 450+ Productions</span></div>
             </div>
             <div className="inline-flex items-center gap-3 font-label text-[10px] uppercase tracking-[0.2em] font-bold text-primary-dim group-hover:text-primary group-hover:gap-5 transition-all mt-12">
               VISIT CHANNEL <ArrowRight size={14} />
@@ -150,7 +150,7 @@ export default function AboutPage() {
             <div className="relative z-10">
               <Users size={48} className="mb-8 opacity-90" />
               <h4 className="font-headline text-4xl italic mb-2">Community Reach</h4>
-              <div className="text-5xl lg:text-6xl font-black mb-4 tracking-tighter">160K+</div>
+              <div className="text-3xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tighter">160K+</div>
               <p className="font-body text-sm opacity-80 leading-relaxed font-semibold">Total engaged audience across Instagram, Facebook, and Twitter.</p>
             </div>
             <div className="h-1 bg-background/20 w-full mt-12 overflow-hidden relative z-10">
@@ -177,18 +177,33 @@ export default function AboutPage() {
           <h2 className="font-label text-[10px] text-primary-dim text-center tracking-[0.4em] mb-20 uppercase">ESTEEMED COLLABORATORS</h2>
           <div className="flex flex-wrap justify-center items-center gap-16 md:gap-32">
             <div className="flex flex-col items-center gap-4 group">
-              <span className="font-headline text-3xl md:text-4xl text-primary opacity-60 group-hover:opacity-100 transition-opacity">Raja Sri Krishnadevaraya</span>
-              <div className="text-[10px] uppercase tracking-[0.2em] text-accent opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all font-bold">Royal Heritage Advisory</div>
+              <span className="font-headline text-2xl md:text-3xl lg:text-4xl text-primary opacity-60 group-hover:opacity-100 transition-opacity break-words text-center">Raja Sri Krishnadevaraya</span>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-accent md:opacity-0 md:translate-y-2 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all font-bold">Royal Heritage Advisory</div>
             </div>
             <div className="flex flex-col items-center gap-4 group">
-              <span className="font-headline text-4xl md:text-5xl font-black tracking-widest text-primary uppercase opacity-60 group-hover:opacity-100 transition-opacity">P2 ADD AGENCY</span>
-              <div className="text-[10px] uppercase tracking-[0.2em] text-accent opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all font-bold">Creative Production Partner</div>
+              <span className="font-headline text-2xl md:text-4xl lg:text-5xl font-black tracking-widest text-primary uppercase opacity-60 group-hover:opacity-100 transition-opacity break-words text-center">P2 ADD AGENCY</span>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-accent md:opacity-0 md:translate-y-2 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all font-bold">Creative Production Partner</div>
             </div>
             <div className="flex flex-col items-center gap-4 group">
               <img src="/AskMysuru_Color.png" alt="Ask Mysuru" className="h-10 md:h-12 filter brightness-0 invert opacity-60 group-hover:opacity-100 transition-opacity object-contain" />
-              <div className="text-[10px] uppercase tracking-[0.2em] text-accent opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all font-bold">Founding Media Platform</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-accent md:opacity-0 md:translate-y-2 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all font-bold">Founding Media Platform</div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Section: Download Profile */}
+      <section className="px-6 md:px-12 py-24 max-w-[1600px] mx-auto relative z-10 border-t border-border">
+        <div className="text-center">
+          <h3 className="font-headline text-3xl md:text-4xl italic text-primary mb-6">Full Credentials & Profile</h3>
+          <p className="font-body text-primary-dim max-w-xl mx-auto mb-12 leading-relaxed">Access comprehensive documentation of heritage initiatives, awards, and professional background.</p>
+          <a 
+            href="/Prashanth_P_Profile.pdf" 
+            download="Prashanth_P_Profile.pdf"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-accent text-primary rounded-sm font-label text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-accent-dim transition-all shadow-lg"
+          >
+            📄 DOWNLOAD FULL PROFILE PDF
+          </a>
         </div>
       </section>
     </main>

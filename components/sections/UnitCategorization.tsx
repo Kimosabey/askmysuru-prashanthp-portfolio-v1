@@ -32,12 +32,12 @@ export default function UnitCategorization() {
             <motion.div
               key={i}
               whileHover={{ y: -8 }}
-              className="relative aspect-[3/4] bg-surface-elevated border border-border p-6 flex flex-col justify-end group overflow-hidden rounded-2xl transition-all duration-500 hover:border-accent/40"
+              className="relative aspect-[3/4] bg-surface-elevated border border-border p-4 md:p-6 flex flex-col justify-end group overflow-hidden rounded-2xl transition-all duration-500 hover:border-accent/40"
             >
               <div className={`absolute top-0 right-0 w-16 h-16 ${unit.color} opacity-10 group-hover:opacity-30 transition-opacity blur-2xl`}></div>
               <span className="font-label text-[10px] text-primary-dim mb-2">{unit.id}</span>
               <h3 className="font-headline text-2xl italic text-primary mb-2">{unit.name}</h3>
-              <p className="font-body text-[9px] uppercase tracking-widest text-primary-dim opacity-0 group-hover:opacity-100 transition-opacity duration-500">{unit.description}</p>
+              <p className="font-body text-[9px] uppercase tracking-widest text-primary-dim md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">{unit.description}</p>
               
               {/* Cinematic Corner Mark */}
               <div className={`absolute top-4 left-4 w-2 h-2 border-t border-l border-white/20`}></div>

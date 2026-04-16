@@ -15,13 +15,10 @@ import BTSArsenal from "@/components/sections/BTSArsenal";
 import PhotoGallery from "@/components/sections/PhotoGallery";
 import SocialConnectivity from "@/components/sections/SocialConnectivity";
 import ContactSynergy from "@/components/sections/ContactSynergy";
-import { useScroll } from "framer-motion";
 
 export default function Home() {
-  const { scrollY } = useScroll();
-
   return (
-    <main className="relative bg-background w-full min-h-screen overflow-hidden">
+    <main className="relative bg-background w-full min-h-screen">
       <Preloader />
       
       <div id="scroll-container" className="relative w-full z-10 origin-center">

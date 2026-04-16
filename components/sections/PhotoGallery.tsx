@@ -57,7 +57,7 @@ export default function PhotoGallery() {
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+              <div className="absolute inset-0 bg-black/40 md:opacity-0 md:group-hover:opacity-100 transition-opacity flex items-end p-6">
                 <span className="font-label text-[8px] uppercase tracking-widest text-white border-l border-accent pl-2">{photo.category}</span>
               </div>
             </motion.div>

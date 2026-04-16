@@ -20,7 +20,7 @@ export default function NotFound() {
 
       <div className="relative z-10 text-center px-4">
         <span className="text-primary font-label text-sm tracking-[0.5em] uppercase block mb-4">Error 404</span>
-        <h1 className="text-6xl md:text-9xl font-headline italic mb-6">The Lost Path</h1>
+        <h1 className="text-4xl md:text-6xl lg:text-9xl font-headline italic mb-6">The Lost Path</h1>
         
         <p className="text-xl font-body text-on-surface-variant max-w-md mx-auto mb-2 italic">
           "This frame was left on the cutting room floor."

@@ -33,14 +33,10 @@ export default function Footer() {
 
         {/* Studio Portals */}
         <div className="md:col-span-3 md:col-start-7 flex flex-col gap-6">
-          <h3 className="font-label text-xs uppercase tracking-widest text-primary-dim">Studio Ecosystem</h3>
+          <h3 className="font-label text-xs uppercase tracking-widest text-primary-dim">Studio Portal</h3>
           <div className="flex flex-col gap-4">
             <a href="https://askmysuru.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent font-headline italic text-lg transition-colors flex items-center justify-between group">
               AskMysuru.com
-              <ArrowRight size={16} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-            </a>
-            <a href="https://political360.in/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent font-headline italic text-lg transition-colors flex items-center justify-between group">
-              Political360.in
               <ArrowRight size={16} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
             </a>
             <div className="text-primary-dim font-headline italic text-lg opacity-50 cursor-not-allowed">
@@ -65,11 +61,8 @@ export default function Footer() {
               <a href="https://facebook.com/askmysuru" target="_blank" rel="noopener noreferrer" className="bg-surface-elevated hover:bg-border p-2.5 rounded-full transition-colors flex items-center justify-center" aria-label="Facebook">
                 <Facebook size={16} className="text-primary" />
               </a>
-              <a href="https://twitter.com/360_political" target="_blank" rel="noopener noreferrer" className="bg-surface-elevated hover:bg-border p-2.5 rounded-full transition-colors flex items-center justify-center" aria-label="Twitter">
+              <a href="https://twitter.com/ask_mysuru" target="_blank" rel="noopener noreferrer" className="bg-surface-elevated hover:bg-border p-2.5 rounded-full transition-colors flex items-center justify-center" aria-label="Twitter">
                 <Twitter size={16} className="text-primary" />
-              </a>
-              <a href="https://pinterest.com/political360" target="_blank" rel="noopener noreferrer" className="bg-surface-elevated hover:bg-border p-2.5 rounded-full transition-colors flex items-center justify-center" aria-label="Pinterest">
-                <Pin size={16} className="text-primary" />
               </a>
             </div>
           </div>
@@ -84,7 +77,7 @@ export default function Footer() {
       </div>
 
       {/* Technical Film Badge */}
-      <div className="w-full border-t border-border pt-8 flex justify-between items-center px-6 md:px-12 relative z-20">
+      <div className="w-full border-t border-border pt-8 flex flex-wrap justify-center md:justify-between items-center gap-4 px-6 md:px-12 relative z-20">
         <div className="h-px bg-border flex-grow hidden md:block"></div>
         <div className="flex items-center gap-4 opacity-100 px-6 mx-auto md:mx-0">
           <Film size={12} className="text-primary-dim" />

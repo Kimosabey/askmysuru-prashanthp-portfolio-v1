@@ -1,15 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence, useScroll, useTransform, useVelocity, useSpring, Variants } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { Play } from "lucide-react";
 import CinematicButton from "@/components/ui/CinematicButton";
+import { Spotlight } from "@/components/effects/Spotlight";
+import { GradientText } from "@/components/effects/GradientText";
 
 export default function IdentityHero() {
   const [hasLoadedBefore, setHasLoadedBefore] = useState(false);
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const y1 = useTransform(scrollY, [0, 500], [0, 120]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -34,7 +35,11 @@ export default function IdentityHero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 md:pt-[160px] lg:pt-[180px] overflow-hidden bg-background px-6 md:px-12">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 md:pt-[160px] lg:pt-[180px] overflow-hidden bg-background px-6 md:px-12" id="vision">
+      {/* Spotlight effect */}
+      <Spotlight className="absolute top-0 left-1/4" />
+      <Spotlight className="absolute top-1/2 right-0" fill="#1d4ed8" />
+
       <div className="absolute inset-0 opacity-[0.03] z-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] dark:opacity-[0.05]"></div>
       <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,transparent_0%,var(--color-background)_100%)] opacity-40"></div>
 
@@ -43,11 +48,11 @@ export default function IdentityHero() {
         variants={containerVariants}
         initial="hidden"
         animate="show"
-        style={{ y: y1, opacity }}
+        style={{ y: y1 }}
       >
         <motion.div variants={itemVariants} className="flex flex-col gap-6 items-center">
-          <span className="font-label text-[10px] md:text-xs uppercase tracking-[0.4em] text-accent font-bold">The Media House Builder's Dossier</span>
-          <h1 className="fluid-h1 font-headline italic leading-[0.85] text-primary drop-shadow-cinematic py-4">Visionary <br/> Direction.</h1>
+          <span className="font-label text-[10px] md:text-xs uppercase tracking-[0.4em] text-accent font-bold">Digital Media & Content Agency</span>
+          <h1 className="fluid-h1 font-headline italic leading-[0.85] text-primary drop-shadow-cinematic py-4">Mysuru's Leading <br/> Digital Media Agency.</h1>
         </motion.div>
         
         <motion.div variants={itemVariants} className="flex flex-col gap-8 max-w-sm">
@@ -56,7 +61,7 @@ export default function IdentityHero() {
             <span className="font-label text-[10px] tracking-[0.3em] uppercase text-primary-dim">Media Franchise Core</span>
           </div>
           <p className="font-body text-base md:text-lg text-primary-dim leading-relaxed">
-            Founder of <span className="text-primary font-medium">Ask Mysuru</span> & <span className="text-primary font-medium">Political360</span>. Architect of heritage and political media ecosystems across Karnataka.
+            We create powerful videos, cover iconic events, and help brands grow online. Pioneering digital heritage documentation across Karnataka.
           </p>
           <div className="flex items-center gap-6 pt-4 mx-auto">
             <div className="flex flex-col items-center">
@@ -71,7 +76,7 @@ export default function IdentityHero() {
           className="flex flex-col md:flex-row items-center justify-center gap-12 mt-4"
         >
           <CinematicButton>
-            Explore History
+            View Our Work
             <Play size={14} className="fill-current" />
           </CinematicButton>
         </motion.div>

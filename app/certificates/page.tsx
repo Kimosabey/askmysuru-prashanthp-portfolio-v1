@@ -9,7 +9,7 @@ export default function CertificatesPage() {
       <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-24">
           <span className="font-label text-[10px] uppercase tracking-[0.5em] text-accent mb-6 block">Prestigious Accolades</span>
-          <h1 className="font-headline text-6xl md:text-8xl italic text-primary mb-8 leading-[0.9]">Awards & Distinctions</h1>
+          <h1 className="font-headline text-4xl md:text-6xl lg:text-8xl italic text-primary mb-8 leading-[0.9]">Awards & Distinctions</h1>
           <div className="w-24 h-[1px] bg-accent mx-auto"></div>
         </div>
         
@@ -71,6 +71,17 @@ export default function CertificatesPage() {
                 <span className="block font-label text-[10px] text-primary-dim uppercase tracking-widest">Category</span>
                 <span className="font-body text-primary text-sm">Heritage Documentation</span>
               </div>
+            </div>
+
+            <div className="pt-6 mt-6 border-t border-border">
+              <a 
+                href="/Prashanth_P_Profile.pdf" 
+                download="Prashanth_P_Profile.pdf"
+                className="inline-flex items-center gap-3 px-6 py-4 bg-accent text-primary rounded-sm font-label text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-accent-dim transition-all shadow-lg hover:shadow-xl"
+              >
+                <BookOpen size={16} />
+                DOWNLOAD PROFILE & CREDENTIALS
+              </a>
             </div>
           </div>
         </div>

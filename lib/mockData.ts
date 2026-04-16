@@ -90,12 +90,6 @@ export const MOCK_PROJECTS: Project[] = [
   }
 ];
 
-export const politicalChronicles = [
-  { title: "Karnataka Legislative Assembly LIVE", date: "March 18, 2026", category: "Governance" },
-  { title: "The Chalavadi Narayanaswamy Interview", date: "March 14, 2026", category: "Exclusive" },
-  { title: "Panchayat to Parliament: Election 2026 Roadmap", date: "Feb 2026", category: "Editorial" }
-];
-
 export const gearList = [
   { name: "ARRI Alexa Mini LF", category: "Primary A-Cam", usage: "Main cinematic capture unit" },
   { name: "Sony Venice 2", category: "B-Cam", usage: "Low-light & anamorphic scenes" },

@@ -14,7 +14,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
   return (
     <main className="relative pt-20 bg-background text-primary">
       {/* Hero Header */}
-      <section className="relative h-screen min-h-[700px] overflow-hidden flex items-end px-6 pb-24 md:px-12 md:pb-32 max-w-[1600px] mx-auto">
+      <section className="relative h-screen min-h-[400px] md:min-h-[700px] overflow-hidden flex items-end px-6 pb-24 md:px-12 md:pb-32 max-w-[1600px] mx-auto">
         <div className="absolute inset-0 z-0">
           <div 
             className="w-full h-full object-cover grayscale brightness-50 bg-cover bg-center transition-all" 

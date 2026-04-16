@@ -1,4 +1,6 @@
-import { Film, Star, Camera, Aperture, Video } from "lucide-react";
+"use client";
+
+import { AnimatedCounter } from "@/components/effects/AnimatedCounter";
 
 export default function AuthorityImpact() {
   return (
@@ -10,12 +12,14 @@ export default function AuthorityImpact() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32">
+          <AnimatedCounter 
+            value={160000} 
+            label="Engaged Community Reach" 
+            suffix="+"
+            duration={2500}
+          />
           <div className="flex flex-col items-center text-center">
-            <span className="text-7xl font-headline tracking-tighter text-primary mb-2">160K+</span>
-            <span className="text-[10px] font-label tracking-[0.4em] uppercase text-primary-dim">Engaged Community Reach</span>
-          </div>
-          <div className="flex flex-col items-center text-center">
-            <span className="text-7xl font-headline tracking-tighter text-primary mb-2">2025</span>
+            <span className="text-4xl md:text-7xl font-headline tracking-tighter text-primary mb-2">2025</span>
             <span className="text-[10px] font-label tracking-[0.4em] uppercase text-primary-dim text-accent font-bold">Nalwadi Raja Venkatappa Nayaka Award</span>
           </div>
         </div>
@@ -23,9 +27,6 @@ export default function AuthorityImpact() {
         <div className="flex flex-wrap justify-center items-center gap-16 md:gap-24 opacity-60">
           <div className="text-sm font-bold tracking-[0.3em] font-label flex items-center gap-2 text-primary">
             ASK MYSURU
-          </div>
-          <div className="text-sm font-bold tracking-[0.3em] font-label flex items-center gap-2 text-primary">
-            POLITICAL 360
           </div>
           <div className="text-sm font-bold tracking-[0.3em] font-label flex items-center gap-2 text-primary">
             P2 ADD AGENCY

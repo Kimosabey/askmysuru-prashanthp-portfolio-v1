@@ -47,10 +47,6 @@ export default function ContactSynergy() {
                 <span className="font-label text-[9px] uppercase tracking-widest text-accent">Inquiries</span>
                 <a href="mailto:lets@askmysuru.com" className="font-body text-sm text-primary hover:text-accent transition-colors">lets@askmysuru.com</a>
               </div>
-              <div className="flex flex-col gap-1">
-                <span className="font-label text-[9px] uppercase tracking-widest text-accent">Business</span>
-                <a href="mailto:contact@political360.in" className="font-body text-sm text-primary hover:text-accent transition-colors">contact@political360.in</a>
-              </div>
             </div>
             <div className="flex flex-wrap gap-6">
               <a href="https://askmysuru.com" target="_blank" rel="noopener noreferrer" className="bg-accent text-primary px-10 py-5 rounded-sm font-label tracking-widest text-[11px] font-bold hover:scale-105 transition-all flex items-center gap-3">
@@ -83,7 +79,7 @@ export default function ContactSynergy() {
       </section>
 
       {/* Section: Contact & Form */}
-      <section className="relative py-32 overflow-hidden bg-surface border-t border-border w-full">
+      <section className="relative py-16 md:py-32 overflow-hidden bg-surface border-t border-border w-full">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
           <div className="text-center mb-20">
             <h2 className="font-headline text-4xl md:text-5xl italic mb-4 text-primary">Professional Inquiries</h2>

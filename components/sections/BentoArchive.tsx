@@ -30,10 +30,10 @@ export default function BentoArchive() {
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
             className={`relative group overflow-hidden glass-card hover:border-accent transition-colors duration-500 ${
-              index === 0 ? "md:col-span-8 md:row-span-1 h-[450px] md:h-auto" : 
-              index === 1 ? "md:col-span-4 md:row-span-2 h-[450px] md:h-auto" :
-              index === 2 ? "md:col-span-4 md:row-span-1 h-[450px] md:h-auto" :
-              "md:col-span-4 md:row-span-1 h-[450px] md:h-auto"
+              index === 0 ? "md:col-span-8 md:row-span-1 h-[300px] md:h-auto" : 
+              index === 1 ? "md:col-span-4 md:row-span-2 h-[300px] md:h-auto" :
+              index === 2 ? "md:col-span-4 md:row-span-1 h-[300px] md:h-auto" :
+              "md:col-span-4 md:row-span-1 h-[300px] md:h-auto"
             }`}
           >
             <Link href={`/project/${project.id}`} className="absolute inset-0 z-20">
@@ -49,7 +49,7 @@ export default function BentoArchive() {
             />
             
             <div className="absolute inset-x-0 bottom-0 p-8 z-10 bg-gradient-to-t from-background via-background/40 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
-              <div className="flex items-center gap-3 mb-4 opacity-0 group-hover:opacity-100 transition-opacity delay-100">
+              <div className="flex items-center gap-3 mb-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity delay-100">
                 <span className="font-label text-[9px] tracking-widest text-accent uppercase font-bold px-2 py-0.5 border border-accent/40">{project.category}</span>
                 <div className="h-px w-8 bg-accent/40"></div>
               </div>

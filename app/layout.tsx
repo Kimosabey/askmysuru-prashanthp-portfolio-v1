@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_Kannada, Geist, Outfit, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
-import FilmStripProgress from "@/components/ui/FilmStripProgress";
-import TopNavBar from "@/components/ui/TopNavBar";
-import CmdKSearch from "@/components/ui/CmdKSearch";
-import SimpleCursor from "@/components/ui/SimpleCursor";
 import Footer from "@/components/ui/Footer";
 import { ProductionProviders } from "@/components/providers/ProductionProviders";
 import { cn } from "@/lib/utils";

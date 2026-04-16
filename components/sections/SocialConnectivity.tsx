@@ -14,15 +14,6 @@ const socialFeeds = [
     description: "Daily heritage archives & cultural visual still series."
   },
   {
-    brand: "Political360",
-    platform: "Facebook",
-    handle: "political360.in",
-    url: "https://facebook.com/political360",
-    icon: <Facebook size={20} />,
-    color: "from-blue-600/20 to-blue-400/20",
-    description: "Deep-dives into Karnataka's democratic landscape."
-  },
-  {
     brand: "Ask Mysuru",
     platform: "Facebook",
     handle: "askmysuru",
@@ -53,7 +44,7 @@ export default function SocialConnectivity() {
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               whileHover={{ y: -5 }}
-              className={`glass-card p-10 flex flex-col justify-between group overflow-hidden relative`}
+              className={`glass-card p-6 md:p-10 flex flex-col justify-between group overflow-hidden relative`}
             >
               {/* Animated Gradient Background */}
               <div className={`absolute inset-0 bg-gradient-to-br ${social.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
@@ -67,7 +58,7 @@ export default function SocialConnectivity() {
                 </div>
                 
                 <span className="font-label text-[9px] uppercase tracking-[0.3em] text-accent block mb-2">{social.brand}</span>
-                <h3 className="font-headline text-3xl italic text-primary mb-4">{social.handle}</h3>
+                <h3 className="font-headline text-xl md:text-3xl italic text-primary mb-4">{social.handle}</h3>
                 <p className="font-body text-xs text-primary-dim leading-relaxed max-w-[200px]">
                   {social.description}
                 </p>

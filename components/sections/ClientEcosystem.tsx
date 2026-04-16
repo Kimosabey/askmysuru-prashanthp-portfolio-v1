@@ -9,7 +9,6 @@ const logos = [
   { name: "Archaeological Survey", icon: "AS" },
   { name: "P2 ADD Agency", icon: "P2" },
   { name: "Ask Mysuru", icon: "AM" },
-  { name: "Political360", icon: "360" },
 ];
 
 export default function ClientEcosystem() {
@@ -23,13 +22,9 @@ export default function ClientEcosystem() {
           </div>
           <div className="max-w-md text-center md:text-right">
             <p className="font-body text-sm text-primary-dim leading-relaxed mb-6">
-              Prashanth P operates through his registered paramount agency <span className="text-primary font-bold">P2 ADD Agency</span>. He has engineered two distinct, full-scale independent media brands.
+              Prashanth P operates through his registered paramount agency <span className="text-primary font-bold">P2 ADD Agency</span>. He has engineered a full-scale independent media brand dedicated to heritage, culture, and historical documentation.
             </p>
             <div className="flex flex-col md:flex-row gap-8 justify-end">
-              <div className="text-right">
-                <span className="font-label text-[9px] text-accent uppercase tracking-widest block mb-1">Political360</span>
-                <span className="font-body text-[10px] text-primary-dim italic">"Panchayat To Parliament"</span>
-              </div>
               <div className="text-right">
                 <span className="font-label text-[9px] text-accent uppercase tracking-widest block mb-1">Ask Mysuru</span>
                 <span className="font-body text-[10px] text-primary-dim italic">"Hidden Stories of Karunadu"</span>
@@ -38,7 +33,7 @@ export default function ClientEcosystem() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-12 items-center opacity-60">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-12 items-center opacity-60">
           {logos.map((logo, i) => (
             <motion.div
               key={i}

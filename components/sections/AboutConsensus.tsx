@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Youtube, ArrowRight, Users, Instagram } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { AnimatedCounter, ModernBadge } from "@/components/effects";
 
 export default function AboutConsensus() {
   return (
@@ -14,40 +15,50 @@ export default function AboutConsensus() {
           viewport={{ once: true }}
           className="lg:col-span-7"
         >
-          <span className="font-label text-[10px] text-accent tracking-[0.4em] uppercase block mb-6">The Architect of Heritage</span>
+          <span className="font-label text-[10px] text-accent tracking-[0.4em] uppercase block mb-6">About Ask Mysuru</span>
           <h2 className="fluid-h2 font-headline italic text-primary leading-[0.9] mb-4">
-            Digital media entrepreneur <br/>
-            & <span className="underline decoration-accent/30 underline-offset-8">documentarian</span>.
+            Who we are & <span className="underline decoration-accent/30 underline-offset-8">what we do</span>.
           </h2>
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="font-headline text-accent italic text-xl mb-8 opacity-80"
           >
-            "Hidden stories of the Karunadu region"
+            "We create powerful videos, cover iconic events, and help brands grow online."
           </motion.p>
           <p className="font-body text-lg text-primary-dim max-w-xl leading-relaxed mb-10">
-            Prashanth P. has engineered two distinct, full-scale independent media brands: <span className="text-primary font-medium italic">Ask Mysuru</span> & <span className="text-primary font-medium italic">Political360</span>. Bridging the gap between historical preservation and modern political discourse.
+            Ask Mysuru is Mysuru's leading digital media and content agency. We've spent 5+ years covering Mysuru Dasara, producing official event content, collaborating with colleges and brands, and building a strong local audience reach. Our work has reached 4L+ people, generated hundreds of admission leads, and created viral event coverage that connects brands with their communities.
           </p>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12">
-            <div className="flex flex-col gap-2">
-              <span className="font-headline text-4xl italic text-primary">63K+</span>
-              <span className="font-label text-[9px] uppercase tracking-widest text-primary-dim">YouTube Base</span>
-            </div>
-            <div className="flex flex-col gap-2">
-              <span className="font-headline text-4xl italic text-primary">160K+</span>
-              <span className="font-label text-[9px] uppercase tracking-widest text-primary-dim">Digital Reach</span>
-            </div>
-            <div className="flex flex-col gap-2">
-              <span className="font-headline text-4xl italic text-primary">450+</span>
-              <span className="font-label text-[9px] uppercase tracking-widest text-primary-dim">Films Produced</span>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-12">
+            <AnimatedCounter 
+              value={5} 
+              label="Years Experience" 
+              suffix="+"
+              duration={2000}
+            />
+            <AnimatedCounter 
+              value={100} 
+              label="Projects Delivered" 
+              suffix="+"
+              duration={2500}
+            />
+            <AnimatedCounter 
+              value={50} 
+              label="Brands Worked With" 
+              suffix="+"
+              duration={2300}
+            />
           </div>
 
-          <div className="flex flex-wrap gap-4 mb-12">
-            {["Digital Media Entrepreneurship", "Heritage Documentation", "Socio-Political Analysis", "Cinematic Storytelling"].map(tag => (
-              <span key={tag} className="font-label text-[8px] uppercase tracking-[0.2em] border border-border px-3 py-1 text-primary-dim">{tag}</span>
+          <div className="flex flex-wrap gap-3 mb-12">
+            {["Video Production", "Social Media Content", "Event Coverage", "College Promotions", "Digital Marketing"].map(tag => (
+              <ModernBadge
+                key={tag}
+                label={tag}
+                variant="primary"
+                size="sm"
+              />
             ))}
           </div>
 

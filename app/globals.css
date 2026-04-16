@@ -36,6 +36,18 @@
     0 20px 48px rgba(0, 0, 0, 0.2),
     0 48px 96px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  /* Z-Index Scale (Consistent Stacking Context) */
+  --z-content: 10;
+  --z-floating: 20;
+  --z-dropdown: 30;
+  --z-sticky: 40;
+  --z-modal-backdrop: 50;
+  --z-modal-content: 60;
+  --z-toast: 70;
+  --z-popover: 80;
+  --z-cursor: 90;
+  --z-debug: 100;
 }
 
 /* -------------------------------------
@@ -237,9 +249,17 @@ body {
     border-radius: 1.5rem;
     box-shadow: var(--shadow-cinematic-elevated);
   }
+  .fluid-h2 {
+    font-size: clamp(2rem, 6vw, 5rem);
+    letter-spacing: -0.03em;
+  }
   .fluid-h3 {
     font-size: clamp(1.8rem, 5vw, 3rem);
     letter-spacing: -0.02em;
+  }
+  .fluid-body {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.7;
   }
   .drop-shadow-cinematic {
     filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));

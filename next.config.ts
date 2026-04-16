@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   // @ts-ignore
-  allowedDevOrigins: ['192.168.1.6', 'localhost'], // Whitelisting your local network IP to allow CSS/JS to load
+  allowedDevOrigins: ['192.168.1.6', 'localhost', '10.10.20.144'], // Whitelisting your local network IP to allow CSS/JS to load
   images: {
     remotePatterns: [
       {

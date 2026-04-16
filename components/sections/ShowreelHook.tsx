@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Play, X } from "lucide-react";
 import {
@@ -19,7 +18,7 @@ export default function ShowreelHook() {
       <div className="relative w-full py-24 bg-background flex flex-col items-center justify-center border-t border-border">
         <div className="max-w-[1600px] mx-auto text-center px-6 md:px-12 w-full">
           <h2 className="font-sans text-xs md:text-sm tracking-[0.4em] text-accent uppercase mb-8">The 60-Second Hook</h2>
-          <p className="font-headline text-3xl md:text-5xl text-primary leading-relaxed mb-12">
+          <p className="font-headline text-xl md:text-3xl lg:text-5xl text-primary leading-relaxed mb-12">
             Every frame is a painted canvas of <span className="italic text-accent">culture, heritage, and the silence of nature.</span>
           </p>
           
@@ -35,7 +34,7 @@ export default function ShowreelHook() {
                 Play Showreel
               </span>
             </DialogTrigger>
-            <DialogContent className="max-w-7xl aspect-video p-0 bg-black border-none overflow-hidden">
+            <DialogContent className="max-w-7xl w-[95vw] max-h-[85dvh] aspect-video p-0 bg-black border-none overflow-hidden">
               <DialogHeader className="sr-only">
                 <DialogTitle>Cinematic Showreel</DialogTitle>
               </DialogHeader>
