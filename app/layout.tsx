@@ -40,7 +40,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={cn("antialiased", "hide-scrollbar", "relative", fontOutfit.variable, fontPlayfair.variable, notoSansKannada.variable, "font-sans", geist.variable)}>
+    <html 
+      lang="en" 
+      suppressHydrationWarning 
+      className={cn(
+        "antialiased hide-scrollbar relative scroll-smooth scroll-pt-24 md:scroll-pt-32", 
+        fontOutfit.variable, 
+        fontPlayfair.variable, 
+        notoSansKannada.variable, 
+        "font-sans", 
+        geist.variable
+      )}
+    >
       <head>
         {/* Preconnect to external origins */}
         <link rel="preconnect" href="https://img.youtube.com" />

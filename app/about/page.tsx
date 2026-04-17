@@ -1,20 +1,39 @@
-import { Award, Youtube, ArrowRight, Users, Camera, Instagram } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { Award, Youtube, ArrowRight, Users, Camera, Instagram, FileText } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const PdfPreview = dynamic(() => import("@/components/ui/PdfPreview"), {
+  ssr: false,
+});
 
 export default function AboutPage() {
   return (
-    <main className="pt-28 md:pt-48 pb-20 bg-background relative">
+    <>
+    <main className="pt-32 md:pt-48 pb-20 bg-background relative">
       {/* Section 1: The Visionary Founder */}
       <section className="px-6 md:px-12 mb-32 max-w-[1600px] mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
           <div className="lg:col-span-8">
-            <span className="font-label text-[10px] text-accent tracking-[0.4em] uppercase block mb-6">Media House Builder & Visionary</span>
+            <span className="font-label text-[10px] text-accent tracking-[0.4em] uppercase block mb-6">Media House Builder & Visionary // Prashanth P.</span>
             <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl italic leading-[0.9] tracking-tighter text-primary mb-8 drop-shadow-cinematic">
-              Prashanth P. <br/>
-              <span className="text-primary-dim font-light not-italic text-3xl md:text-5xl lg:text-6xl tracking-tight">Founder of Ask Mysuru</span>
+              The Architect <br/>
+              <span className="text-primary-dim font-light not-italic text-3xl md:text-5xl lg:text-6xl tracking-tight">of Heritage</span>
             </h1>
             <p className="font-body text-lg md:text-xl text-primary-dim max-w-2xl leading-relaxed mb-10">
-              A Bengaluru–Mysuru-based digital media entrepreneur and heritage documentarian. Prashanth has engineered a full-scale independent media brand dedicated to preserving and archiving Karnataka's rich cultural and historical legacy.
+              Prashanth P. is a Bengaluru–Mysuru-based digital media entrepreneur and heritage documentarian. He has engineered a full-scale independent media brand dedicated to preserving and archiving Karnataka's rich cultural and historical legacy through his agency, **P2 ADD Agency**.
             </p>
+            
+            {/* Focus Areas Tags */}
+            <div className="flex flex-wrap gap-4 mb-12">
+              {["Digital Media Entrepreneurship", "Heritage Documentation", "Socio-Political Analysis", "Cinematic Storytelling"].map((area, i) => (
+                <div key={i} className="px-4 py-2 border border-border rounded-full hover:border-accent hover:text-accent transition-colors">
+                  <span className="font-label text-[10px] uppercase tracking-widest">{area}</span>
+                </div>
+              ))}
+            </div>
+
             <p className="font-headline italic text-2xl md:text-3xl text-accent-dim">
               "ದಾಖಲಿಸದ ಇತಿಹಾಸವು ಅಳಿಸಿಹೋಗುತ್ತದೆ." <span className="font-body text-sm not-italic opacity-60 ml-4 font-light text-primary">(Unrecorded history is lost.)</span>
             </p>
@@ -26,7 +45,7 @@ export default function AboutPage() {
               <img 
                 className="w-full h-full object-cover grayscale contrast-125 filter group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 mix-blend-luminosity hover:mix-blend-normal" 
                 alt="Prashanth P. Personal Rider Profile" 
-                src="/Prashanth_Bike.jpg"
+                src="/Prashanth_Profile.jpg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-80 pointer-events-none"></div>
             </div>
@@ -192,20 +211,22 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Section: Download Profile */}
+      {/* Section: Credentials Profile */}
       <section className="px-6 md:px-12 py-24 max-w-[1600px] mx-auto relative z-10 border-t border-border">
-        <div className="text-center">
-          <h3 className="font-headline text-3xl md:text-4xl italic text-primary mb-6">Full Credentials & Profile</h3>
-          <p className="font-body text-primary-dim max-w-xl mx-auto mb-12 leading-relaxed">Access comprehensive documentation of heritage initiatives, awards, and professional background.</p>
-          <a 
-            href="/Prashanth_P_Profile.pdf" 
-            download="Prashanth_P_Profile.pdf"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-accent text-primary rounded-sm font-label text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-accent-dim transition-all shadow-lg"
-          >
-            📄 DOWNLOAD FULL PROFILE PDF
-          </a>
+        <div className="text-center mb-16">
+          <h3 className="font-headline text-4xl md:text-6xl italic text-primary mb-6">Full Credentials & Profile</h3>
+          <p className="font-body text-primary-dim max-w-xl mx-auto mb-12 leading-relaxed">A comprehensive documentation of heritage initiatives, awards, and the professional trajectory of Prashanth P.</p>
+          <div className="w-24 h-[1px] bg-accent mx-auto opacity-30"></div>
+        </div>
+
+        <div className="mt-12 backdrop-blur-sm max-w-full overflow-hidden">
+          <PdfPreview 
+            isEmbedded={true}
+            fileUrl="/Prashanth_P_Profile.pdf" 
+          />
         </div>
       </section>
     </main>
+    </>
   );
 }

@@ -77,7 +77,7 @@ export default function AboutConsensus() {
           <div className="absolute inset-0 border border-accent/20 translate-x-4 translate-y-4 -z-10 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-700"></div>
           <div className="overflow-hidden aspect-[4/5] bg-surface-elevated border border-border shadow-cinematic relative">
             <img 
-              src="/Prashanth_Bike.jpg" 
+              src="/Prashanth_Profile.jpg" 
               alt="Prashanth P. Personal Profile" 
               className="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
             />
