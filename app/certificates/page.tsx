@@ -1,8 +1,17 @@
-import { Award, Medal, BookOpen } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { Award, Medal, BookOpen, FileText } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const PdfPreview = dynamic(() => import("@/components/ui/PdfPreview"), {
+  ssr: false,
+});
 
 export default function CertificatesPage() {
   return (
-    <main className="pt-40 pb-20 bg-background min-h-screen relative overflow-hidden">
+    <>
+    <main className="pt-48 pb-20 bg-background min-h-screen relative overflow-hidden">
       {/* Cinematic Background Accents */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
       
@@ -73,19 +82,17 @@ export default function CertificatesPage() {
               </div>
             </div>
 
-            <div className="pt-6 mt-6 border-t border-border">
-              <a 
-                href="/Prashanth_P_Profile.pdf" 
-                download="Prashanth_P_Profile.pdf"
-                className="inline-flex items-center gap-3 px-6 py-4 bg-accent text-primary rounded-sm font-label text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-accent-dim transition-all shadow-lg hover:shadow-xl"
-              >
-                <BookOpen size={16} />
-                DOWNLOAD PROFILE & CREDENTIALS
-              </a>
+            <div className="pt-8 mt-6 border-t border-border max-w-full overflow-hidden">
+              <span className="font-label text-[10px] text-accent font-bold tracking-[0.2em] mb-4 block">LIVE CREDENTIALS VIEW</span>
+              <PdfPreview 
+                isEmbedded={true}
+                fileUrl="/Prashanth_P_Profile.pdf" 
+              />
             </div>
           </div>
         </div>
       </div>
     </main>
+    </>
   );
 }
