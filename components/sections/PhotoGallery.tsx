@@ -8,7 +8,7 @@ const photos = [
   { url: "https://lh3.googleusercontent.com/aida-public/AB6AXuDO549CDqtKk4CLiaW3SSiy4Mk3OAGeElA0xkycALowXOYvWOTvrJa3zOgj_21iVapTEL5Pkk7glBvzFo95wwshBxpXHTO-36N2e1L9K9mphf3p04_Go580uR3b3JMJRfPfWCZmYmwrNNLU79hLfTY0K5sE7jput42tktnVblFjtW8N0J5bj3GQ5qs7Y6-wbI7YaapaxLaErVNNcQAQFpfokJqf1WESBgNubK0Di9eYlvh4NwIEPDoc3xtq0Y65tv-Q2As_8KxWFw", category: "Architecture" },
   { url: "https://lh3.googleusercontent.com/aida-public/AB6AXuBGkA2m0WEEwPz5lFb_CjUtyMRq6VibvDGMh1720B-xhMAuOyOUff02KXi82qx_PbXiJAjs9qKTGCjUZwAHtmT4-SN2uQ84PXoJtCHrK0n80zK6zYM0ibsXUqi7DSMjA2DwNrPUf6fQ_2SY2RAkBOEpv5-sfn8ZYD_k0flaBbHo7YRVGao5OKisgazus2-tVitvz6ageCCCZ-OGq4-BjKSgkIcovZ0rYdZLb8OXyoBzjJchAuN8BM1BzLmbw3RoxUYbCip8sYLGBA", category: "Wildlife" },
   { url: "https://lh3.googleusercontent.com/aida-public/AB6AXuBcRkML4Y6jPCVzbN_RnzTurZeHJzamTw7jM303h4Y5onWCnIoQ1GjvD82eCxiseH2bqidX11lXAy4mxbKKkz1E8pCn9yPjQaP4652-69v2TX-34dIXtmIInov_0_S9Uz-LNGQIUvkumtFJlkQFCWGc0Q0yNFG8r3waaIHX424Lm4UFR9-D53uMNL8IhTJsJw8DRjmB9vCDOTGzJJ4k489AHv0qkDvFq4uNIvKNRbrwYjT1VJp27GXMvF12qrLXKfMzq5bfA4KCgQ", category: "Architecture" },
-  { url: "/Prashanth_Bike.jpg", category: "BTS" },
+  { url: "/Prashanth_Profile.jpg", category: "BTS" },
 ];
 
 export default function PhotoGallery() {
