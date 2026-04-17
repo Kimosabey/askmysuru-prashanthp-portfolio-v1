@@ -15,6 +15,7 @@ export default function Footer() {
               src="/AskMysuru_Color.png" 
               alt="Ask Mysuru Official Logo" 
               fill
+              sizes="(max-width: 768px) 192px, 192px"
               className="object-contain transition-all duration-500 dark:brightness-0 dark:invert opacity-80 hover:opacity-100" 
             />
           </div>
@@ -32,8 +33,8 @@ export default function Footer() {
         </div>
 
         {/* Studio Portals */}
-        <div className="md:col-span-3 md:col-start-7 flex flex-col gap-6">
-          <h3 className="font-label text-xs uppercase tracking-widest text-primary-dim">Studio Portal</h3>
+        <div className="md:col-span-2 md:col-start-6 flex flex-col gap-6">
+          <h3 className="font-label text-xs uppercase tracking-widest text-primary-dim">Studio Portals</h3>
           <div className="flex flex-col gap-4">
             <a href="https://askmysuru.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent font-headline italic text-lg transition-colors flex items-center justify-between group">
               AskMysuru.com
@@ -42,6 +43,24 @@ export default function Footer() {
             <div className="text-primary-dim font-headline italic text-lg opacity-50 cursor-not-allowed">
               P2 ADD Agency
             </div>
+          </div>
+        </div>
+
+        {/* Quick Links */}
+        <div className="md:col-span-2 flex flex-col gap-6">
+          <h3 className="font-label text-xs uppercase tracking-widest text-primary-dim">Navigation</h3>
+          <div className="flex flex-col gap-3">
+            {[
+              { name: "The Vision", href: "/#vision" },
+              { name: "The Architect", href: "/about" },
+              { name: "Film Archive", href: "/cinematography" },
+              { name: "Visual Gallery", href: "/gallery" },
+              { name: "Awards & Recognition", href: "/certificates" },
+            ].map((link) => (
+              <a key={link.name} href={link.href} className="text-primary-dim hover:text-accent font-label text-[10px] uppercase tracking-widest transition-colors">
+                {link.name}
+              </a>
+            ))}
           </div>
         </div>
 

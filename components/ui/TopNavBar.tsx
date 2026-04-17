@@ -52,7 +52,6 @@ export default function TopNavBar() {
           const active = entries.find((e) => e.isIntersecting);
           if (active) {
             setActiveSection(active.target.id);
-            window.history.replaceState(null, "", `#${active.target.id}`);
           }
         },
         { root: null, rootMargin: "-20% 0px -60% 0px", threshold: 0.1 }
@@ -72,12 +71,12 @@ export default function TopNavBar() {
 
   const navLinks = [
     { name: "Vision", href: "/#vision" },
-    { name: "About", href: "/#about" },
-    { name: "Films", href: "/#cinematography" },
-    { name: "Gallery", href: "/#gallery" },
-    { name: "Units", href: "/#units" },
-    { name: "Awards", href: "/#certificates" },
-    { name: "Ecosystem", href: "/#clients" },
+    { name: "About", href: "/about" },
+    { name: "Films", href: "/cinematography" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Units", href: "/units" },
+    { name: "Awards", href: "/certificates" },
+    { name: "Ecosystem", href: "/clients" },
   ];
 
   const mobileLinks = [...navLinks, { name: "Contact", href: "/contact" }];
@@ -124,7 +123,7 @@ export default function TopNavBar() {
     <>
       {/* ── Header Bar ── */}
       <nav
-        className={`fixed top-0 left-0 w-full z-[40] transition-all duration-500 ${
+        className={`fixed top-0 left-0 w-full z-[50] transition-all duration-500 ${
           isScrolled
             ? "py-3 md:py-4 bg-background/95 backdrop-blur-md border-b border-border/50 shadow-cinematic"
             : "py-3 md:py-8 bg-transparent"
